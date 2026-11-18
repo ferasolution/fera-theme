@@ -1,0 +1,630 @@
+[
+ {
+  "slug": "cybersecurity",
+  "name": "Cybersecurity",
+  "t1": "Protect what",
+  "t2": "you've",
+  "acc": "built.",
+  "tags": "Assess · Protect · Remediate",
+  "icon": "M32 6 10 14v16c0 13 9.4 24.6 22 28 12.6-3.4 22-15 22-28V14L32 6Z M27 28a5 5 0 1 0 10 0a5 5 0 1 0-10 0 M32 33v9",
+  "lead": "Risk assessments, penetration testing and hardening that find the gaps before attackers do — explained in plain language, with a clear plan to fix them.",
+  "inc": [
+   [
+    "Risk assessment",
+    "A clear picture of your exposure across website, cloud, devices and people."
+   ],
+   [
+    "Vulnerability scanning",
+    "Automated and manual checks of your apps, servers and network."
+   ],
+   [
+    "Penetration testing",
+    "Ethical, controlled attacks that prove what is really exploitable."
+   ],
+   [
+    "Hardening & remediation",
+    "Prioritised fixes, configuration changes and patching guidance."
+   ],
+   [
+    "Website security",
+    "SSL, security headers, firewall, backups and malware protection."
+   ],
+   [
+    "Awareness training",
+    "Short, practical sessions so your team can spot phishing and scams."
+   ]
+  ],
+  "steps": [
+   [
+    "Scope",
+    "We agree on the systems to test, the goals and the timing."
+   ],
+   [
+    "Assess",
+    "We scan, test and probe for weaknesses — carefully and safely."
+   ],
+   [
+    "Report",
+    "You get prioritised findings in plain language, not jargon."
+   ],
+   [
+    "Remediate",
+    "We help fix every issue, then re-test to confirm it is closed."
+   ]
+  ],
+  "tools": [
+   "OWASP Top 10",
+   "Nmap",
+   "Burp Suite",
+   "Cloudflare WAF",
+   "SSL / TLS",
+   "Wordfence",
+   "MFA",
+   "Backups"
+  ],
+  "faq": [
+   [
+    "Is my business too small to be a target?",
+    "No. Small businesses are often targeted precisely because they have fewer defences. A short assessment shows exactly where you stand."
+   ],
+   [
+    "Will testing disrupt my website?",
+    "We agree on scope and timing in advance and test carefully, so your normal operations continue."
+   ],
+   [
+    "What do I get at the end?",
+    "A plain-language report with prioritised findings and a remediation plan — plus our help fixing them if you want it."
+   ]
+  ],
+  "i": 0
+ },
+ {
+  "slug": "web-development",
+  "name": "Website Development",
+  "t1": "Websites that",
+  "t2": "",
+  "acc": "perform.",
+  "tags": "WordPress · React · 3D",
+  "icon": "M11 12h42a5 5 0 0 1 5 5v28a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z M6 21h52 M26 29l-7 7 7 7 M38 29l7 7-7 7",
+  "lead": "Distinctive, fast websites — from WordPress business sites to immersive 3D experiences like this one — built to turn visitors into customers.",
+  "inc": [
+   [
+    "Business websites",
+    "Professional sites that explain what you do and why customers should choose you."
+   ],
+   [
+    "WordPress development",
+    "Custom themes your team can edit without touching code."
+   ],
+   [
+    "3D & motion",
+    "Three.js, WebGL and GSAP experiences that make your brand unforgettable."
+   ],
+   [
+    "Landing pages",
+    "Focused pages built for campaigns, launches and lead generation."
+   ],
+   [
+    "Redesigns",
+    "A modern refresh of your existing site, keeping what already works."
+   ],
+   [
+    "Speed & SEO",
+    "Core Web Vitals, clean structure and on-page SEO from day one."
+   ]
+  ],
+  "steps": [
+   [
+    "Discover",
+    "Goals, audience, competitors and the content you need."
+   ],
+   [
+    "Design",
+    "Interactive prototypes with real motion for you to approve."
+   ],
+   [
+    "Develop",
+    "Clean, responsive build with weekly previews."
+   ],
+   [
+    "Launch",
+    "Secure go-live, analytics, training and ongoing support."
+   ]
+  ],
+  "tools": [
+   "WordPress",
+   "React",
+   "Next.js",
+   "Three.js",
+   "GSAP",
+   "Tailwind CSS",
+   "Figma",
+   "Cloudflare"
+  ],
+  "faq": [
+   [
+    "Can I edit the website myself?",
+    "Yes. We build on WordPress or a headless CMS so your team can update text, images and pages without code."
+   ],
+   [
+    "How long does a website take?",
+    "It depends on scope. Once we understand your needs, we give you a clear timeline before any work starts."
+   ],
+   [
+    "Do 3D animations slow the site down?",
+    "We load heavy effects only when needed and optimise everything, so the site stays fast on phones and desktops."
+   ]
+  ],
+  "i": 1
+ },
+ {
+  "slug": "software-development",
+  "name": "Software Development",
+  "t1": "Software built",
+  "t2": "around your",
+  "acc": "work.",
+  "tags": "Apps · Dashboards · Automation",
+  "icon": "M32 8 56 20 32 32 8 20Z M8 32l24 12 24-12 M8 44l24 12 24-12",
+  "lead": "Custom software, dashboards, workflow automation and integrations — built around the way your business actually works, not the other way round.",
+  "inc": [
+   [
+    "Custom web applications",
+    "Secure, scalable apps designed around your exact workflow."
+   ],
+   [
+    "Dashboards & portals",
+    "Customer, staff and admin portals with the data you need at a glance."
+   ],
+   [
+    "Workflow automation",
+    "Replace repetitive manual work with reliable automated processes."
+   ],
+   [
+    "API integrations",
+    "Connect your CRM, payments, accounting and other tools."
+   ],
+   [
+    "SaaS products",
+    "Multi-tenant platforms ready to sell to your own customers."
+   ],
+   [
+    "Mobile apps",
+    "Cross-platform apps for iOS and Android with React Native."
+   ]
+  ],
+  "steps": [
+   [
+    "Discovery",
+    "We map your processes, users and must-have features."
+   ],
+   [
+    "Prototype",
+    "Clickable screens to validate the idea before building."
+   ],
+   [
+    "Build",
+    "Short sprints with working software you can test every week."
+   ],
+   [
+    "Launch & support",
+    "Deployment, documentation, training and continued improvements."
+   ]
+  ],
+  "tools": [
+   "Laravel",
+   "Node.js",
+   "React",
+   "React Native",
+   "PostgreSQL",
+   "MySQL",
+   "REST APIs",
+   "GitHub Actions"
+  ],
+  "faq": [
+   [
+    "Do I own the code?",
+    "Yes. You own the code and the data, with documentation so any developer can work on it."
+   ],
+   [
+    "Can you connect our existing tools?",
+    "In most cases, yes — we integrate with CRMs, payment providers, accounting tools and other systems through their APIs."
+   ],
+   [
+    "What happens after launch?",
+    "We offer ongoing support, updates and new features as your business grows."
+   ]
+  ],
+  "i": 2
+ },
+ {
+  "slug": "digital-marketing",
+  "name": "Digital Marketing",
+  "t1": "Growth you",
+  "t2": "can",
+  "acc": "measure.",
+  "tags": "SEO · Ads · Analytics",
+  "icon": "M8 54h48 M12 44l12-12 10 8 18-20 M42 20h10v10",
+  "lead": "SEO, paid campaigns and analytics working as one engine that turns traffic into qualified leads — with reporting you can actually read.",
+  "inc": [
+   [
+    "Technical SEO",
+    "Site structure, speed and indexing fixed so search engines love you."
+   ],
+   [
+    "Local SEO",
+    "Google Business Profile and local rankings for customers near you."
+   ],
+   [
+    "Google Ads",
+    "Search and display campaigns focused on real enquiries."
+   ],
+   [
+    "Meta Ads",
+    "Facebook and Instagram campaigns that reach the right people."
+   ],
+   [
+    "Conversion tracking",
+    "Know exactly which channels bring calls, forms and sales."
+   ],
+   [
+    "Monthly reporting",
+    "Clear reports with results and what we are doing next."
+   ]
+  ],
+  "steps": [
+   [
+    "Audit",
+    "We review your site, rankings, ads and analytics."
+   ],
+   [
+    "Strategy",
+    "Channels, budget split and goals agreed together."
+   ],
+   [
+    "Launch",
+    "Campaigns and SEO work go live with full tracking."
+   ],
+   [
+    "Optimise",
+    "We test, learn and improve every single month."
+   ]
+  ],
+  "tools": [
+   "Google Analytics 4",
+   "Search Console",
+   "Google Ads",
+   "Meta Ads",
+   "Tag Manager",
+   "Semrush",
+   "Looker Studio",
+   "Hotjar"
+  ],
+  "faq": [
+   [
+    "How soon will I see results?",
+    "Paid campaigns can bring traffic quickly; SEO builds steadily over months. We set realistic expectations up front."
+   ],
+   [
+    "Who owns the ad accounts?",
+    "You do. Campaigns run in your own accounts, so you keep full access and history."
+   ],
+   [
+    "What will I see each month?",
+    "A clear report showing traffic, leads, spend and what we are changing next."
+   ]
+  ],
+  "i": 3
+ },
+ {
+  "slug": "graphic-design",
+  "name": "Graphic Design",
+  "t1": "Brands people",
+  "t2": "",
+  "acc": "remember.",
+  "tags": "Logos · Identity · Creatives",
+  "icon": "M32 6 46 30 32 58 18 30Z M28 32a4 4 0 1 0 8 0a4 4 0 1 0-8 0 M32 6v22",
+  "lead": "Logos, brand identities and campaign visuals with a clear point of view — designed to be remembered and built to work everywhere.",
+  "inc": [
+   [
+    "Logo design",
+    "A distinctive mark that works from favicon to billboard."
+   ],
+   [
+    "Brand identity",
+    "Colours, typography and visual language that feel like you."
+   ],
+   [
+    "Brand guidelines",
+    "A simple guide so everyone uses your brand correctly."
+   ],
+   [
+    "Social creatives",
+    "Post and story templates that stay on-brand."
+   ],
+   [
+    "Ad creatives",
+    "Scroll-stopping visuals for Google, Meta and display ads."
+   ],
+   [
+    "Print collateral",
+    "Business cards, brochures, flyers and signage."
+   ]
+  ],
+  "steps": [
+   [
+    "Brief",
+    "Your story, audience, competitors and personality."
+   ],
+   [
+    "Concepts",
+    "Several creative directions to choose from."
+   ],
+   [
+    "Refine",
+    "We perfect the chosen direction with your feedback."
+   ],
+   [
+    "Deliver",
+    "Final files in every format, plus guidelines."
+   ]
+  ],
+  "tools": [
+   "Figma",
+   "Illustrator",
+   "Photoshop",
+   "InDesign",
+   "After Effects",
+   "Canva templates"
+  ],
+  "faq": [
+   [
+    "How does the logo process work?",
+    "We explore several directions first, then refine the one you love until it is exactly right."
+   ],
+   [
+    "What files will I receive?",
+    "Everything you need: vector and web formats, colour and single-colour versions, and guidelines for using them."
+   ],
+   [
+    "Can you refresh my existing brand?",
+    "Yes. We can modernise what you have while keeping the recognition you have already built."
+   ]
+  ],
+  "i": 4
+ },
+ {
+  "slug": "content-writing",
+  "name": "Content Writing",
+  "t1": "Words that",
+  "t2": "",
+  "acc": "convert.",
+  "tags": "Copy · Blogs · Scripts",
+  "icon": "M16 6h22l10 10v42H16Z M38 6v10h10 M23 28h18 M23 36h18 M23 44h11",
+  "lead": "Website copy, blogs and scripts that sound like you, speak to your customers and rank on search.",
+  "inc": [
+   [
+    "Website copy",
+    "Clear, persuasive pages that explain your value in seconds."
+   ],
+   [
+    "SEO blog articles",
+    "Researched articles that answer real questions and rank."
+   ],
+   [
+    "Product descriptions",
+    "Benefit-led descriptions that help products sell."
+   ],
+   [
+    "Email campaigns",
+    "Newsletters and sequences that people actually open."
+   ],
+   [
+    "Video & ad scripts",
+    "Short, punchy scripts for reels, YouTube and ads."
+   ],
+   [
+    "Case studies",
+    "Stories that prove your results to new customers."
+   ]
+  ],
+  "steps": [
+   [
+    "Research",
+    "Your voice, audience, keywords and competitors."
+   ],
+   [
+    "Outline",
+    "Structure and key messages agreed before writing."
+   ],
+   [
+    "Write",
+    "Original drafts written for humans and search engines."
+   ],
+   [
+    "Edit & optimise",
+    "Polished, proofread and optimised for SEO."
+   ]
+  ],
+  "tools": [
+   "Search Console",
+   "Semrush",
+   "Surfer SEO",
+   "Grammarly",
+   "Google Docs",
+   "WordPress"
+  ],
+  "faq": [
+   [
+    "Will the content sound like my brand?",
+    "Yes. We start by learning your voice, audience and goals, and every piece is edited to match."
+   ],
+   [
+    "Is the content original?",
+    "Every piece is written specifically for you and checked before delivery."
+   ],
+   [
+    "Do you handle SEO?",
+    "Yes — keyword research, structure, meta titles and internal links are part of every article."
+   ]
+  ],
+  "i": 5
+ },
+ {
+  "slug": "ecommerce",
+  "name": "E-Commerce Solutions",
+  "t1": "Online stores",
+  "t2": "that",
+  "acc": "sell.",
+  "tags": "Shopify · WooCommerce · Custom",
+  "icon": "M13 22h38l-3 34H16Z M24 26v-8a8 8 0 0 1 16 0v8",
+  "lead": "Online stores that look premium, load fast and convert — from product catalogue to checkout, payments and shipping.",
+  "inc": [
+   [
+    "Shopify stores",
+    "Beautiful, reliable stores on the world’s leading platform."
+   ],
+   [
+    "WooCommerce stores",
+    "Flexible stores on WordPress with full control."
+   ],
+   [
+    "Custom storefronts",
+    "Bespoke shopping experiences for unique products."
+   ],
+   [
+    "Payments & shipping",
+    "Stripe, PayPal, taxes, shipping rates and delivery set up."
+   ],
+   [
+    "Product setup",
+    "Catalogue, variants, images and descriptions organised."
+   ],
+   [
+    "Conversion optimisation",
+    "Faster pages and smoother checkout for more sales."
+   ]
+  ],
+  "steps": [
+   [
+    "Plan",
+    "Products, platform, payments and shipping decided."
+   ],
+   [
+    "Design",
+    "A storefront that reflects your brand and builds trust."
+   ],
+   [
+    "Build",
+    "Store, integrations and products set up and tested."
+   ],
+   [
+    "Launch & grow",
+    "Go live, then marketing, SEO and optimisation."
+   ]
+  ],
+  "tools": [
+   "Shopify",
+   "WooCommerce",
+   "Stripe",
+   "PayPal",
+   "Klaviyo",
+   "Merchant Center",
+   "Meta Shop",
+   "Cloudflare"
+  ],
+  "faq": [
+   [
+    "Shopify or WooCommerce?",
+    "It depends on your products, budget and how much control you want. We recommend the right fit for you."
+   ],
+   [
+    "Can you move my existing store?",
+    "Yes. We migrate products, customers and orders carefully to protect your sales and SEO."
+   ],
+   [
+    "Can I manage products myself?",
+    "Absolutely. We set everything up so you can add products, update prices and manage orders easily."
+   ]
+  ],
+  "i": 6
+ },
+ {
+  "slug": "social-media",
+  "name": "Social Account Management",
+  "t1": "Social that",
+  "t2": "",
+  "acc": "connects.",
+  "tags": "Posting · Community · Reports",
+  "icon": "M8 12h36v26H24l-10 9v-9H8Z M26 21c-2-3.5-7-3-7 1 0 3.5 7 8 7 8s7-4.5 7-8c0-4-5-4.5-7-1Z M50 22h6v26h-6v8l-9-8H30v-4",
+  "lead": "Consistent posting, community care and clear reporting across every platform you are on — so your brand stays active while you run the business.",
+  "inc": [
+   [
+    "Strategy & calendar",
+    "A monthly plan of themes, formats and posting times."
+   ],
+   [
+    "Content creation",
+    "On-brand graphics, reels, captions and hashtags."
+   ],
+   [
+    "Posting & scheduling",
+    "Consistent publishing across all your platforms."
+   ],
+   [
+    "Community management",
+    "Replies to comments and messages in your voice."
+   ],
+   [
+    "Profile optimisation",
+    "Bios, highlights and links set up to convert."
+   ],
+   [
+    "Monthly reports",
+    "Reach, engagement and growth explained simply."
+   ]
+  ],
+  "steps": [
+   [
+    "Audit",
+    "Your profiles, audience and competitors reviewed."
+   ],
+   [
+    "Plan",
+    "A content calendar you approve before anything posts."
+   ],
+   [
+    "Publish",
+    "Content created, scheduled and posted consistently."
+   ],
+   [
+    "Report",
+    "Monthly results and next month’s improvements."
+   ]
+  ],
+  "tools": [
+   "Instagram",
+   "Facebook",
+   "LinkedIn",
+   "TikTok",
+   "X",
+   "YouTube",
+   "Meta Business Suite",
+   "Canva"
+  ],
+  "faq": [
+   [
+    "Which platforms do you manage?",
+    "Instagram, Facebook, LinkedIn, TikTok, X and YouTube — we focus on the ones where your customers are."
+   ],
+   [
+    "Do I approve posts before they go live?",
+    "Yes. You review the monthly calendar and approve content before anything is published."
+   ],
+   [
+    "Do you reply to comments and messages?",
+    "Yes, community management can be included so your audience always gets a response."
+   ]
+  ],
+  "i": 7
+ }
+]

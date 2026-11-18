@@ -1,0 +1,58 @@
+<?php
+/**
+ * Blog, archives and search results.
+ *
+ * @package FeraTheme
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+if ( is_search() ) {
+	/* translators: %s: search query. */
+	$fera_title = sprintf( __( 'Results for “%s”', 'fera-theme' ), get_search_query() );
+} elseif ( is_archive() ) {
+	$fera_title = wp_strip_all_tags( get_the_archive_title() );
+} else {
+	$fera_title = get_option( 'page_for_posts' ) ? get_the_title( get_option( 'page_for_posts' ) ) : __( 'Insights', 'fera-theme' );
+}
+?>
+<main id="svcPage">
+	<section class="s-hero pg-hero wp-hero" data-scene="pg-wave">
+		<nav class="crumbs mono" aria-label="<?php esc_attr_e( 'Breadcrumb', 'fera-theme' ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'fera-theme' ); ?></a><span>/</span><b><?php echo esc_html( $fera_title ); ?></b></nav>
+		<h1 class="s-title"><span class="line"><span><?php echo esc_html( $fera_title ); ?></span></span></h1>
+		<?php if ( is_search() ) : ?>
+			<div class="s-row" data-fade><?php get_search_form(); ?></div>
+		<?php endif; ?>
+	</section>
+	<div class="post-list">
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<a class="post-card" href="<?php the_permalink(); ?>" data-cursor="Read">
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail( 'medium_large', array( 'loading' => 'lazy' ) );
+					}
+					?>
+					<span class="mono"><?php echo esc_html( get_the_date() ); ?></span>
+					<h2><?php the_title(); ?></h2>
+					<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 24, '…' ) ); ?></p>
+				</a>
+				<?php
+			endwhile;
+			$fera_links = paginate_links( array( 'type' => 'plain' ) );
+			if ( $fera_links ) :
+				echo '<nav class="pager" aria-label="' . esc_attr__( 'Pagination', 'fera-theme' ) . '">' . wp_kses_post( $fera_links ) . '</nav>';
+			endif;
+		else :
+			echo '<p class="prose">' . esc_html__( 'Nothing found yet.', 'fera-theme' ) . '</p>';
+		endif;
+		?>
+	</div>
+</main>
+<?php
+get_footer();

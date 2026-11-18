@@ -1,0 +1,18 @@
+{
+  "name": "fera-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fera Theme \u2014 WordPress theme for ferasolution.com",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "watch": "npm run build:js -- --watch",
+    "build:js": "esbuild src/app.js --bundle --splitting --format=esm --minify --target=es2020 --outdir=assets/js --entry-names=[name] --chunk-names=chunks/[name]-[hash] --legal-comments=none",
+    "build:css": "esbuild src/main.css --minify --outfile=assets/css/main.css"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "gsap": "3.12.5",
+    "lenis": "1.1.13",
+    "three": "0.160.0"
+  }
+}

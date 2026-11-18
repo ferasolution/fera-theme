@@ -1,0 +1,68 @@
+<div id="loader" aria-hidden="true">
+  <div class="ld-half top"></div><div class="ld-half bot"></div>
+  <div class="ld-inner">
+    <img src="{{IMG}}/markd-560.webp" alt="">
+    <div class="ld-tag mono"><span style="display:inline-block">Technology. With purpose.</span></div>
+  </div>
+  <div class="ld-bar"><span id="ldBar"></span></div>
+  <div class="ld-count" id="ldCount">0</div>
+</div>
+
+<div id="curtain" aria-hidden="true"><img src="{{IMG}}/markd-560.webp" alt=""><span class="mono">Fera Solution</span></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="secnav" id="secnav" aria-label="Sections"></nav>
+<div id="cmd" role="dialog" aria-modal="true" aria-label="Quick navigation">
+  <div class="cmd-box">
+    <div class="cmd-in"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="cmdIn">Search pages and actions</label><input id="cmdIn" type="text" placeholder="Jump to a service, section or action…" autocomplete="off" role="combobox" aria-controls="cmdList" aria-expanded="true"></div>
+    <ul class="cmd-list" id="cmdList" role="listbox" data-lenis-prevent></ul>
+    <div class="cmd-foot"><span>↑↓ Navigate</span><span>Enter Open</span><span>Esc Close</span></div>
+  </div>
+</div>
+<div id="cursor" aria-hidden="true"><div class="c-ring"><span class="c-label" id="cLabel">View</span></div><div class="c-dot"></div></div>
+
+<!-- floating service preview -->
+<div class="preview" id="preview" aria-hidden="true">
+  <div class="preview-track" id="pvTrack">
+    <div class="pv" style="--g:radial-gradient(60% 60% at 30% 20%,#EE2E33,transparent),radial-gradient(60% 60% at 80% 90%,#5C0A0D,transparent),#1A0709"><span class="mono">01 / Defend</span><svg viewBox="0 0 64 64"><path d="M32 6 10 14v16c0 13 9.4 24.6 22 28 12.6-3.4 22-15 22-28V14L32 6Z"/><circle cx="32" cy="28" r="5"/><path d="M32 33v9"/></svg><b>Cybersecurity</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 70% 20%,#C8141C,transparent),radial-gradient(60% 60% at 20% 90%,#2A2223,transparent),#120B0C"><span class="mono">02 / Build</span><svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="38" rx="5"/><path d="M6 21h52M26 29l-7 7 7 7M38 29l7 7-7 7"/></svg><b>Website Development</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 20% 30%,#8E0F14,transparent),radial-gradient(60% 60% at 90% 80%,#EE2E33,transparent),#140809"><span class="mono">03 / Engineer</span><svg viewBox="0 0 64 64"><path d="M32 8 56 20 32 32 8 20Z"/><path d="m8 32 24 12 24-12M8 44l24 12 24-12"/></svg><b>Software Development</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 80% 30%,#EE2E33,transparent),radial-gradient(70% 60% at 10% 90%,#8E0F14,transparent),#170A0B"><span class="mono">04 / Grow</span><svg viewBox="0 0 64 64"><path d="M8 54h48M12 44l12-12 10 8 18-20M42 20h10v10"/></svg><b>Digital Marketing</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 50% 10%,#E9DFD9,transparent 70%),radial-gradient(60% 60% at 50% 100%,#C8141C,transparent),#1A0B0D"><span class="mono">05 / Create</span><svg viewBox="0 0 64 64"><path d="M32 6 46 30 32 58 18 30Z"/><circle cx="32" cy="32" r="4"/><path d="M32 6v22"/></svg><b>Graphic Design</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 20% 20%,#F2C3A9,transparent 70%),radial-gradient(60% 60% at 90% 90%,#8E0F14,transparent),#170B0B"><span class="mono">06 / Write</span><svg viewBox="0 0 64 64"><path d="M16 6h22l10 10v42H16Z"/><path d="M38 6v10h10M23 28h18M23 36h18M23 44h11"/></svg><b>Content Writing</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 75% 25%,#C8141C,transparent),radial-gradient(60% 60% at 15% 85%,#EE2E33,transparent),#130809"><span class="mono">07 / Sell</span><svg viewBox="0 0 64 64"><path d="M13 22h38l-3 34H16Z"/><path d="M24 26v-8a8 8 0 0 1 16 0v8"/></svg><b>E-Commerce Solutions</b></div>
+    <div class="pv" style="--g:radial-gradient(60% 60% at 25% 75%,#EE2E33,transparent),radial-gradient(60% 60% at 85% 15%,#5C0A0D,transparent),#160809"><span class="mono">08 / Engage</span><svg viewBox="0 0 64 64"><path d="M8 12h36v26H24l-10 9v-9H8Z"/><path d="M26 21c-2-3.5-7-3-7 1 0 3.5 7 8 7 8s7-4.5 7-8c0-4-5-4.5-7-1Z"/><path d="M50 22h6v26h-6v8l-9-8H30v-4"/></svg><b>Social Accounts</b></div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="{{URL:home}}" class="brand" aria-label="Fera Solution — home">
+    <img src="{{IMG}}/markd-96.webp" alt="" width="31" height="40">
+    <span><b>Fera Solution</b><small>Technology. With purpose.</small></span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="{{URL:home}}" data-page="home"><span class="roll"><span data-t="Home">Home</span></span></a>
+    <a href="{{URL:about}}" data-page="about"><span class="roll"><span data-t="About">About</span></span></a>
+    <a href="{{URL:services}}" data-page="services"><span class="roll"><span data-t="Services">Services</span></span></a>
+    <a href="{{URL:work}}" data-page="work"><span class="roll"><span data-t="Work">Work</span></span></a>
+    <a href="{{URL:contact}}" data-page="contact"><span class="roll"><span data-t="Contact">Contact</span></span></a>
+  </nav>
+  <div class="nav-right">
+    <span class="clock mono" id="clock1">Herndon, VA, USA</span>
+    <button type="button" class="tool snd" id="sndBtn" aria-pressed="false" aria-label="Interface sound"><i></i><i></i><i></i><i></i></button>
+    <button type="button" class="tool k" id="cmdBtn" aria-label="Quick navigation" data-cursor="Jump"><kbd id="kbdK">Ctrl K</kbd></button>
+    <button type="button" class="btn btn-red magnetic" data-open-contact><span class="roll"><span data-t="Start a project">Start a project</span></span></button>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i><span></span><span></span></i></button>
+  </div>
+</header>
+
+<div id="menu" role="dialog" aria-label="Site menu">
+  <a class="m-link" href="{{URL:home}}"><span>Home <small>01</small></span></a>
+  <a class="m-link" href="{{URL:about}}"><span>About <small>02</small></span></a>
+  <a class="m-link" href="{{URL:services}}"><span>Services <small>03</small></span></a>
+  <a class="m-link" href="{{URL:work}}"><span>Work <small>04</small></span></a>
+  <a class="m-link" href="{{URL:contact}}"><span>Contact <small>05</small></span></a>
+  <div class="m-foot"><a href="mailto:sales@ferasolution.com">sales@ferasolution.com</a><a href="tel:+13372524040">337-252-4040</a><span>Herndon, Virginia, USA</span></div>
+</div>

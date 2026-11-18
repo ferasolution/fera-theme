@@ -1,0 +1,65 @@
+name: Deploy Fera Theme
+
+# Push to main  -> deploys to the STAGING site automatically.
+# Actions tab -> "Deploy Fera Theme" -> Run workflow -> target: production  -> deploys to the LIVE site.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Where to deploy
+        type: choice
+        options: [staging, production]
+        default: staging
+
+concurrency:
+  group: deploy-${{ github.event.inputs.target || 'staging' }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      TARGET: ${{ github.event.inputs.target || 'staging' }}
+      HAS_FTP: ${{ secrets.FTP_SERVER != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Build assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Check PHP syntax
+        run: find . -name '*.php' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: FTP not configured yet
+        if: env.HAS_FTP != 'true'
+        run: echo "::notice::Build OK. Add the FTP secrets (see README) to enable deployment."
+
+      - name: Upload theme over FTPS
+        if: env.HAS_FTP == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ env.TARGET == 'production' && secrets.PROD_FTP_USERNAME || secrets.STAGING_FTP_USERNAME }}
+          password: ${{ env.TARGET == 'production' && secrets.PROD_FTP_PASSWORD || secrets.STAGING_FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ (env.TARGET == 'production' && secrets.PROD_FTP_DIR) || (env.TARGET != 'production' && secrets.STAGING_FTP_DIR) || './' }}
+          state-name: .ftp-deploy-sync-state-${{ env.TARGET }}.json
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            src/**
+            package.json
+            package-lock.json
+            README.md
+            CLAUDE.md
