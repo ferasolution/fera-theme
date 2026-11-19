@@ -190,8 +190,8 @@ add_action(
 add_action(
 	'wp_head',
 	static function () {
-		if ( is_front_page() || is_404() ) {
-			return;
+		if ( is_front_page() || is_404() || fera_seo_plugin_active() ) {
+			return; // AIOSEO already outputs a BreadcrumbList.
 		}
 		$items = array( array( 'Home', home_url( '/' ) ) );
 		if ( is_singular( 'fera_service' ) ) {
