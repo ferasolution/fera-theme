@@ -258,7 +258,7 @@ async function initGL() {
   const iconAttr = new THREE.BufferAttribute(aIcon, 3); iconAttr.setUsage(THREE.DynamicDrawUsage);
   geo.setAttribute('aIcon', iconAttr);
   const uniforms = {
-    uW: { value: new THREE.Vector4(0, 0, 0, 1) }, uTime: { value: 0 }, uSize: { value: small ? 2.0 : 2.1 }, uTurb: { value: 1.2 }, uPR: { value: PR },
+    uW: { value: new THREE.Vector4(0, 0, 0, 1) }, uTime: { value: 0 }, uSize: { value: small ? 2.0 : 2.1 }, uTurb: { value: 0.32 }, uPR: { value: PR },
     uMouse: { value: new THREE.Vector3(99, 99, 0) }, uMouseR: { value: 0.7 },
     uIc: { value: 0 }, uFade: { value: 1 }, uRed: { value: new THREE.Color('#D6141A') }, uHot: { value: new THREE.Color('#FFF1E8') }, uDim: { value: 1 }
   };
@@ -292,7 +292,7 @@ async function initGL() {
   let heroFly = 0;
   let dragY = 0, dragX = 0, velY = 0, velX = 0, dragging = false, charge = 0, charging = false;
   let anchorSel = null, anchorEl = null;
-  const cur = { x: 4, y: 0, z: -2, s: 1, dim: 0 }, tgt = { x: SCENES.hero.x, y: SCENES.hero.y, z: 0, s: 1, dim: 1 };
+  const cur = { x: SCENES.hero.x, y: SCENES.hero.y, z: -0.8, s: 1, dim: 0.35 }, tgt = { x: SCENES.hero.x, y: SCENES.hero.y, z: 0, s: 1, dim: 1 };
   const sm = { x: 0, y: 0 };
   const ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), hit = new THREE.Vector3(), ndc = new THREE.Vector2();
   let vel = 0;
@@ -342,7 +342,7 @@ async function initGL() {
       if (ray.ray.intersectPlane(plane, hit)) uniforms.uMouse.value.copy(hit);
     }
     uniforms.uTime.value = t;
-    uniforms.uTurb.value += ((uniforms.uTurb.base || 0.015) + vel - uniforms.uTurb.value) * 0.05;
+    uniforms.uTurb.value += ((uniforms.uTurb.base || 0.015) + vel - uniforms.uTurb.value) * (clock.elapsedTime < 1.2 ? 0.12 : 0.05);
     uniforms.uDim.value = cur.dim;
     { const wl = uniforms.uW.value.x, tb = Math.max(0, Math.min(1, 1 - (uniforms.uTurb.value - 0.03) * 3));
       const to = wl * wl * wl * tb * 0.82 * Math.min(1, cur.dim) * (1 - charge);

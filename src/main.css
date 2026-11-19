@@ -744,6 +744,14 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 .demo-note{margin-top:22px;color:var(--muted);font-size:11px;letter-spacing:.12em}
 .u-link{color:var(--fg);text-decoration:underline;text-decoration-color:var(--red-hi);text-underline-offset:3px}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.socials a{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);color:var(--fg);transition:background .25s,border-color .25s,color .25s}
+.socials a:hover,.socials a:focus-visible{background:var(--red);border-color:var(--red);color:#fff}
+.ct-list .socials{margin-top:6px}
+.m-foot .m-soc{margin-top:8px}
+.f-wa{color:var(--muted)}
+.quick .quick-wa{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;border:1px solid #25D366;color:#25D366;font-size:12px;white-space:nowrap}
+.quick .quick-wa:hover{background:#25D366;color:#0b0a0a}
 .form-note.err{color:#FF9A9A}
 .form-note.show{display:block}
 button[type=submit][disabled]{opacity:.6;pointer-events:none}

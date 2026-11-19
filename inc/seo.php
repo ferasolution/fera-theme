@@ -33,6 +33,29 @@ function fera_org() {
 			'addressCountry'  => 'US',
 		),
 		'areaServed'    => 'Worldwide',
+		'sameAs'        => array(
+			'https://www.facebook.com/FeraSolution/',
+			'https://www.instagram.com/ferasolution/',
+			'https://www.linkedin.com/company/ferasolution/',
+		),
+		'contactPoint'  => array(
+			array(
+				'@type'             => 'ContactPoint',
+				'contactType'       => 'sales',
+				'telephone'         => '+1-337-252-4040',
+				'email'             => 'sales@ferasolution.com',
+				'areaServed'        => 'Worldwide',
+				'availableLanguage' => 'English',
+			),
+			array(
+				'@type'       => 'ContactPoint',
+				'contactType' => 'customer support',
+				'telephone'   => '+1-337-445-5717',
+				'url'         => 'https://wa.me/13374455717',
+				'email'       => 'support@ferasolution.com',
+				'areaServed'  => 'Worldwide',
+			),
+		),
 		'knowsAbout'    => array( 'Cybersecurity', 'Website development', 'Software development', 'Digital marketing', 'SEO', 'Graphic design', 'Content writing', 'E-commerce', 'Social media management' ),
 	);
 }
@@ -111,9 +134,14 @@ add_action(
 			$desc = has_excerpt() ? get_the_excerpt() : wp_trim_words( wp_strip_all_tags( get_post_field( 'post_content', get_queried_object_id() ) ), 28, '…' );
 		}
 		$desc = trim( wp_strip_all_tags( (string) $desc ) );
+		if ( function_exists( 'fera_seo_meta' ) && fera_seo_meta() ) {
+			$desc = fera_seo_meta()['desc'];
+		}
 		$url  = is_singular() ? get_permalink() : home_url( add_query_arg( array() ) );
 		if ( $desc ) {
-			printf( '<meta name="description" content="%s">' . "\n", esc_attr( $desc ) );
+			if ( ! ( function_exists( 'fera_seo_meta' ) && fera_seo_meta() ) ) {
+				printf( '<meta name="description" content="%s">' . "\n", esc_attr( $desc ) );
+			}
 			printf( '<meta property="og:description" content="%s">' . "\n", esc_attr( $desc ) );
 		}
 		printf( '<link rel="canonical" href="%s">' . "\n", esc_url( $url ) );
