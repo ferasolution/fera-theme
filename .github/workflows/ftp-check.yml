@@ -11,6 +11,6 @@ jobs:
           P: ${{ secrets.STAGING_FTP_PASSWORD }}
         run: |
           sudo apt-get -qq install -y lftp >/dev/null
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; pwd; cls -la; cls -la wp-content 2>/dev/null; cls -1 partials | head -3; bye" "$H" 2>&1 | sed 's/[^ ]*@[^ ]*/<user>/g'
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; pwd; cls -la; cls -la fera-theme; cls -1 fera-foundry | head -5; bye" "$H" 2>&1 | sed 's/[^ ]*@[^ ]*/<user>/g'
           echo "---- index.php head ----"
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; cat index.php; bye" "$H" 2>/dev/null | head -5
