@@ -4,13 +4,18 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: List FTP root (read-only)
+      - name: Download a copy of the themes folder (read-only)
         env:
           H: ${{ secrets.FTP_SERVER }}
           U: ${{ secrets.STAGING_FTP_USERNAME }}
           P: ${{ secrets.STAGING_FTP_PASSWORD }}
         run: |
           sudo apt-get -qq install -y lftp >/dev/null
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; pwd; cls -la; cls -la fera-theme; cls -1 fera-foundry | head -5; bye" "$H" 2>&1 | sed 's/[^ ]*@[^ ]*/<user>/g'
-          echo "---- index.php head ----"
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; cat index.php; bye" "$H" 2>/dev/null | head -5
+          mkdir -p snap
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; cls -la; mirror --parallel=4 --exclude-glob node_modules/ --exclude-glob *.zip fera-foundry snap/fera-foundry; bye" "$H" 2>&1 | tail -20
+          find snap -type f | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: themes-snapshot
+          path: snap
+          retention-days: 1
