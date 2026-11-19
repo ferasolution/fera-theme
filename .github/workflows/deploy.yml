@@ -51,7 +51,7 @@ jobs:
           username: ${{ env.TARGET == 'production' && secrets.PROD_FTP_USERNAME || secrets.STAGING_FTP_USERNAME }}
           password: ${{ env.TARGET == 'production' && secrets.PROD_FTP_PASSWORD || secrets.STAGING_FTP_PASSWORD }}
           protocol: ftps
-          server-dir: ${{ (env.TARGET == 'production' && secrets.PROD_FTP_DIR) || (env.TARGET != 'production' && secrets.STAGING_FTP_DIR) || './' }}
+          server-dir: ${{ (env.TARGET == 'production' && secrets.PROD_FTP_DIR) || (env.TARGET != 'production' && secrets.STAGING_FTP_DIR) || './fera-theme/' }}
           state-name: .ftp-deploy-sync-state-${{ env.TARGET }}.json
           exclude: |
             **/.git*

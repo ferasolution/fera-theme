@@ -34,9 +34,9 @@ Repository secrets (Settings → Secrets and variables → Actions):
 | Secret | Value |
 |---|---|
 | `FTP_SERVER` | Bluehost FTP host, e.g. `ftp.ferasolution.com` |
-| `STAGING_FTP_USERNAME` / `STAGING_FTP_PASSWORD` | FTP account whose folder is the staging site's `wp-content/themes/fera-theme/` |
-| `PROD_FTP_USERNAME` / `PROD_FTP_PASSWORD` | FTP account whose folder is the live site's `wp-content/themes/fera-theme/` |
-| `STAGING_FTP_DIR` / `PROD_FTP_DIR` | Optional — only if the FTP account's root is not the theme folder (e.g. `/public_html/staging/1234/wp-content/themes/fera-theme/`) |
+| `STAGING_FTP_USERNAME` / `STAGING_FTP_PASSWORD` | FTP account whose folder is the site's `wp-content/themes/` (files go into `fera-theme/` inside it) |
+| `PROD_FTP_USERNAME` / `PROD_FTP_PASSWORD` | FTP account whose folder is the live site's `wp-content/themes/` |
+| `STAGING_FTP_DIR` / `PROD_FTP_DIR` | Optional — override the upload folder (default `./fera-theme/`, relative to the FTP account's root) |
 
 ## Local development
 
