@@ -14,6 +14,9 @@ jobs:
           mkdir -p snap
           lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; cls -la; mirror --parallel=4 --exclude-glob node_modules/ --exclude-glob *.zip fera-foundry snap/fera-foundry; bye" "$H" 2>&1 | tail -20
           find snap -type f | wc -l
+          echo "==== TREE ===="; find snap -type f -not -path '*/assets/*' | sort | head -150
+          echo "==== EXPERIENCE REFS ===="; grep -rl -i "experience" snap --include=*.php | head -20
+          for f in $(grep -rl -i "experience" snap --include=*.php | head -6); do echo "==== FILE $f ===="; head -c 6000 "$f"; echo; done
       - uses: actions/upload-artifact@v4
         with:
           name: themes-snapshot
