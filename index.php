@@ -19,12 +19,28 @@ if ( is_search() ) {
 }
 ?>
 <main id="svcPage">
-	<section class="s-hero pg-hero wp-hero" data-scene="pg-wave">
+	<?php $fera_is_blog_home = ! is_search() && ! is_archive(); ?>
+	<section class="s-hero pg-hero<?php echo $fera_is_blog_home ? '' : ' wp-hero'; ?>" data-scene="pg-wave">
 		<nav class="crumbs mono" aria-label="<?php esc_attr_e( 'Breadcrumb', 'fera-theme' ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'fera-theme' ); ?></a><span>/</span><b><?php echo esc_html( $fera_title ); ?></b></nav>
-		<h1 class="s-title"><span class="line"><span><?php echo esc_html( $fera_title ); ?></span></span></h1>
-		<?php if ( is_search() ) : ?>
-			<div class="s-row" data-fade><?php get_search_form(); ?></div>
+		<?php if ( $fera_is_blog_home ) : ?>
+			<h1 class="s-title"><span class="line"><span><?php esc_html_e( 'Ideas worth', 'fera-theme' ); ?></span></span><span class="line hl-line"><span><span class="hl-wrap" data-text="<?php esc_attr_e( 'sharing.', 'fera-theme' ); ?>"><span class="hl"><?php esc_html_e( 'sharing.', 'fera-theme' ); ?></span></span></span></span></h1>
+		<?php else : ?>
+			<h1 class="s-title"><span class="line"><span><?php echo esc_html( $fera_title ); ?></span></span></h1>
 		<?php endif; ?>
+		<?php
+		global $wp_query;
+		$fera_count = (int) $wp_query->found_posts;
+		/* translators: %d: number of articles. */
+		$fera_count_label = sprintf( _n( '%d article', '%d articles', $fera_count, 'fera-theme' ), $fera_count );
+		if ( is_search() ) {
+			fera_hero_tail( get_search_form( array( 'echo' => false ) ), array( __( 'Search results', 'fera-theme' ), $fera_count_label ), true );
+		} elseif ( is_archive() ) {
+			$fera_desc = wp_strip_all_tags( get_the_archive_description() );
+			fera_hero_tail( $fera_desc ? $fera_desc : __( 'Articles, guides and news from the Fera Solution team.', 'fera-theme' ), array( __( 'Insights · Guides · News', 'fera-theme' ), $fera_count_label ) );
+		} else {
+			fera_hero_tail( __( 'Practical insights on cybersecurity, websites, software and digital growth — written by the Fera Solution team for businesses worldwide.', 'fera-theme' ), array( __( 'Insights · Guides · News', 'fera-theme' ), $fera_count_label ) );
+		}
+		?>
 	</section>
 	<div class="post-list">
 		<?php

@@ -447,8 +447,7 @@ const startGL = () => (((softwareGL() || glRecentlyLost()) && !/[?&]fera-gl=forc
   gl.scene(pendingScene, true);
 }).catch(() => document.documentElement.classList.add('no-gl'));
 const idle = window.requestIdleCallback || ((f) => setTimeout(f, 120));
-if (document.readyState !== 'loading') idle(startGL, { timeout: 250 });
-else addEventListener('DOMContentLoaded', () => idle(startGL, { timeout: 250 }), { once: true });
+startGL();
 function setScene(n, force) { pendingScene = n; if (gl) gl.scene(n, force); }
 
 /* ================= Work horizontal scroll (create pins first) ================= */

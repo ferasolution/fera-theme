@@ -80,6 +80,16 @@ window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimi
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/bodoni-moda-latin-wght-italic.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 		<?php
+		// Fetch the 3D engine and the logo it samples in parallel with the page, so the particle logo forms immediately.
+		if ( fera_is_design_view() ) {
+			$fera_gl = glob( FERA_DIR . '/assets/js/chunks/gl-deps-*.js' );
+			if ( $fera_gl ) {
+				printf( '<link rel="modulepreload" href="%s">' . "\n", esc_url( FERA_URI . '/assets/js/chunks/' . basename( $fera_gl[0] ) ) );
+			}
+			printf( '<link rel="preload" as="image" type="image/webp" href="%s">' . "\n", esc_url( FERA_URI . '/assets/img/markd-560.webp' ) );
+		}
+		?>
+		<?php
 		if ( ! has_site_icon() ) {
 			printf( '<link rel="icon" href="%s" sizes="32x32">' . "\n", esc_url( FERA_URI . '/assets/img/icon-32.png' ) );
 			printf( '<link rel="icon" href="%s" sizes="192x192">' . "\n", esc_url( FERA_URI . '/assets/img/icon-192.png' ) );

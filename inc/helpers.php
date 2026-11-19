@@ -158,3 +158,34 @@ function fera_is_design_view() {
 	$r = fera_route();
 	return 'page' !== $r && ! ( 'service' === $r && ! fera_has_partial( 'service-' . get_post_field( 'post_name', get_queried_object_id() ) ) );
 }
+
+/**
+ * Shared hero footer used by WordPress-driven pages (blog, archives, posts, legal pages)
+ * so they match the designed pages: lead + CTAs row, then the four-column hero bar.
+ *
+ * @param string   $lead  Lead text (plain) or HTML when $raw is true.
+ * @param string[] $bar   Up to three labels shown after "Scroll".
+ * @param bool     $raw   Treat $lead as trusted HTML (e.g. a search form).
+ */
+function fera_hero_tail( $lead, $bar = array(), $raw = false ) {
+	$arrow = '<span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+	echo '<div class="s-row">';
+	if ( $raw ) {
+		echo '<div class="s-lead" data-fade>' . $lead . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput -- trusted markup from core functions.
+	} else {
+		echo '<p class="s-lead" data-fade>' . esc_html( $lead ) . '</p>';
+	}
+	echo '<div class="hero-ctas" data-fade>';
+	echo '<button type="button" class="btn btn-red magnetic" data-open-contact data-cursor="' . esc_attr__( "Let's talk", 'fera-theme' ) . '"><span class="roll"><span data-t="' . esc_attr__( 'Start a project', 'fera-theme' ) . '">' . esc_html__( 'Start a project', 'fera-theme' ) . '</span></span>' . $arrow . '</button>'; // phpcs:ignore
+	echo '<a href="' . esc_url( fera_page_url( 'services' ) ) . '" class="btn btn-line magnetic"><span class="roll"><span data-t="' . esc_attr__( 'Our services', 'fera-theme' ) . '">' . esc_html__( 'Our services', 'fera-theme' ) . '</span></span>' . $arrow . '</a>'; // phpcs:ignore
+	echo '</div></div>';
+	$bar = array_slice( array_values( array_filter( $bar ) ), 0, 2 );
+	while ( count( $bar ) < 2 ) {
+		$bar[] = '';
+	}
+	echo '<div class="hero-bar mono" data-fade><span class="scroll-cue"><b></b>' . esc_html__( 'Scroll', 'fera-theme' ) . '</span>';
+	foreach ( $bar as $item ) {
+		echo '<span>' . wp_kses_post( $item ) . '</span>';
+	}
+	echo '<span>' . esc_html__( 'Herndon, VA · USA', 'fera-theme' ) . '</span></div>';
+}

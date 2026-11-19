@@ -33,21 +33,20 @@ while ( have_posts() ) :
 					<b><?php echo esc_html( wp_trim_words( get_the_title(), 8, '…' ) ); ?></b>
 				</nav>
 				<h1 class="s-title"><span class="line"><span><?php the_title(); ?></span></span></h1>
-				<?php if ( has_excerpt() ) : ?>
-					<div class="s-row"><p class="s-lead" data-fade><?php echo esc_html( get_the_excerpt() ); ?></p></div>
-				<?php endif; ?>
-				<?php if ( is_singular( 'post' ) ) : ?>
-					<div class="post-meta mono" data-fade>
-						<span><?php echo esc_html( get_the_date() ); ?></span>
-						<span><?php echo esc_html( get_the_author() ); ?></span>
-						<?php
-						$fera_cats = get_the_category_list( ', ' );
-						if ( $fera_cats ) {
-							echo '<span>' . wp_kses_post( $fera_cats ) . '</span>';
-						}
-						?>
-					</div>
-				<?php endif; ?>
+				<?php
+				if ( is_singular( 'post' ) ) {
+					$fera_cats = get_the_category_list( ', ' );
+					fera_hero_tail(
+						has_excerpt() ? get_the_excerpt() : wp_trim_words( wp_strip_all_tags( get_the_content() ), 26, '…' ),
+						array( get_the_date() . ' · ' . get_the_author(), $fera_cats ? $fera_cats : __( 'Insights', 'fera-theme' ) )
+					);
+				} else {
+					fera_hero_tail(
+						has_excerpt() ? get_the_excerpt() : __( 'Fera Solution LLC — a USA-based digital agency in Herndon, Virginia, serving clients worldwide.', 'fera-theme' ),
+						array( __( 'Fera Solution LLC', 'fera-theme' ), sprintf( /* translators: %s: date */ __( 'Updated %s', 'fera-theme' ), get_the_modified_date() ) )
+					);
+				}
+				?>
 			</section>
 			<div class="prose-wrap">
 				<?php
