@@ -16,7 +16,12 @@ function fera_ver( $rel ) {
 add_action(
 	'wp_enqueue_scripts',
 	static function () {
-		wp_enqueue_style( 'fera-main', FERA_URI . '/assets/css/main.css', array(), fera_ver( 'assets/css/main.css' ) );
+		// Main stylesheet is inlined (see wp_head below) to avoid a render-blocking request.
+		wp_register_style( 'fera-main', false, array(), fera_ver( 'assets/css/main.css' ) );
+		wp_enqueue_style( 'fera-main' );
+		$css = (string) file_get_contents( FERA_DIR . '/assets/css/main.css' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		$css = str_replace( 'url(../', 'url(' . FERA_URI . '/assets/', $css );
+		wp_add_inline_style( 'fera-main', $css );
 
 		$src = FERA_URI . '/assets/js/app.js?ver=' . fera_ver( 'assets/js/app.js' );
 		if ( function_exists( 'wp_enqueue_script_module' ) ) {
@@ -67,7 +72,7 @@ add_action(
 <meta name="format-detection" content="telephone=no">
 <script>
 window.FERA=<?php echo wp_json_encode( apply_filters( 'fera_frontend_config', $config ) ); ?>;
-(function(d){try{if(sessionStorage.getItem('fera-v'))d.classList.add('fera-quick');if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
+(function(d){d.classList.add('fera-quick');try{if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
 window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
@@ -146,4 +151,49 @@ add_filter(
 		);
 	},
 	999
+);
+
+/**
+ * Speed: print every classic script in the footer (they no longer block the
+ * first paint). Dependencies follow automatically. Logged-in users keep the
+ * default so wp-admin tools in the toolbar behave as usual.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	static function () {
+		if ( is_admin() || is_user_logged_in() ) {
+			return;
+		}
+		global $wp_scripts;
+		$move = static function ( $handle ) use ( &$move, $wp_scripts ) {
+			if ( empty( $wp_scripts->registered[ $handle ] ) || 1 === $wp_scripts->get_data( $handle, 'group' ) ) {
+				return;
+			}
+			$wp_scripts->add_data( $handle, 'group', 1 );
+			foreach ( (array) $wp_scripts->registered[ $handle ]->deps as $dep ) {
+				$move( $dep );
+			}
+		};
+		foreach ( (array) $wp_scripts->queue as $h ) {
+			$move( $h );
+		}
+	},
+	10000
+);
+
+/** Plugin styles the design pages never use. */
+add_action(
+	'wp_enqueue_scripts',
+	static function () {
+		if ( ! fera_is_design_view() ) {
+			return;
+		}
+		global $wp_styles;
+		foreach ( (array) $wp_styles->queue as $h ) {
+			if ( preg_match( '/^(jetpack-forms|grunion|jetpack_css|aioseo-table-of-contents|aioseo-toc|wp-block-library|global-styles)/', $h ) || false !== strpos( (string) ( $wp_styles->registered[ $h ]->src ?? '' ), 'table-of-contents' ) || false !== strpos( (string) ( $wp_styles->registered[ $h ]->src ?? '' ), 'jetpack-forms' ) ) {
+				wp_dequeue_style( $h );
+			}
+		}
+	},
+	10001
 );
