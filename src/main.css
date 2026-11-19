@@ -684,10 +684,12 @@ legend{font-size:14px;color:#CFC8C4;margin-bottom:12px;padding:0}
 .f-logo small{display:block;margin-top:4px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
 
 /* ---------- Fera Theme (WordPress) additions ---------- */
-html.quick #loader{display:none}
+html.fera-quick #loader{display:none}
+body.admin-bar #nav{top:32px}
+@media (max-width:782px){body.admin-bar #nav{top:46px}}
 .no-gl #stage{background:url(../img/markd-560.webp) center/contain no-repeat}
-html.quick body.loading{overflow:auto}
-html.nav-in #curtain{visibility:visible;transform:none}
+html.fera-quick body.loading{overflow:auto}
+html.fera-nav-in #curtain{visibility:visible;transform:none}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-note.err{color:#FF9A9A}
 .form-note.show{display:block}

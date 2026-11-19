@@ -975,15 +975,15 @@ document.addEventListener('keydown', (e) => {
 const ldCount = $('#ldCount'), ldBar = $('#ldBar');
 const counter = { v: 0 };
 gsap.to('#loader img', { opacity: 1, scale: 1, duration: 1.2, ease: 'expo.out' });
-const quick = document.documentElement.classList.contains('quick');
-const navIn = document.documentElement.classList.contains('nav-in');
+const quick = document.documentElement.classList.contains('fera-quick');
+const navIn = document.documentElement.classList.contains('fera-nav-in');
 const loadAnim = gsap.to(counter, { v: 100, duration: (reduced || quick) ? 0.01 : 1.1, ease: 'power2.inOut', onUpdate: () => { ldCount.textContent = Math.round(counter.v); ldBar.style.transform = 'scaleX(' + counter.v / 100 + ')'; } });
 try { sessionStorage.setItem('fera-v', '1'); sessionStorage.removeItem('fera-nav'); } catch (err) {}
 const fontsReady = Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, quick ? 400 : 1600))]);
 Promise.all([fontsReady, loadAnim.then()]).then(() => {
   if (navIn) {
     gsap.set(curtain, { y: 0, yPercent: 0, visibility: 'visible' });
-    document.documentElement.classList.remove('nav-in');
+    document.documentElement.classList.remove('fera-nav-in');
     gsap.to(curtain, { yPercent: -100, duration: 0.85, ease: 'expo.inOut', delay: 0.05, onComplete: () => gsap.set(curtain, { visibility: 'hidden' }) });
   }
   const tl = gsap.timeline({ onComplete: () => { $('#loader').style.display = 'none'; } });

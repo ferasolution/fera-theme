@@ -67,7 +67,7 @@ add_action(
 <meta name="format-detection" content="telephone=no">
 <script>
 window.FERA=<?php echo wp_json_encode( $config ); ?>;
-(function(d){try{if(sessionStorage.getItem('fera-v'))d.classList.add('quick');if(sessionStorage.getItem('fera-nav'))d.classList.add('nav-in');}catch(e){}})(document.documentElement);
+(function(d){try{if(sessionStorage.getItem('fera-v'))d.classList.add('fera-quick');if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
 window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
@@ -102,4 +102,48 @@ add_action(
 		wp_deregister_script( 'wp-embed' );
 	},
 	100
+);
+
+/**
+ * Design pages are fully styled by the theme. When a page was previously built
+ * with Elementor, its kit/page CSS and scripts would override the design
+ * (heading colours, fonts, layout), so drop them on those views only.
+ */
+function fera_strip_builder_assets() {
+	if ( is_admin() || ! fera_is_design_view() ) {
+		return;
+	}
+	global $wp_styles, $wp_scripts;
+	foreach ( (array) ( $wp_styles->queue ?? array() ) as $h ) {
+		if ( preg_match( '/^(elementor(?!-admin-bar|-common|-icons)|widget-|e-animation|e-swiper|swiper)/', $h ) ) {
+			wp_dequeue_style( $h );
+		}
+	}
+	foreach ( (array) ( $wp_scripts->queue ?? array() ) as $h ) {
+		if ( preg_match( '/^(elementor-frontend|elementor-pro-frontend|elementor-waypoints|swiper)$/', $h ) ) {
+			wp_dequeue_script( $h );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'fera_strip_builder_assets', 9999 );
+add_action( 'wp_print_styles', 'fera_strip_builder_assets', 1 );
+add_action( 'wp_print_footer_scripts', 'fera_strip_builder_assets', 1 );
+
+/** Remove Elementor kit/page body classes on design views (kit CSS is scoped to them). */
+add_filter(
+	'body_class',
+	static function ( $classes ) {
+		if ( ! fera_is_design_view() ) {
+			return $classes;
+		}
+		return array_values(
+			array_filter(
+				$classes,
+				static function ( $c ) {
+					return 0 !== strpos( $c, 'elementor-' );
+				}
+			)
+		);
+	},
+	999
 );
