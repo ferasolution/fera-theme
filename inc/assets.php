@@ -180,6 +180,11 @@ add_action(
 			if ( preg_match( '#official-facebook-pixel|facebook-pixel#', (string) $wp_scripts->registered[ $handle ]->src . ' ' . $handle ) ) {
 				return;
 			}
+			// The consent banner should appear early (it is often the largest text on mobile): keep it in <head>, deferred.
+			if ( false !== strpos( (string) $wp_scripts->registered[ $handle ]->src, '/fera-consent/' ) ) {
+				$wp_scripts->add_data( $handle, 'strategy', 'defer' );
+				return;
+			}
 			$wp_scripts->add_data( $handle, 'group', 1 );
 			foreach ( (array) $wp_scripts->registered[ $handle ]->deps as $dep ) {
 				$move( $dep );
