@@ -1,0 +1,1189 @@
+{
+  "version": "0.4",
+  "title": "Fera — home",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "p000001",
+      "elType": "widget",
+      "widgetType": "foundry-opening",
+      "settings": {
+        "preset": "home",
+        "enabled": "yes",
+        "background": "net",
+        "title": "Ideas become<br><em>working systems.</em>",
+        "tagline": "DESIGNED WITH INTENT. ENGINEERED WITH CARE.",
+        "status": "Ready to explore.",
+        "footer_label": "BUILD. CONNECT. EVOLVE."
+      },
+      "elements": []
+    },
+    {
+      "id": "p00000b",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "p000008",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "p000002",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>FERA SOLUTION / DIGITAL PRODUCT & DEVELOPMENT</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000003",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "We Build Websites and Software That Help Businesses Grow.",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000004",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Custom websites, web applications, and business software designed around your goals — built for performance, usability, and long-term growth.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000007",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "p000005",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000006",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p00000a",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "p000009",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "home",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "overline": "SYSTEMS WITH PURPOSE",
+                "label_one": "THOUGHTFUL ENGINEERING",
+                "label_two": "BUILT AROUND YOUR BUSINESS",
+                "caption": "PLAN / DESIGN / BUILD / EVOLVE",
+                "alt": "Titanium orbital sculpture surrounding an illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000019",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "services"
+      },
+      "elements": [
+        {
+          "id": "p000018",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000015",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>OUR CORE EXPERTISE</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000016",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Software and websites, shaped around your business.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000017",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>From a useful internal tool to a distinctive public website, we focus on what your users need to do.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000014",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-grid"
+          },
+          "elements": [
+            {
+              "id": "p00000f",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "p00000c",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Custom Software Development",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00000d",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Business applications, dashboards, workflow automation and integrations designed around a defined problem.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00000e",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Custom Software Development",
+                    "link": {
+                      "url": "{{FERA_PAGE:software-development}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000013",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "p000010",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Website Development",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000011",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Business websites, WordPress development, responsive redesigns and landing pages with a clear customer journey.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000012",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Website Development",
+                    "link": {
+                      "url": "{{FERA_PAGE:web-development}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p00001f",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "work"
+      },
+      "elements": [
+        {
+          "id": "p00001e",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00001b",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>EXPLORE THE POSSIBILITIES</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00001c",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Try the work. Understand the approach.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00001d",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>These are working demonstrations built with synthetic data—not client case studies.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p00001a",
+          "elType": "widget",
+          "widgetType": "foundry-showcase",
+          "settings": {
+            "mode": "featured",
+            "title": "Interactive product demonstrations"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p00002e",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p00002d",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00002a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>WHY FERA</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00002b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Thoughtful engineering. Clear collaboration.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00002c",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>A useful solution is more than a striking interface.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000029",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-grid"
+          },
+          "elements": [
+            {
+              "id": "p000022",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "p000020",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Built around your goals",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000021",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Start with business needs and user workflows before choosing features.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000025",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "p000023",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Clear scope and communication",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000024",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Agree what we are building, how it will be reviewed and what is outside scope.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000028",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "p000026",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Maintainable by design",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000027",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Plan for content editing, integration boundaries and future improvements.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p00004c",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p00004b",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000048",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>HOW WE WORK</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000049",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "A clear path from idea to launch.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00004a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Scope, communication and useful milestones keep the project understandable.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000047",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-process"
+          },
+          "elements": [
+            {
+              "id": "p000032",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p00002f",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>01</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000030",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Discovery",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000031",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Understand your goals, users and existing systems.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000036",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p000033",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>02</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000034",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Scope & proposal",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000035",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Agree deliverables, assumptions and a practical plan.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p00003a",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p000037",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>03</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000038",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Design & development",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000039",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Shape the experience and build the agreed functionality.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p00003e",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p00003b",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>04</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00003c",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Testing",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00003d",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Review usability, responsive behavior and key workflows.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000042",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p00003f",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>05</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000040",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Launch",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000041",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Prepare the release and confirm launch responsibilities.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000046",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-step"
+              },
+              "elements": [
+                {
+                  "id": "p000043",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>06</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000044",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Support planning",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000045",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Discuss maintenance and future improvements as part of your proposal.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000052",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p000051",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00004e",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>SECURITY MINDED</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00004f",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Good engineering includes thoughtful security.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000050",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Cybersecurity remains a supporting service: risk assessments, protection guidance and practical remediation planning.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p00004d",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Explore Cybersecurity",
+            "link": {
+              "url": "{{FERA_PAGE:cybersecurity}}"
+            },
+            "_element_width": "auto",
+            "_css_classes": "studio-button "
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p00005c",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p00005b",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000058",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>PROJECT QUESTIONS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000059",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Good questions. Clear next steps.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00005a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Every project starts with an agreed scope.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000057",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "settings": {
+            "tabs": [
+              {
+                "_id": "p000053",
+                "tab_title": "How long will the project take?",
+                "tab_content": "<p>The timeline depends on the requirements, integrations and review stages. We discuss milestones in your proposal rather than promise a fixed delivery date before discovery.</p>"
+              },
+              {
+                "_id": "p000054",
+                "tab_title": "Can you improve an existing website?",
+                "tab_content": "<p>Yes. Tell us what is working, what needs to change and which platform you use. We will review the existing site before recommending the scope.</p>"
+              },
+              {
+                "_id": "p000055",
+                "tab_title": "How are revisions and support handled?",
+                "tab_content": "<p>Revision stages, communication and any ongoing support are agreed in the project scope. Ask us to include the support you need in your proposal.</p>"
+              },
+              {
+                "_id": "p000056",
+                "tab_title": "Are these demos client projects?",
+                "tab_content": "<p>No. The demonstrations use synthetic data and illustrative brands. They show interface concepts and interactive workflows; they are not testimonials or deployed client products.</p>"
+              }
+            ],
+            "active_item": 0,
+            "_css_classes": "studio-faq"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p00006b",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "contact"
+      },
+      "elements": [
+        {
+          "id": "p00006a",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000067",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR NEXT STEP</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000068",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tell us what you want to build.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000069",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Share the problem, your priorities and any existing platform. We will respond to discuss scope and suitable next steps.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000066",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-contact"
+          },
+          "elements": [
+            {
+              "id": "p000064",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-contact-details"
+              },
+              "elements": [
+                {
+                  "id": "p00005d",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Start with a conversation.",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00005e",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "337-252-4040",
+                    "link": {
+                      "url": "tel:+13372524040"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00005f",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "sales@ferasolution.com",
+                    "link": {
+                      "url": "mailto:sales@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000060",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "support@ferasolution.com",
+                    "link": {
+                      "url": "mailto:support@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000061",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "contact@ferasolution.com",
+                    "link": {
+                      "url": "mailto:contact@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000062",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Herndon, VA, USA</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000063",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Privacy notice",
+                    "link": {
+                      "url": "{{FERA_PAGE:privacy-policy}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000065",
+              "elType": "widget",
+              "widgetType": "foundry-inquiry",
+              "settings": {
+                "service": "Multiple services / Not sure yet",
+                "heading": "Request a project quote",
+                "button_label": "Send project inquiry",
+                "message_placeholder": "What would you like to build or improve? Please use this form for project inquiries, not passwords or sensitive account information."
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

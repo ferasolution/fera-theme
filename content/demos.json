@@ -1,0 +1,234 @@
+[
+  {
+    "id": "accounting",
+    "category": "software",
+    "title": "Accounting workspace",
+    "description": "Create sample invoices and expenses, record payments and review calculated reports. No real financial information.",
+    "source": "lab.html?demo=accounting",
+    "slug": "5d4b9d7368e1a6d9"
+  },
+  {
+    "id": "crm",
+    "category": "software",
+    "title": "Customer relationship workspace",
+    "description": "Add, edit and delete synthetic leads and customers. Schedule sample follow-ups and update the pipeline.",
+    "source": "lab.html?demo=crm",
+    "slug": "28572b26b4ff393f"
+  },
+  {
+    "id": "erp",
+    "category": "software",
+    "title": "ERP & inventory workspace",
+    "description": "Manage fictional products and suppliers, update stock and create purchase orders. Receive an order to change stock.",
+    "source": "lab.html?demo=erp",
+    "slug": "88d235164824d505"
+  },
+  {
+    "id": "projects",
+    "category": "software",
+    "title": "Project & task workspace",
+    "description": "Create projects and tasks, assign synthetic owners and update deadlines, priority and progress.",
+    "source": "lab.html?demo=projects",
+    "slug": "12d3bfc3b3ff05bc"
+  },
+  {
+    "id": "appointments",
+    "category": "workflow",
+    "title": "Appointment scheduling",
+    "description": "Book available sample slots, reschedule a booking or cancel it. Nothing is booked with a real business.",
+    "source": "lab.html?demo=appointments",
+    "slug": "349e0b4dd644ca2d"
+  },
+  {
+    "id": "helpdesk",
+    "category": "workflow",
+    "title": "Helpdesk workspace",
+    "description": "Create sample tickets, filter priorities and assign synthetic team members. Changes do not notify anyone.",
+    "source": "lab.html?demo=helpdesk",
+    "slug": "b84d65e39ae92c89"
+  },
+  {
+    "id": "builder",
+    "category": "workflow",
+    "title": "Workflow automation builder",
+    "description": "Configure triggers, rules and actions, then run sample inputs through your saved steps. No external actions are performed.",
+    "source": "lab.html?demo=builder",
+    "slug": "a78e54750394451a"
+  },
+  {
+    "id": "analytics",
+    "category": "workflow",
+    "title": "Reporting & analytics",
+    "description": "Filter synthetic observations by channel and date, inspect calculated charts and export a sample CSV report.",
+    "source": "lab.html?demo=analytics",
+    "slug": "d0d4e473ea1e0bed"
+  },
+  {
+    "id": "vulnerabilities",
+    "category": "security",
+    "title": "Vulnerability management simulation",
+    "description": "Review synthetic findings, track remediation and export a report. No discovery or real scan is performed.",
+    "source": "lab.html?demo=vulnerabilities",
+    "slug": "f375ae373d710daa"
+  },
+  {
+    "id": "soc",
+    "category": "security",
+    "title": "SOC event investigation simulation",
+    "description": "Filter synthetic security events, inspect evidence and update incident handling. No real monitoring is connected.",
+    "source": "lab.html?demo=soc",
+    "slug": "2c077d4048991357"
+  },
+  {
+    "id": "assessment",
+    "category": "security",
+    "title": "Website security assessment simulation",
+    "description": "Run an illustrative assessment against a fixed fictional site, review risk ratings and track recommended actions. It does not scan any website.",
+    "source": "lab.html?demo=assessment",
+    "slug": "39711a66141b4aca"
+  },
+  {
+    "id": "awareness",
+    "category": "security",
+    "title": "Security awareness training",
+    "description": "Identify synthetic phishing examples, review feedback and track local training progress. No emails are sent.",
+    "source": "lab.html?demo=awareness",
+    "slug": "e2714c7ddeaff606"
+  },
+  {
+    "id": "seo",
+    "category": "marketing",
+    "title": "On-page SEO content checker",
+    "description": "Analyze HTML you paste locally. Checks cover basic content structure; this is not a crawl, ranking prediction or complete SEO audit.",
+    "source": "lab.html?demo=seo",
+    "slug": "0212fc066a26dd45"
+  },
+  {
+    "id": "campaigns",
+    "category": "marketing",
+    "title": "Campaign analytics",
+    "description": "Filter fictional campaigns, calculate CTR, cost per lead and illustrative return, then export sample data.",
+    "source": "lab.html?demo=campaigns",
+    "slug": "1c122db3fc277151"
+  },
+  {
+    "id": "planner",
+    "category": "marketing",
+    "title": "Social content planner",
+    "description": "Write fictional posts, set sample publication dates and simulate scheduled status. Nothing is published to a social network.",
+    "source": "lab.html?demo=planner",
+    "slug": "2439b1932f5b761d"
+  },
+  {
+    "id": "funnel",
+    "category": "marketing",
+    "title": "Lead-generation funnel",
+    "description": "Edit stage counts and see calculated step conversions. Counts must decrease through the funnel; data is illustrative.",
+    "source": "lab.html?demo=funnel",
+    "slug": "3216e71951b85c78"
+  },
+  {
+    "id": "utm",
+    "category": "marketing",
+    "title": "Campaign link builder",
+    "description": "Build and copy an illustrative tagged campaign URL locally. This tool does not open or request the address.",
+    "source": "lab.html?demo=utm",
+    "slug": "094632d926ca1482"
+  },
+  {
+    "id": "storefront",
+    "category": "websites",
+    "title": "Cove / storefront concept",
+    "description": "Fictional products, searchable categories, product details and simulated checkout. No real payment or delivery.",
+    "source": "lab.html?demo=storefront",
+    "slug": "963d9dd024e9bf91"
+  },
+  {
+    "id": "corporate",
+    "category": "websites",
+    "title": "Fieldwork / business concept",
+    "description": "A fictional company website with service details and a local quote-form simulation.",
+    "source": "lab.html?demo=corporate",
+    "slug": "d81daa976167953f"
+  },
+  {
+    "id": "professional",
+    "category": "websites",
+    "title": "Aster / advisory concept",
+    "description": "A fictional professional services site with service details, a booking simulation and local inquiry controls.",
+    "source": "lab.html?demo=professional",
+    "slug": "7a2e0ba2c2781117"
+  },
+  {
+    "id": "restaurant",
+    "category": "websites",
+    "title": "Ember / restaurant concept",
+    "description": "A fictional restaurant website with menu categories, a sample order bag, reservation simulation and contact form.",
+    "source": "lab.html?demo=restaurant",
+    "slug": "513f2f72cd61ba6e"
+  },
+  {
+    "id": "legacy-crm",
+    "category": "software",
+    "title": "Original CRM workspace",
+    "description": "Search and sort synthetic leads, update pipeline stages and calculate sales metrics.",
+    "source": "app.html?app=crm",
+    "slug": "d09a3dc22fa6def9"
+  },
+  {
+    "id": "legacy-projects",
+    "category": "software",
+    "title": "Original project delivery",
+    "description": "Explore project progress, task owners, priorities and temporary status updates.",
+    "source": "app.html?app=projects",
+    "slug": "e36f19a4f19e374b"
+  },
+  {
+    "id": "legacy-inventory",
+    "category": "software",
+    "title": "Original operations inventory",
+    "description": "Review synthetic stock, reorder thresholds and calculated inventory value.",
+    "source": "app.html?app=inventory",
+    "slug": "2730ae972d0b5dac"
+  },
+  {
+    "id": "company",
+    "category": "websites",
+    "title": "Modern company website",
+    "description": "A fictional business concept with a complete navigation and inquiry demonstration.",
+    "source": "website.html?type=company",
+    "slug": "56db563342e51350"
+  },
+  {
+    "id": "legacy-professional",
+    "category": "websites",
+    "title": "Professional services",
+    "description": "An editorial advisory concept with distinct service and about views.",
+    "source": "website.html?type=professional",
+    "slug": "eaf828649c07cfd0"
+  },
+  {
+    "id": "shop",
+    "category": "websites",
+    "title": "Storefront concept",
+    "description": "Synthetic products, a working bag and an illustrative order summary. No payments.",
+    "source": "website.html?type=shop",
+    "slug": "cc7de8c0a0f1ad24"
+  },
+  {
+    "id": "workflow",
+    "category": "workflow",
+    "title": "Inquiry workflow",
+    "description": "A local trigger, validation and outcome simulation. No external requests.",
+    "source": "app.html?app=workflow",
+    "slug": "f25a0a70f9042cfd"
+  },
+  {
+    "id": "security",
+    "category": "security",
+    "title": "Security illustration",
+    "description": "Synthetic controls and next steps. No actual security scan.",
+    "source": "app.html?app=security",
+    "slug": "cc7eabede09d8d9d"
+  }
+]

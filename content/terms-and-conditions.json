@@ -1,0 +1,365 @@
+{
+  "version": "0.4",
+  "title": "Fera — terms and conditions",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "p000204",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "p000201",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "p0001fb",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>WEBSITE TERMS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001fc",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Terms for using this website.",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001fd",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>These website terms cover browsing and demonstrations. A signed project agreement defines paid work, scope, fees, intellectual property and support. Review these terms before publication.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000200",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "p0001fe",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "{{FERA_PAGE:contact}}#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001ff",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p000203",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "p000202",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "home",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "overline": "SYSTEMS WITH PURPOSE",
+                "label_one": "THOUGHTFUL ENGINEERING",
+                "label_two": "BUILT AROUND YOUR BUSINESS",
+                "caption": "PLAN / DESIGN / BUILD / EVOLVE",
+                "alt": "Titanium orbital sculpture surrounding an illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000209",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p000208",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000205",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>PROJECT AGREEMENTS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000206",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "An inquiry is the start of a conversation.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000207",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Submitting an inquiry does not create a service contract or guarantee a price, delivery date or availability. Project responsibilities, acceptance criteria and payment terms must be agreed separately.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p00020e",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p00020d",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00020a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>ACCEPTABLE USE</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00020b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Use the website responsibly.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00020c",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Do not misuse forms, attempt unauthorized access or submit harmful content. AI answers may be inaccurate and require confirmation by Fera staff. Third-party services have their own terms. Do not submit credentials or sensitive information.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000213",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p000212",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00020f",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>DEMONSTRATIONS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000210",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Illustrations, not production products.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000211",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Demonstrations use synthetic data and temporary state. They do not provide production authentication, real payments or operational guarantees. Fera branding and website materials may not be presented as your own work.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000219",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p000218",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000215",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR QUESTIONS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000216",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Contact Fera Solution.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000217",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Contact contact@ferasolution.com with questions about these terms. Applicable legal requirements and any limits on liability must be reviewed for the business and its customers before publication. These terms do not replace a project agreement.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000214",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "contact@ferasolution.com",
+            "link": {
+              "url": "mailto:contact@ferasolution.com"
+            },
+            "_element_width": "auto",
+            "_css_classes": "studio-button "
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

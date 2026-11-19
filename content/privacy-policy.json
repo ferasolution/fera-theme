@@ -1,0 +1,595 @@
+{
+  "version": "0.4",
+  "title": "Fera Solution LLC — Privacy Policy",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "p000204",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "p000201",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "p0001fb",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>PRIVACY / WEBSITE DATA</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001fc",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Privacy Policy",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001fd",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p><strong>Fera Solution LLC</strong><br><strong>Effective Date:</strong> October 13, 2026<br><strong>Website:</strong> https://ferasolution.com<br><strong>Contact Email:</strong> contact@ferasolution.com</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000200",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "p0001fe",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "{{FERA_PAGE:contact}}#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001ff",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p000203",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "p000202",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "home",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "overline": "SYSTEMS WITH PURPOSE",
+                "label_one": "THOUGHTFUL ENGINEERING",
+                "label_two": "BUILT AROUND YOUR BUSINESS",
+                "caption": "PLAN / DESIGN / BUILD / EVOLVE",
+                "alt": "Titanium orbital sculpture surrounding an illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f06fe7bc",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section privacy-policy-content"
+      },
+      "elements": [
+        {
+          "id": "a5a67059",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "4f6d5d46",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "1. Introduction",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "258e85a4",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Welcome to Fera Solution LLC (&quot;Fera Solution,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;).</p><p>We respect your privacy and are committed to protecting the personal information you share with us.</p><p>This Privacy Policy explains how we collect, use, disclose, store, and protect information when you visit our website, request information, communicate with us, or use our services.</p><p>By using our website, you acknowledge the data practices described in this Privacy Policy.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "22de9556",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "889b3fd3",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "2. Information We Collect",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "38552df6",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Depending on how you interact with our business, we may collect the following categories of information:</p><p><strong>Personal Information</strong></p><ul><li>Full name</li><li>Email address</li><li>Telephone number</li><li>Business name and address</li><li>City, state, and ZIP code</li><li>Information submitted through contact forms and service inquiries</li><li>Communications and correspondence with our team</li></ul><p><strong>Technical Information</strong></p><p>When you visit our website, certain information may be collected automatically, including:</p><ul><li>Internet Protocol (IP) address</li><li>Browser type and version</li><li>Device information</li><li>Operating system</li><li>Pages visited and website interactions</li><li>Referral sources</li><li>Cookies and similar tracking identifiers</li></ul><p><strong>Service-Related Information</strong></p><p>When requesting web development, software development, cybersecurity, digital marketing, or telecommunications services, you may provide additional project details, business requirements, or technical information.</p><p>We ask that you avoid submitting sensitive credentials or confidential security information through ordinary website contact forms.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "ca311f0a",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "602c8794",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "3. How We Use Your Information",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "98574ef4",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We may use collected information to:</p><ul><li>Respond to inquiries and provide customer support.</li><li>Prepare service quotations, proposals, and consultations.</li><li>Deliver requested development, cybersecurity, and marketing services.</li><li>Process requests for telecommunications service information and availability.</li><li>Communicate about projects, appointments, and services.</li><li>Improve website functionality, performance, and user experience.</li><li>Protect against fraud, unauthorized access, and security threats.</li><li>Comply with applicable laws and regulatory obligations.</li><li>Send promotional communications where permitted by applicable law and any required consent.</li></ul>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "9fba66a0",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "06bb6b4a",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "4. Spectrum Partner Program",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "abd6335e",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Fera Solution LLC operates as a business channel partner for Spectrum services.</p><p>When you submit an inquiry about Spectrum Internet, TV, Mobile, or Voice services, we may collect information needed to assess service availability, provide relevant plan information, and assist with your request.</p><p>This may include your name, contact information, business or service address, ZIP code, and service preferences.</p><p>Where necessary to process your request, relevant information may be shared with Spectrum or authorized service fulfillment providers, subject to applicable requirements.</p><p>Fera Solution is an independent business partner and is not the telecommunications service provider.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "16c73e78",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "aa3b8253",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "5. Cookies and Tracking Technologies",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "d5890c01",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Our website may use cookies and similar technologies to support essential functionality, remember preferences, measure website performance, and evaluate marketing campaigns.</p><p>Depending on the tools enabled, these technologies may involve analytics providers, advertising platforms, and embedded third-party services.</p><p>You may manage cookies through your browser settings and any consent management options provided on our website.</p><p>Where required by applicable law, we will request consent before activating non-essential tracking technologies.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "34ab570a",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "1661ba75",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "6. Information Sharing and Disclosure",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "0dc56378",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We may disclose relevant information to:</p><ul><li>Technology providers supporting website hosting, communications, and business operations.</li><li>Service providers and contractors assisting with requested services.</li><li>Authorized telecommunications partners involved in processing service inquiries.</li><li>Government authorities or other parties where legally required.</li><li>Professional advisers where necessary for legitimate business purposes.</li></ul><p>We do not authorize third-party service providers to use personal information for purposes unrelated to the services they perform for us, except as permitted by their applicable agreements and the law.</p><p>Any additional sharing for advertising or other purposes must be disclosed in accordance with applicable privacy requirements.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "611971ea",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "5b55cdc4",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "7. Information Security",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "e779bed8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We recognize the importance of protecting personal and business information.</p><p>We seek to maintain appropriate administrative, technical, and organizational safeguards designed to reduce risks of unauthorized access, alteration, disclosure, or destruction.</p><p>However, no method of internet transmission or electronic storage can be guaranteed to be completely secure.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "518bafee",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "a7da5b4f",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "8. Data Retention",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "cdcdd67d",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We retain personal information for periods reasonably necessary to fulfill the purposes described in this Privacy Policy, including responding to requests, maintaining business records, fulfilling contractual obligations, resolving disputes, and complying with legal requirements.</p><p>Retention periods depend on the type of information, the purpose for which it was collected, and applicable legal obligations.</p><p>When information is no longer required, we take appropriate steps to delete, anonymize, or securely dispose of it, consistent with our applicable retention procedures.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "1c139e2c",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "69817c1b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "9. Your Privacy Choices and Rights",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "9484fd15",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Depending on your location and applicable law, you may have rights to:</p><ul><li>Request access to personal information held about you.</li><li>Request correction of inaccurate information.</li><li>Request deletion of eligible personal information.</li><li>Withdraw consent where processing is based on consent.</li><li>Opt out of certain promotional communications.</li><li>Exercise additional privacy rights available under applicable law.</li></ul><p>To submit a request, email <strong>contact@ferasolution.com</strong> with the subject line &quot;Privacy Request.&quot;</p><p>We may need to verify your identity before processing certain requests. Some requests may be subject to legally permitted exceptions.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "ba6e133d",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "bf059bed",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "10. Marketing Communications",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "eb6724d0",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Where permitted by law, Fera Solution may contact individuals who have requested information about our services or agreed to receive marketing communications.</p><p>Marketing emails will provide applicable unsubscribe options.</p><p>Consent to receive marketing communications does not automatically authorize other types of communications that require separate consent.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "c00a3534",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "4df6944a",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "11. Third-Party Websites and Services",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "ce79bf75",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Our website may contain links to external websites, partner platforms, social media services, or telecommunications providers.</p><p>These third parties maintain their own privacy policies and data practices.</p><p>We encourage users to review the privacy notices of third-party websites before submitting personal information.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "f7fcffe1",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "0edd2b6d",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "12. Children's Privacy",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "87533ac8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Our website and business services are not directed toward children under 13 years of age.</p><p>We do not knowingly solicit personal information directly from children under 13 through our general business website.</p><p>If you believe a child has submitted personal information to us, please contact us so that we can review the matter and take appropriate action.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "9d0573f9",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "b8abdac5",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "13. Changes to This Privacy Policy",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "5cbf2a70",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We may update this Privacy Policy to reflect changes in our business operations, technology, legal obligations, or data handling practices.</p><p>When changes are made, the effective date at the top of this page will be updated.</p><p>Any additional notices required by applicable law will be provided.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "fb4d3dd8",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "section",
+            "flex_direction": "column",
+            "css_classes": "privacy-policy-section"
+          },
+          "elements": [
+            {
+              "id": "aad802e3",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "14. Contact Fera Solution",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "e43be7d1",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>For questions, privacy concerns, or requests regarding personal information submitted to our business, please contact:</p><p><strong>Fera Solution LLC</strong></p><p>Website: https://ferasolution.com</p><p>Email: contact@ferasolution.com</p><p>Location: Virginia, United States</p><p><strong>Privacy inquiries:</strong> Please use the subject line &quot;Privacy Request&quot; so our team can identify and review your request.</p><p>© 2026 Fera Solution LLC. All Rights Reserved.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "version": "0.4",
+  "title": "Fera \u2014 Services",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "e1af9302",
+      "elType": "widget",
+      "widgetType": "foundry-opening",
+      "settings": {
+        "preset": "software-development",
+        "enabled": "yes",
+        "background": "code",
+        "title": "From idea to useful technology.",
+        "tagline": "BUILD. CONNECT. GROW. PROTECT.",
+        "status": "Ready to explore.",
+        "footer_label": "TECHNOLOGY. WITH PURPOSE."
+      },
+      "elements": []
+    },
+    {
+      "id": "be9e7798",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "c63e0036",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "233fde6a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>TECHNOLOGY. WITH PURPOSE.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "43d70ac0",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Our Services",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "b9617362",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Practical digital solutions, built around your business. Explore how Fera Solution can help you develop, connect, grow and protect your technology.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "ee74f505",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "fb281c90",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Free Consultation",
+                    "link": {
+                      "url": "{{FERA_PAGE:contact}}#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "8c0f8631",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3b798cf4",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "39d8e801",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "software-development",
+                "caption": "BUILD / CONNECT / GROW / PROTECT"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c0735b83",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "f51aa349",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Choose the right support for your next step.",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "7a96dc81",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>Start with a specific challenge or a broader idea. We will discuss your requirements and agree a suitable scope before work begins.</p>",
+            "_css_classes": "studio-copy"
+          },
+          "elements": []
+        },
+        {
+          "id": "878c9c8c",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-grid"
+          },
+          "elements": [
+            {
+              "id": "f6648a49",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "573e254b",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<span class=\"ff-service-symbol\" aria-hidden=\"true\">&lt;/&gt;</span>",
+                    "_css_classes": ""
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "81db8aa5",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Web Development",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "60b35695",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Modern, responsive, user-friendly websites built to reflect your brand, engage visitors and support your business goals.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "ef9281a5",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Web Development",
+                    "link": {
+                      "url": "{{FERA_PAGE:web-development}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "54c8b4d9",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "61a23aba",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<span class=\"ff-service-symbol\" aria-hidden=\"true\">{ }</span>",
+                    "_css_classes": ""
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "a705c4ac",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Software Development",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "b10aff7f",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Custom software designed around your processes, requirements and operational needs, with an emphasis on usability, scalability and maintainability.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "c556b421",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Software Development",
+                    "link": {
+                      "url": "{{FERA_PAGE:software-development}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "86cd19db",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-grid"
+          },
+          "elements": [
+            {
+              "id": "71037583",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "194e984a",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<span class=\"ff-service-symbol\" aria-hidden=\"true\">\u2192</span>",
+                    "_css_classes": ""
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "b2743f7c",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Web Applications & Automation",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "31f312e4",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Interactive web applications, business dashboards, workflow automation and system integrations that streamline repetitive tasks and improve operational efficiency.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "51e5e9af",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Web Applications & Automation",
+                    "link": {
+                      "url": "{{FERA_PAGE:web-applications}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "55471f84",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "757d5905",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<span class=\"ff-service-symbol\" aria-hidden=\"true\">\u2197</span>",
+                    "_css_classes": ""
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "8396f405",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Digital Marketing",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "f04bb0d9",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Digital marketing solutions that strengthen your online presence, reach relevant audiences and generate opportunities through suitable digital channels.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "3204fe59",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Digital Marketing",
+                    "link": {
+                      "url": "{{FERA_PAGE:digital-marketing}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "f0390cb7",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "css_classes": "studio-card"
+              },
+              "elements": [
+                {
+                  "id": "7290ccee",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<span class=\"ff-service-symbol\" aria-hidden=\"true\">\u2713</span>",
+                    "_css_classes": ""
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "bfce6c39",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Cybersecurity Services",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "6df3a0f0",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Security assessments, vulnerability assessments, penetration testing and practical recommendations to help identify and address security weaknesses.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "7cea65c7",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Cybersecurity Services",
+                    "link": {
+                      "url": "{{FERA_PAGE:cybersecurity}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3c916005",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "8aff65b4",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Let\u2019s discuss what your business needs.",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "b835a883",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>Request a free consultation using our existing project inquiry form. Tell us about your goals, and our team will follow up to discuss the next step.</p>",
+            "_css_classes": "studio-copy"
+          },
+          "elements": []
+        },
+        {
+          "id": "4c954566",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-actions"
+          },
+          "elements": [
+            {
+              "id": "3eac2acd",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Get a Free Consultation",
+                "link": {
+                  "url": "{{FERA_PAGE:contact}}#inquiry"
+                },
+                "_element_width": "auto",
+                "_css_classes": "studio-button studio-primary"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

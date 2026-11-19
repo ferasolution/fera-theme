@@ -1,0 +1,511 @@
+{
+  "version": "0.4",
+  "title": "Fera — portfolio",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "p000123",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "p000120",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "p00011a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>PORTFOLIO / LIVE DEMOS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00011b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Explore what a useful digital experience can feel like.",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00011c",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Browse interactive software and website concepts. Every example is a demonstration with synthetic data, clearly separated from client work.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00011f",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "p00011d",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p00011e",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p000122",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "p000121",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "home",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "overline": "SYSTEMS WITH PURPOSE",
+                "label_one": "THOUGHTFUL ENGINEERING",
+                "label_two": "BUILT AROUND YOUR BUSINESS",
+                "caption": "PLAN / DESIGN / BUILD / EVOLVE",
+                "alt": "Titanium orbital sculpture surrounding an illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p000129",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "work"
+      },
+      "elements": [
+        {
+          "id": "p000128",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p000125",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>DEMONSTRATION GALLERY</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000126",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Open a concept. Try the controls.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p000127",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Use category filters, inspect the project brief and open each demonstration.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000124",
+          "elType": "widget",
+          "widgetType": "foundry-showcase",
+          "settings": {
+            "mode": "all",
+            "title": "Interactive product demonstrations"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p00012f",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p00012e",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00012b",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR OWN PROJECT</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00012c",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "The demonstration is a starting point.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00012d",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Authentication, hosting, integrations, data migration and operational requirements belong in a separately scoped production build.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p00012a",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Discuss your requirements",
+            "link": {
+              "url": "#inquiry"
+            },
+            "_element_width": "auto",
+            "_css_classes": "studio-button studio-primary"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "techbrief",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section technology-brief",
+        "_element_id": "technology"
+      },
+      "elements": [
+        {
+          "id": "techh2",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "The right technology starts with your requirements.",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "techintro",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>We build tailored software, web applications, APIs, integrations and websites. We choose languages, frameworks and platforms around your business requirements, budget, scalability, security and existing infrastructure—not a one-size-fits-all stack.</p><p>Tell us about your current systems and any technology preferences. We will discuss suitable options, trade-offs and a proposed scope before development.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "techoptions",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "settings": {
+            "tabs": [
+              {
+                "_id": "techopts",
+                "tab_title": "Explore technology options",
+                "tab_content": "<dl class=\"technology-options\"><dt>Frontend</dt><dd>JavaScript, TypeScript, React, Next.js, Vue.js, Angular, HTML5 and CSS3</dd><dt>Backend</dt><dd>Python, Node.js, PHP, Java, C#, .NET and Go</dd><dt>Mobile applications</dt><dd>Kotlin, Swift, React Native and Flutter</dd><dt>Databases</dt><dd>PostgreSQL, MySQL, Microsoft SQL Server, MongoDB and Redis</dd><dt>Cloud &amp; DevOps</dt><dd>AWS, Microsoft Azure, Google Cloud, Docker, Kubernetes and CI/CD pipelines</dd><dt>APIs &amp; integrations</dt><dd>REST APIs, GraphQL, webhooks and third-party business system integrations</dd><dt>AI &amp; automation</dt><dd>Python-based AI/ML solutions, LLM integrations, workflow automation and intelligent business tools</dd><dt>CMS &amp; e-commerce</dt><dd>WordPress, WooCommerce and other suitable platforms</dd></dl><p>These are technology options depending on project scope. They do not imply every technology is currently deployed or that every service is a standardized product. Delivery capability, integrations and platform requirements are confirmed in your proposal.</p>"
+              }
+            ],
+            "active_item": 0
+          },
+          "elements": []
+        },
+        {
+          "id": "techcta",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Discuss Your Project",
+            "link": {
+              "url": "#inquiry"
+            },
+            "_css_classes": "studio-button studio-primary",
+            "_element_width": "auto"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p00013e",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "contact"
+      },
+      "elements": [
+        {
+          "id": "p00013d",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p00013a",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR NEXT STEP</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00013b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tell us what you want to build.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p00013c",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Share the problem, your priorities and any existing platform. We will respond to discuss scope and suitable next steps.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p000139",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-contact"
+          },
+          "elements": [
+            {
+              "id": "p000137",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-contact-details"
+              },
+              "elements": [
+                {
+                  "id": "p000130",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Start with a conversation.",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000131",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "337-252-4040",
+                    "link": {
+                      "url": "tel:+13372524040"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000132",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "sales@ferasolution.com",
+                    "link": {
+                      "url": "mailto:sales@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000133",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "support@ferasolution.com",
+                    "link": {
+                      "url": "mailto:support@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000134",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "contact@ferasolution.com",
+                    "link": {
+                      "url": "mailto:contact@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000135",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Herndon, VA, USA</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p000136",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Privacy notice",
+                    "link": {
+                      "url": "{{FERA_PAGE:privacy-policy}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p000138",
+              "elType": "widget",
+              "widgetType": "foundry-inquiry",
+              "settings": {
+                "service": "Multiple services / Not sure yet",
+                "heading": "Request a project quote",
+                "button_label": "Send project inquiry",
+                "message_placeholder": "What would you like to build or improve? Please use this form for project inquiries, not passwords or sensitive account information."
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

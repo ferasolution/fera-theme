@@ -1,0 +1,464 @@
+{
+  "version": "0.4",
+  "title": "Fera — contact",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "p0001e1",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "div",
+        "flex_direction": "column",
+        "css_classes": "studio-hero"
+      },
+      "elements": [
+        {
+          "id": "p0001de",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-hero-copy"
+          },
+          "elements": [
+            {
+              "id": "p0001d8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>REQUEST A PROJECT QUOTE</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001d9",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Let’s discuss your next useful build.",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001da",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Tell us about the business problem, website or application you want to improve. Your inquiry is the start of a scope conversation, not a commitment to purchase.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001dd",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-actions"
+              },
+              "elements": [
+                {
+                  "id": "p0001db",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001dc",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p0001e0",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "hero-art studio-art"
+          },
+          "elements": [
+            {
+              "id": "p0001df",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "home",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "overline": "SYSTEMS WITH PURPOSE",
+                "label_one": "THOUGHTFUL ENGINEERING",
+                "label_two": "BUILT AROUND YOUR BUSINESS",
+                "caption": "PLAN / DESIGN / BUILD / EVOLVE",
+                "alt": "Titanium orbital sculpture surrounding an illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "techbrief",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section technology-brief",
+        "_element_id": "technology"
+      },
+      "elements": [
+        {
+          "id": "techh2",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "The right technology starts with your requirements.",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "techintro",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>We build tailored software, web applications, APIs, integrations and websites. We choose languages, frameworks and platforms around your business requirements, budget, scalability, security and existing infrastructure—not a one-size-fits-all stack.</p><p>Tell us about your current systems and any technology preferences. We will discuss suitable options, trade-offs and a proposed scope before development.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "techoptions",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "settings": {
+            "tabs": [
+              {
+                "_id": "techopts",
+                "tab_title": "Explore technology options",
+                "tab_content": "<dl class=\"technology-options\"><dt>Frontend</dt><dd>JavaScript, TypeScript, React, Next.js, Vue.js, Angular, HTML5 and CSS3</dd><dt>Backend</dt><dd>Python, Node.js, PHP, Java, C#, .NET and Go</dd><dt>Mobile applications</dt><dd>Kotlin, Swift, React Native and Flutter</dd><dt>Databases</dt><dd>PostgreSQL, MySQL, Microsoft SQL Server, MongoDB and Redis</dd><dt>Cloud &amp; DevOps</dt><dd>AWS, Microsoft Azure, Google Cloud, Docker, Kubernetes and CI/CD pipelines</dd><dt>APIs &amp; integrations</dt><dd>REST APIs, GraphQL, webhooks and third-party business system integrations</dd><dt>AI &amp; automation</dt><dd>Python-based AI/ML solutions, LLM integrations, workflow automation and intelligent business tools</dd><dt>CMS &amp; e-commerce</dt><dd>WordPress, WooCommerce and other suitable platforms</dd></dl><p>These are technology options depending on project scope. They do not imply every technology is currently deployed or that every service is a standardized product. Delivery capability, integrations and platform requirements are confirmed in your proposal.</p>"
+              }
+            ],
+            "active_item": 0
+          },
+          "elements": []
+        },
+        {
+          "id": "techcta",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Discuss Your Project",
+            "link": {
+              "url": "#inquiry"
+            },
+            "_css_classes": "studio-button studio-primary",
+            "_element_width": "auto"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p0001fa",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section"
+      },
+      "elements": [
+        {
+          "id": "p0001f9",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p0001f6",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>PROJECT QUESTIONS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001f7",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Good questions. Clear next steps.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001f8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Every project starts with an agreed scope.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p0001f5",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "settings": {
+            "tabs": [
+              {
+                "_id": "p0001f1",
+                "tab_title": "How long will the project take?",
+                "tab_content": "<p>The timeline depends on the requirements, integrations and review stages. We discuss milestones in your proposal rather than promise a fixed delivery date before discovery.</p>"
+              },
+              {
+                "_id": "p0001f2",
+                "tab_title": "Can you improve an existing website?",
+                "tab_content": "<p>Yes. Tell us what is working, what needs to change and which platform you use. We will review the existing site before recommending the scope.</p>"
+              },
+              {
+                "_id": "p0001f3",
+                "tab_title": "How are revisions and support handled?",
+                "tab_content": "<p>Revision stages, communication and any ongoing support are agreed in the project scope. Ask us to include the support you need in your proposal.</p>"
+              },
+              {
+                "_id": "p0001f4",
+                "tab_title": "Are these demos client projects?",
+                "tab_content": "<p>No. The demonstrations use synthetic data and illustrative brands. They show interface concepts and interactive workflows; they are not testimonials or deployed client products.</p>"
+              }
+            ],
+            "active_item": 0,
+            "_css_classes": "studio-faq"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "p0001f0",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "contact"
+      },
+      "elements": [
+        {
+          "id": "p0001ef",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p0001ec",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR NEXT STEP</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001ed",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tell us what you want to build.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001ee",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Share the problem, your priorities and any existing platform. We will respond to discuss scope and suitable next steps.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p0001eb",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-contact"
+          },
+          "elements": [
+            {
+              "id": "p0001e9",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-contact-details"
+              },
+              "elements": [
+                {
+                  "id": "p0001e2",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Start with a conversation.",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e3",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "337-252-4040",
+                    "link": {
+                      "url": "tel:+13372524040"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e4",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "sales@ferasolution.com",
+                    "link": {
+                      "url": "mailto:sales@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e5",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "support@ferasolution.com",
+                    "link": {
+                      "url": "mailto:support@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e6",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "contact@ferasolution.com",
+                    "link": {
+                      "url": "mailto:contact@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Herndon, VA, USA</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e8",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Privacy notice",
+                    "link": {
+                      "url": "{{FERA_PAGE:privacy-policy}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p0001ea",
+              "elType": "widget",
+              "widgetType": "foundry-inquiry",
+              "settings": {
+                "service": "Multiple services / Not sure yet",
+                "heading": "Request a project quote",
+                "button_label": "Send project inquiry",
+                "message_placeholder": "What would you like to build or improve? Please use this form for project inquiries, not passwords or sensitive account information."
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

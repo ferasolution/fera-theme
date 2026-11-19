@@ -1,0 +1,54 @@
+{
+  "home": {
+    "title": "Custom Software & Website Development | Fera Solution",
+    "description": "Custom software, websites and business applications built around your goals. Explore interactive demonstrations and discuss your project with Fera Solution."
+  },
+  "cybersecurity": {
+    "title": "Cybersecurity & Penetration Testing in Northern Virginia | Fera Solution",
+    "description": "Discuss authorized penetration testing, security assessments, risk analysis, monitoring, incident response and GRC support with Fera Solution in Herndon, VA."
+  },
+  "web-development": {
+    "title": "Website Design & WordPress Development | Fera Solution",
+    "description": "Business websites, WordPress development and responsive redesigns from Fera Solution in Herndon, Northern Virginia. Explore working website concepts."
+  },
+  "software-development": {
+    "title": "Custom Software & Business Applications | Fera Solution",
+    "description": "Custom business software, CRM workflows, dashboards and integrations from Fera Solution in Herndon, Northern Virginia. Explore synthetic interactive demos."
+  },
+  "digital-marketing": {
+    "title": "Digital Marketing, SEO & Campaign Strategy | Fera Solution",
+    "description": "Reach the right customers with Fera Solution. Explore SEO, content, paid campaign strategy and clear measurement aligned with your business goals."
+  },
+  "spectrum-business": {
+    "title": "Spectrum Business Internet & Voice Partner | Fera Solution",
+    "description": "Explore Spectrum Business Internet, Voice, TV and Mobile through Fera Solution. Get consultation and an address-based availability check for your business."
+  },
+  "portfolio": {
+    "title": "Interactive Software & Website Demonstrations | Fera Solution",
+    "description": "Explore clearly labelled interactive CRM, project, inventory and website demonstrations with synthetic data. Discuss a custom solution for your business."
+  },
+  "web-applications": {
+    "title": "Custom Web Applications & Automation | Fera Solution",
+    "description": "Explore custom web applications, workflow automation and API integration planning with Fera Solution in Herndon, VA. Try an illustrative workflow."
+  },
+  "about": {
+    "title": "About Fera Solution | Fera Solution",
+    "description": "Explore about with Fera Solution. Discuss your business goals, requirements and a practical project scope."
+  },
+  "contact": {
+    "title": "Request a Software or Website Project Quote | Fera Solution",
+    "description": "Contact Fera Solution in Herndon, VA about custom software, website development, redesigns and workflow integrations."
+  },
+  "privacy-policy": {
+    "title": "Website Privacy Notice | Fera Solution",
+    "description": "Explore privacy policy with Fera Solution. Discuss your business goals, requirements and a practical project scope."
+  },
+  "terms-and-conditions": {
+    "title": "Website Terms & Conditions | Fera Solution",
+    "description": "Read the terms for browsing Fera Solution, using interactive demonstrations and submitting project inquiries. Paid work is governed by a separate agreement."
+  },
+  "services": {
+    "title": "Software, Web Development & Technology Services | Fera Solution",
+    "description": "Explore software development, websites, automation, digital marketing and cybersecurity services from Fera Solution in Herndon, Northern Virginia."
+  }
+}

@@ -1,0 +1,1429 @@
+{
+  "version": "0.4",
+  "title": "Fera — Digital marketing",
+  "type": "page",
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "default"
+  },
+  "content": [
+    {
+      "id": "000001b5",
+      "elType": "widget",
+      "widgetType": "foundry-opening",
+      "isInner": false,
+      "settings": {
+        "preset": "digital-marketing",
+        "title": "Connecting your story<br><em>with the right audience.</em>",
+        "tagline": "REACH PEOPLE WHO NEED WHAT YOU DO",
+        "status": "Your growth strategy takes shape.",
+        "footer_label": "DIGITAL MARKETING",
+        "_css_classes": "fera-opening-widget"
+      },
+      "elements": []
+    },
+    {
+      "id": "000001c1",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "hero service-hero"
+      },
+      "elements": [
+        {
+          "id": "000001be",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "hero-copy"
+          },
+          "elements": [
+            {
+              "id": "000001b6",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "Our expertise / Digital marketing",
+                "link": {
+                  "url": "{{FERA_PAGE:home}}#services"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-text-link breadcrumb"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001b7",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>REACH PEOPLE WHO NEED WHAT YOU DO</p>",
+                "_css_classes": "eyebrow fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001b8",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "A clearer message.<br><em>A stronger presence.</em>",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001b9",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Bring your message, content, and campaigns into focus so potential customers can understand your value and take the next step.</p>",
+                "_css_classes": "intro fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001bc",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "actions"
+              },
+              "elements": [
+                {
+                  "id": "000001ba",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "Discuss your project",
+                    "link": {
+                      "url": "#inquiry"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "fera-button-widget fera-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001bb",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "Explore digital marketing",
+                    "link": {
+                      "url": "#capabilities"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "fera-button-widget fera-text-link"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001bd",
+              "elType": "widget",
+              "widgetType": "foundry-replay",
+              "isInner": false,
+              "settings": {
+                "label": "Watch the opening",
+                "_css_classes": "watch-service-intro"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "000001c0",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "hero-art"
+          },
+          "elements": [
+            {
+              "id": "000001bf",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "isInner": false,
+              "settings": {
+                "preset": "digital-marketing",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp",
+                  "id": 0
+                },
+                "caption": "BUILT AROUND YOUR BUSINESS",
+                "label_one": "SECURITY BY DESIGN",
+                "label_two": "BUILT TO MOVE YOU FORWARD"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "000001d0",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "service-value section"
+      },
+      "elements": [
+        {
+          "id": "000001c2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p>THE BUSINESS PICTURE</p>",
+            "_css_classes": "eyebrow fera-copy"
+          },
+          "elements": []
+        },
+        {
+          "id": "000001c5",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "section-heading"
+          },
+          "elements": [
+            {
+              "id": "000001c3",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Make your online presence work toward a clear goal.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001c4",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Effective marketing begins with your audience and your offer. We help shape a coherent message, choose useful channels, and measure what happens so future decisions are better informed.</p>",
+                "_css_classes": " fera-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "000001cf",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "outcome-row"
+          },
+          "elements": [
+            {
+              "id": "000001c8",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001c6",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>01</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001c7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<strong>A message aligned with your audience</strong>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001cb",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001c9",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>02</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001ca",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<strong>Campaigns with defined objectives</strong>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001ce",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001cc",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>03</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001cd",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<strong>Measurement that informs the next decision</strong>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "000001e4",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "service-capabilities section",
+        "_element_id": "capabilities"
+      },
+      "elements": [
+        {
+          "id": "000001d1",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p>WHAT WE CAN HELP WITH</p>",
+            "_css_classes": "eyebrow fera-copy"
+          },
+          "elements": []
+        },
+        {
+          "id": "000001d2",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "Focused services.<br><em>Practical next steps.</em>",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "000001e3",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "capabilities"
+          },
+          "elements": [
+            {
+              "id": "000001d6",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "capability"
+              },
+              "elements": [
+                {
+                  "id": "000001d3",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>01</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001d4",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Search visibility",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001d5",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>Review website structure and content opportunities to make your services easier for relevant audiences to discover and understand.</p>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001da",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "capability"
+              },
+              "elements": [
+                {
+                  "id": "000001d7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>02</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001d8",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Content &amp; messaging",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001d9",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>Clarify your offer and develop website or campaign content that answers customer questions and supports your brand.</p>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001de",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "capability"
+              },
+              "elements": [
+                {
+                  "id": "000001db",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>03</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001dc",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Campaign strategy",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001dd",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>Define audience, channel, creative direction, and conversion goals for a focused marketing plan.</p>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "000001e2",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "capability"
+              },
+              "elements": [
+                {
+                  "id": "000001df",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>04</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001e0",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Measurement &amp; optimization",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001e1",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>Agree on useful metrics, review available performance data, and identify adjustments worth testing.</p>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "000001fa",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "statement section",
+        "_element_id": "approach"
+      },
+      "elements": [
+        {
+          "id": "000001e9",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            }
+          },
+          "elements": [
+            {
+              "id": "000001e5",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>HOW WE WORK</p>",
+                "_css_classes": "eyebrow fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001e6",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "From the first conversation<br>to your next step.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001e7",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>We start with a defined scope, make the decisions clear, and agree on the work before moving forward.</p>",
+                "_css_classes": " fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001e8",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "Talk with Fera",
+                "link": {
+                  "url": "#inquiry"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-primary"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "000001f9",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "css_classes": "steps"
+          },
+          "elements": [
+            {
+              "id": "000001ee",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001ea",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>01</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001ed",
+                  "elType": "container",
+                  "isInner": false,
+                  "settings": {
+                    "content_width": "full",
+                    "html_tag": "div",
+                    "flex_direction": "column",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "000001eb",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Understand your audience",
+                        "header_size": "h3"
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "000001ec",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Discuss customer needs, current positioning, and the business goals your marketing should support.</p>",
+                        "_css_classes": " fera-copy"
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "000001f3",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001ef",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>02</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001f2",
+                  "elType": "container",
+                  "isInner": false,
+                  "settings": {
+                    "content_width": "full",
+                    "html_tag": "div",
+                    "flex_direction": "column",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "000001f0",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Shape the campaign",
+                        "header_size": "h3"
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "000001f1",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Define channels, messages, creative requirements, and the next action you want people to take.</p>",
+                        "_css_classes": " fera-copy"
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "000001f8",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "article",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                }
+              },
+              "elements": [
+                {
+                  "id": "000001f4",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<span>03</span>",
+                    "_css_classes": " fera-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "000001f7",
+                  "elType": "container",
+                  "isInner": false,
+                  "settings": {
+                    "content_width": "full",
+                    "html_tag": "div",
+                    "flex_direction": "column",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "000001f5",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Measure and refine",
+                        "header_size": "h3"
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "000001f6",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Review agreed metrics and use the findings to guide improvements.</p>",
+                        "_css_classes": " fera-copy"
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "00000205",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "service-faq section"
+      },
+      "elements": [
+        {
+          "id": "000001fd",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            }
+          },
+          "elements": [
+            {
+              "id": "000001fb",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>BEFORE YOU GET STARTED</p>",
+                "_css_classes": "eyebrow fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "000001fc",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Good questions.<br>Clear answers.",
+                "header_size": "h2"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "00000204",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            }
+          },
+          "elements": [
+            {
+              "id": "000001ff",
+              "elType": "widget",
+              "widgetType": "accordion",
+              "isInner": false,
+              "settings": {
+                "tabs": [
+                  {
+                    "_id": "000001fe",
+                    "tab_title": "Can you guarantee rankings or a specific number of leads?",
+                    "tab_content": "<p>No. Search visibility and campaign outcomes depend on competition, audience, budget, platforms, and your offer. We agree on goals and a measurement approach without promising guaranteed results.</p>"
+                  }
+                ],
+                "active_item": 0,
+                "_css_classes": "fera-faq-widget"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000201",
+              "elType": "widget",
+              "widgetType": "accordion",
+              "isInner": false,
+              "settings": {
+                "tabs": [
+                  {
+                    "_id": "00000200",
+                    "tab_title": "Is advertising spend included in your service fee?",
+                    "tab_content": "<p>The proposal will separate service scope from any platform advertising budgets or third-party costs. These are agreed before a campaign runs.</p>"
+                  }
+                ],
+                "active_item": 0,
+                "_css_classes": "fera-faq-widget"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000203",
+              "elType": "widget",
+              "widgetType": "accordion",
+              "isInner": false,
+              "settings": {
+                "tabs": [
+                  {
+                    "_id": "00000202",
+                    "tab_title": "Can you work with our existing website and brand?",
+                    "tab_content": "<p>Yes. We can review your current materials and recommend focused improvements, or coordinate marketing with a larger website redesign.</p>"
+                  }
+                ],
+                "active_item": 0,
+                "_css_classes": "fera-faq-widget"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0000020c",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "related-services"
+      },
+      "elements": [
+        {
+          "id": "00000206",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p>Bring the whole picture together.</p>",
+            "_css_classes": " fera-copy"
+          },
+          "elements": []
+        },
+        {
+          "id": "0000020b",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            }
+          },
+          "elements": [
+            {
+              "id": "00000207",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "Cybersecurity",
+                "link": {
+                  "url": "{{FERA_PAGE:cybersecurity}}"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-text-link"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000208",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "Web development",
+                "link": {
+                  "url": "{{FERA_PAGE:web-development}}"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-text-link"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000209",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "Software development",
+                "link": {
+                  "url": "{{FERA_PAGE:software-development}}"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-text-link"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "labmarketing",
+      "elType": "container",
+      "settings": {
+        "css_classes": "studio-section",
+        "html_tag": "section",
+        "content_width": "full"
+      },
+      "elements": [
+        {
+          "id": "hmarketing",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Working marketing tools",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "wmarketing",
+          "elType": "widget",
+          "widgetType": "foundry-showcase",
+          "settings": {
+            "mode": "marketing",
+            "title": "Working marketing tools"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "00000218",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "css_classes": "contact section",
+        "_element_id": "contact"
+      },
+      "elements": [
+        {
+          "id": "00000216",
+          "elType": "container",
+          "isInner": false,
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "flex_gap": {
+              "column": "0",
+              "row": "0",
+              "isLinked": true,
+              "unit": "px"
+            }
+          },
+          "elements": [
+            {
+              "id": "0000020d",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>04 / LET’S MAKE IT HAPPEN</p>",
+                "_css_classes": "eyebrow fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "0000020e",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Let’s give your growth a direction.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "0000020f",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Tell us what you’re working toward. We’ll start with a conversation.</p>",
+                "_css_classes": " fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000210",
+              "elType": "widget",
+              "widgetType": "button",
+              "isInner": false,
+              "settings": {
+                "text": "337-252-4040",
+                "link": {
+                  "url": "tel:+13372524040"
+                },
+                "_element_width": "auto",
+                "_css_classes": "fera-button-widget fera-text-link phone"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000211",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Herndon, VA, USA</p>",
+                "_css_classes": "location fera-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "00000215",
+              "elType": "container",
+              "isInner": false,
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "flex_gap": {
+                  "column": "0",
+                  "row": "0",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "css_classes": "emails"
+              },
+              "elements": [
+                {
+                  "id": "00000212",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "sales@ferasolution.com",
+                    "link": {
+                      "url": "mailto:sales@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "fera-button-widget fera-text-link"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "00000213",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "Support: support@ferasolution.com",
+                    "link": {
+                      "url": "mailto:support@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "fera-button-widget fera-text-link"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "00000214",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "General: contact@ferasolution.com",
+                    "link": {
+                      "url": "mailto:contact@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "fera-button-widget fera-text-link"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "00000217",
+          "elType": "widget",
+          "widgetType": "foundry-inquiry",
+          "isInner": false,
+          "settings": {
+            "service": "Digital marketing",
+            "heading": "Your next chapter, together.",
+            "message_placeholder": "Tell us who you want to reach, what you offer, your current channels, and your marketing goals.",
+            "button_label": "Send my inquiry",
+            "_css_classes": "fera-inquiry-widget"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

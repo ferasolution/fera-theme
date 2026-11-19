@@ -1,0 +1,737 @@
+{
+  "content": [
+    {
+      "id": "98c0c452",
+      "elType": "widget",
+      "widgetType": "foundry-opening",
+      "settings": {
+        "preset": "cybersecurity",
+        "background": "net",
+        "title": "A stronger foundation for your digital future.",
+        "tagline": "ASSESS. PRIORITIZE. IMPROVE.",
+        "enabled": "yes"
+      },
+      "elements": []
+    },
+    {
+      "id": "835880ed",
+      "elType": "container",
+      "settings": {
+        "css_classes": "studio-hero",
+        "html_tag": "div",
+        "_element_id": ""
+      },
+      "elements": [
+        {
+          "id": "4e157abb",
+          "elType": "container",
+          "settings": {
+            "css_classes": "studio-hero-copy",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "4aa57ee4",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>FERA SOLUTION / PURPOSEFUL TECHNOLOGY</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "d7e71da9",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Understand your risks. Strengthen your systems.",
+                "header_size": "h1"
+              },
+              "elements": []
+            },
+            {
+              "id": "918f5345",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Security assessments, authorized penetration testing, risk analysis and practical security support—scoped to your business.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "14642678",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-actions",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "d0c4d4c1",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get a Project Quote",
+                    "link": {
+                      "url": "#inquiry"
+                    },
+                    "_css_classes": "studio-button studio-primary"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "4958276b",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Our Work",
+                    "link": {
+                      "url": "{{FERA_PAGE:portfolio}}"
+                    },
+                    "_css_classes": "studio-button"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dd50e3f8",
+          "elType": "container",
+          "settings": {
+            "css_classes": "hero-art studio-art",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "fae7e495",
+              "elType": "widget",
+              "widgetType": "foundry-visual",
+              "settings": {
+                "preset": "cybersecurity",
+                "caption": "THOUGHTFUL ENGINEERING",
+                "image": {
+                  "url": "{{FERA_THEME_URL}}/assets/fera-orbit-v2.webp"
+                },
+                "alt": "Fera Solution titanium orbital sculpture with illuminated red core"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b8d1b82",
+      "elType": "container",
+      "settings": {
+        "css_classes": "studio-section",
+        "html_tag": "section",
+        "_element_id": ""
+      },
+      "elements": [
+        {
+          "id": "f6a7d4ce",
+          "elType": "container",
+          "settings": {
+            "css_classes": "studio-section-heading",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "eda0a325",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>CYBERSECURITY SERVICES</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "b37c4fc5",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Clear scope. Useful findings.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "29a4ab89",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>We agree authorization, responsibilities and deliverables before starting. We do not claim universal protection, guaranteed compliance or 24-hour coverage.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "e4b224b6",
+          "elType": "container",
+          "settings": {
+            "css_classes": "security-service-grid",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "69612ea3",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "3f933c81",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Penetration testing",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "0ec243b3",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Authorized testing scoped to agreed systems, rules of engagement and reporting. No scan occurs through these demonstrations.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "8bd77a47",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "82d81819",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Vulnerability assessment & management",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "4886feaf",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Assess identified risks, prioritize findings and track remediation within an agreed engagement.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "4d95d593",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "140c64d5",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Monitoring & incident response",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "ffa2a230",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Discuss the environment, coverage, escalation and incident support required. Monitoring hours and response commitments are agreed explicitly.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "49c8ea50",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "2c065520",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Risk analysis & GRC",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "30c2cd09",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Evaluate risks and discuss governance, risk and compliance requirements without implying certifications or guaranteed compliance.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "cea27452",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "637388b2",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Web application / API security",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "ebe0b97f",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Discuss assessment scope for application flows, authorization boundaries, exposed APIs and input handling.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "1d3ab89e",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "f5e0cd41",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Cloud security assessment — scope discussion",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "75443049",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Review the cloud environment, platforms and required expertise during discovery. Supported platforms and deliverables must be confirmed before an engagement.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "11afe049",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "915f485a",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Secure code review — scope discussion",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "ef3b4c36",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Define language, codebase access and review objectives before agreeing a code-review engagement.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "77e56c9b",
+              "elType": "container",
+              "settings": {
+                "css_classes": "studio-card",
+                "html_tag": "div",
+                "_element_id": ""
+              },
+              "elements": [
+                {
+                  "id": "d2ae6e50",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Security reporting & remediation planning",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "cda31485",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Communicate findings, severity, evidence and practical next steps within the agreed scope.</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "303ed904",
+      "elType": "container",
+      "settings": {
+        "css_classes": "studio-section",
+        "html_tag": "section",
+        "_element_id": ""
+      },
+      "elements": [
+        {
+          "id": "5c9457bd",
+          "elType": "container",
+          "settings": {
+            "css_classes": "studio-section-heading",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "72a6ef15",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>EXPLORE SECURITY DEMOS</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "25ae6095",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Practice with synthetic security scenarios.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "c7d83538",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Interactive vulnerability, SOC, assessment and awareness demonstrations use synthetic data. They do not scan a visitor’s systems or certify a website as safe.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "75058b3e",
+          "elType": "widget",
+          "widgetType": "foundry-showcase",
+          "settings": {
+            "mode": "security",
+            "title": "Cybersecurity simulations"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "c53e9837",
+      "elType": "container",
+      "settings": {
+        "css_classes": "studio-section",
+        "html_tag": "section",
+        "_element_id": ""
+      },
+      "elements": [
+        {
+          "id": "b333947c",
+          "elType": "container",
+          "settings": {
+            "css_classes": "studio-section-heading",
+            "html_tag": "div",
+            "_element_id": ""
+          },
+          "elements": [
+            {
+              "id": "2a7c9cd9",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>HOW WE WORK</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "914d3fb2",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "From agreed scope to prioritized next steps.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "35068ecf",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Define the environment and objectives, agree authorization, assess the scoped systems, communicate findings and discuss remediation and follow-up.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p0001f0",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "html_tag": "section",
+        "flex_direction": "column",
+        "css_classes": "studio-section",
+        "_element_id": "contact"
+      },
+      "elements": [
+        {
+          "id": "p0001ef",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-section-heading"
+          },
+          "elements": [
+            {
+              "id": "p0001ec",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>YOUR NEXT STEP</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001ed",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tell us what you want to build.",
+                "header_size": "h2"
+              },
+              "elements": []
+            },
+            {
+              "id": "p0001ee",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Share the problem, your priorities and any existing platform. We will respond to discuss scope and suitable next steps.</p>",
+                "_css_classes": "studio-copy"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "p0001eb",
+          "elType": "container",
+          "settings": {
+            "content_width": "full",
+            "html_tag": "div",
+            "flex_direction": "column",
+            "css_classes": "studio-contact"
+          },
+          "elements": [
+            {
+              "id": "p0001e9",
+              "elType": "container",
+              "settings": {
+                "content_width": "full",
+                "html_tag": "div",
+                "flex_direction": "column",
+                "css_classes": "studio-contact-details"
+              },
+              "elements": [
+                {
+                  "id": "p0001e2",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Start with a conversation.",
+                    "header_size": "h3"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e3",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "337-252-4040",
+                    "link": {
+                      "url": "tel:+13372524040"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e4",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "sales@ferasolution.com",
+                    "link": {
+                      "url": "mailto:sales@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e5",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "support@ferasolution.com",
+                    "link": {
+                      "url": "mailto:support@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e6",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "contact@ferasolution.com",
+                    "link": {
+                      "url": "mailto:contact@ferasolution.com"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Herndon, VA, USA</p>",
+                    "_css_classes": "studio-copy"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "p0001e8",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Privacy notice",
+                    "link": {
+                      "url": "{{FERA_PAGE:privacy-policy}}"
+                    },
+                    "_element_width": "auto",
+                    "_css_classes": "studio-button "
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "p0001ea",
+              "elType": "widget",
+              "widgetType": "foundry-inquiry",
+              "settings": {
+                "service": "Cybersecurity",
+                "heading": "Request a project quote",
+                "button_label": "Send project inquiry",
+                "message_placeholder": "What would you like to build or improve? Please use this form for project inquiries, not passwords or sensitive account information."
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

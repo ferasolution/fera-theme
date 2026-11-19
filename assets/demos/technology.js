@@ -1,0 +1,13 @@
+/* Shared, safe demo brief. Actual demo technology is distinguished from custom project options. */
+(() => {
+  const groups=[['Frontend','JavaScript, TypeScript, React, Next.js, Vue.js, Angular, HTML5, CSS3'],['Backend','Python, Node.js, PHP, Java, C#, .NET, Go'],['Mobile applications','Kotlin, Swift, React Native, Flutter'],['Databases','PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Redis'],['Cloud & DevOps','AWS, Microsoft Azure, Google Cloud, Docker, Kubernetes, CI/CD pipelines'],['APIs & integrations','REST APIs, GraphQL, webhooks, third-party business system integrations'],['AI & automation','Python-based AI/ML solutions, LLM integrations, workflow automation, intelligent business tools'],['CMS & e-commerce','WordPress, WooCommerce, other suitable platforms']];
+  const section=document.createElement('section');section.className='demo-technology';section.setAttribute('aria-label','Project brief and technology');
+  const h=document.createElement('h2');h.textContent='Built around your business.';section.append(h);
+  const intro=document.createElement('p');intro.textContent='Fera Solution builds tailored software, web applications, APIs, integrations and websites. We select technology around your requirements, budget, scalability, security and existing infrastructure.';section.append(intro);
+  const actual=document.createElement('p');actual.textContent='Actual demo stack: JavaScript, HTML5 and CSS3. The accounting and CRM applications use this stack for working calculations and browser interactions. These demos have no production backend or external integrations.';section.append(actual);
+  const detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Technology options for a custom project';detail.append(summary);
+  const dl=document.createElement('dl');groups.forEach(([name,options])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=name;dd.textContent=options;dl.append(dt,dd);});detail.append(dl);
+  const limit=document.createElement('p');limit.textContent='These are options depending on scope—not a claim that every technology is currently deployed or that every service is a standardized product. The proposed stack, production controls and integrations are agreed before implementation.';detail.append(limit);section.append(detail);
+  const cta=document.createElement('a');cta.textContent='Discuss Your Project';cta.href=(document.querySelector('meta[name=fera-contact]')?.content || new URL('../../../../../contact/',document.baseURI).href);cta.target='_blank';cta.rel='noopener';section.append(cta);
+  const footer=document.querySelector('footer');if(footer)footer.before(section);else document.body.append(section);
+})();
