@@ -3,8 +3,8 @@
  * AI chat assistant for the site's "Let's talk" panel.
  *
  * Visitors chat with an AI first; "Talk to an agent" hands over to Tawk.to.
- * The AI runs on the Claude API through this server (the API key never reaches
- * the browser). Without a key the panel falls back to built-in canned answers.
+ * The AI runs through this server on Groq (free), Google Gemini (free tier) or
+ * Claude (paid) — the API key never reaches the browser. Without a key the panel falls back to built-in canned answers.
  *
  * Settings → Fera AI Chat.
  *
@@ -20,8 +20,9 @@ function fera_ai_opts() {
 		is_array( $o ) ? $o : array(),
 		array(
 			'enabled'   => 0,
+			'provider'  => 'groq',
 			'api_key'   => '',
-			'model'     => 'claude-haiku-5-5',
+			'model'     => '',
 			'knowledge' => '',
 			'daily_cap' => 400,
 		)
@@ -140,42 +141,107 @@ function fera_ai_chat_handle( WP_REST_Request $req ) {
 		return new WP_REST_Response( array( 'ok' => false, 'reason' => 'empty' ), 400 );
 	}
 
-	$res = wp_remote_post(
-		'https://api.anthropic.com/v1/messages',
-		array(
-			'timeout' => 25,
-			'headers' => array(
-				'content-type'      => 'application/json',
-				'x-api-key'         => trim( (string) $o['api_key'] ),
-				'anthropic-version' => '2023-06-01',
-			),
-			'body'    => wp_json_encode(
-				array(
-					'model'      => sanitize_text_field( $o['model'] ? $o['model'] : 'claude-haiku-5-5' ),
-					'max_tokens' => 400,
-					'system'     => fera_ai_system_prompt(),
-					'messages'   => $msgs,
-				)
-			),
-		)
-	);
-	if ( is_wp_error( $res ) || 200 !== (int) wp_remote_retrieve_response_code( $res ) ) {
-		update_option( 'fera_ai_last_error', array( 'time' => time(), 'code' => is_wp_error( $res ) ? $res->get_error_message() : wp_remote_retrieve_response_code( $res ) . ' ' . mb_substr( wp_remote_retrieve_body( $res ), 0, 300 ) ), false );
+	$result = fera_ai_call( $o, fera_ai_system_prompt(), $msgs );
+	if ( is_wp_error( $result ) ) {
+		update_option( 'fera_ai_last_error', array( 'time' => time(), 'code' => $result->get_error_message() ), false );
 		return new WP_REST_Response( array( 'ok' => false, 'reason' => 'upstream' ), 200 );
 	}
-	$body  = json_decode( wp_remote_retrieve_body( $res ), true );
-	$reply = '';
-	foreach ( (array) ( $body['content'] ?? array() ) as $block ) {
-		if ( isset( $block['type'], $block['text'] ) && 'text' === $block['type'] ) {
-			$reply .= $block['text'];
-		}
-	}
+	$reply = (string) $result;
 	$agent = false !== strpos( $reply, '[[AGENT]]' );
 	$reply = trim( str_replace( '[[AGENT]]', '', $reply ) );
 	if ( '' === $reply ) {
 		return new WP_REST_Response( array( 'ok' => false, 'reason' => 'empty-reply' ), 200 );
 	}
 	return new WP_REST_Response( array( 'ok' => true, 'reply' => wp_strip_all_tags( $reply ), 'agent' => $agent ), 200 );
+}
+
+/** Default model per provider. */
+function fera_ai_default_model( $provider ) {
+	$m = array(
+		'groq'      => 'openai/gpt-oss-120b',
+		'gemini'    => 'gemini-flash-latest',
+		'anthropic' => 'claude-haiku-5-5',
+	);
+	return $m[ $provider ] ?? $m['groq'];
+}
+
+/**
+ * Call the selected AI provider. Returns reply text or WP_Error.
+ *
+ * @param array  $o      Options.
+ * @param string $system System prompt.
+ * @param array  $msgs   [{role, content}] alternating, ending with user.
+ * @return string|WP_Error
+ */
+function fera_ai_call( $o, $system, $msgs ) {
+	$provider = in_array( $o['provider'], array( 'groq', 'gemini', 'anthropic' ), true ) ? $o['provider'] : 'groq';
+	$model    = sanitize_text_field( $o['model'] ? $o['model'] : fera_ai_default_model( $provider ) );
+	$key      = trim( (string) $o['api_key'] );
+
+	if ( 'gemini' === $provider ) {
+		$contents = array();
+		foreach ( $msgs as $m ) {
+			$contents[] = array( 'role' => 'assistant' === $m['role'] ? 'model' : 'user', 'parts' => array( array( 'text' => $m['content'] ) ) );
+		}
+		$url  = 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode( $model ) . ':generateContent';
+		$args = array(
+			'headers' => array( 'content-type' => 'application/json', 'x-goog-api-key' => $key ),
+			'body'    => wp_json_encode(
+				array(
+					'systemInstruction' => array( 'parts' => array( array( 'text' => $system ) ) ),
+					'contents'          => $contents,
+					'generationConfig'  => array( 'maxOutputTokens' => 400, 'temperature' => 0.4 ),
+				)
+			),
+		);
+	} elseif ( 'anthropic' === $provider ) {
+		$url  = 'https://api.anthropic.com/v1/messages';
+		$args = array(
+			'headers' => array( 'content-type' => 'application/json', 'x-api-key' => $key, 'anthropic-version' => '2023-06-01' ),
+			'body'    => wp_json_encode( array( 'model' => $model, 'max_tokens' => 400, 'system' => $system, 'messages' => $msgs ) ),
+		);
+	} else { // Groq (OpenAI-compatible).
+		$payload = array(
+			'model'       => $model,
+			'max_tokens'  => 900,
+			'temperature' => 0.4,
+			'messages'    => array_merge( array( array( 'role' => 'system', 'content' => $system ) ), $msgs ),
+		);
+		if ( 0 === strpos( $model, 'openai/gpt-oss' ) ) {
+			$payload['reasoning_effort']  = 'low';
+			$payload['include_reasoning'] = false;
+		}
+		$url  = 'https://api.groq.com/openai/v1/chat/completions';
+		$args = array(
+			'headers' => array( 'content-type' => 'application/json', 'authorization' => 'Bearer ' . $key ),
+			'body'    => wp_json_encode( $payload ),
+		);
+	}
+	$args['timeout'] = 25;
+	$res = wp_remote_post( $url, $args );
+	if ( is_wp_error( $res ) ) {
+		return $res;
+	}
+	$code = (int) wp_remote_retrieve_response_code( $res );
+	$body = json_decode( wp_remote_retrieve_body( $res ), true );
+	if ( 200 !== $code ) {
+		return new WP_Error( 'fera_ai_http', $provider . ' ' . $code . ' ' . mb_substr( wp_remote_retrieve_body( $res ), 0, 300 ) );
+	}
+	$text = '';
+	if ( 'gemini' === $provider ) {
+		foreach ( (array) ( $body['candidates'][0]['content']['parts'] ?? array() ) as $part ) {
+			$text .= $part['text'] ?? '';
+		}
+	} elseif ( 'anthropic' === $provider ) {
+		foreach ( (array) ( $body['content'] ?? array() ) as $block ) {
+			if ( isset( $block['type'], $block['text'] ) && 'text' === $block['type'] ) {
+				$text .= $block['text'];
+			}
+		}
+	} else {
+		$text = (string) ( $body['choices'][0]['message']['content'] ?? '' );
+	}
+	return $text;
 }
 
 /* ---------- Settings → Fera AI Chat ---------- */
@@ -200,8 +266,9 @@ add_action(
 					$key = trim( (string) ( $in['api_key'] ?? '' ) );
 					return array(
 						'enabled'   => empty( $in['enabled'] ) ? 0 : 1,
+						'provider'  => in_array( $in['provider'] ?? 'groq', array( 'groq', 'gemini', 'anthropic' ), true ) ? $in['provider'] : 'groq',
 						'api_key'   => ( '' === $key ) ? $old['api_key'] : sanitize_text_field( $key ), // blank = keep current key.
-						'model'     => sanitize_text_field( $in['model'] ?? 'claude-haiku-5-5' ),
+						'model'     => sanitize_text_field( $in['model'] ?? '' ),
 						'knowledge' => sanitize_textarea_field( $in['knowledge'] ?? '' ),
 						'daily_cap' => max( 1, min( 5000, (int) ( $in['daily_cap'] ?? 400 ) ) ),
 					);
@@ -231,12 +298,20 @@ function fera_ai_settings_page() {
 			<?php settings_fields( 'fera_ai_chat' ); ?>
 			<table class="form-table" role="presentation">
 				<tr><th scope="row">Enable AI</th><td><label><input type="checkbox" name="fera_ai_chat[enabled]" value="1" <?php checked( ! empty( $o['enabled'] ) ); ?>> Let the AI answer visitors</label></td></tr>
-				<tr><th scope="row"><label for="fera-ai-key">Claude API key</label></th><td>
-					<input id="fera-ai-key" type="password" class="regular-text" name="fera_ai_chat[api_key]" value="" autocomplete="new-password" placeholder="<?php echo $has ? esc_attr( 'Saved: ••••' . substr( $o['api_key'], -4 ) . ' (leave blank to keep)' ) : 'sk-ant-…'; ?>">
-					<p class="description">Create a key at console.anthropic.com → API keys. It stays on this server and is never shown to visitors.</p>
+				<tr><th scope="row"><label for="fera-ai-provider">AI provider</label></th><td>
+					<select id="fera-ai-provider" name="fera_ai_chat[provider]">
+						<option value="groq" <?php selected( $o['provider'], 'groq' ); ?>>Groq — free (recommended)</option>
+						<option value="gemini" <?php selected( $o['provider'], 'gemini' ); ?>>Google Gemini — free tier</option>
+						<option value="anthropic" <?php selected( $o['provider'], 'anthropic' ); ?>>Claude (Anthropic) — paid</option>
+					</select>
+					<p class="description"><strong>Groq:</strong> free key at console.groq.com → API Keys (no card). <strong>Gemini:</strong> free key at aistudio.google.com → Get API key. <strong>Claude:</strong> console.anthropic.com (needs credit).</p>
 				</td></tr>
-				<tr><th scope="row"><label for="fera-ai-model">Model</label></th><td><input id="fera-ai-model" type="text" class="regular-text" name="fera_ai_chat[model]" value="<?php echo esc_attr( $o['model'] ); ?>"><p class="description">Default <code>claude-haiku-5-5</code> (fast and low-cost).</p></td></tr>
-				<tr><th scope="row"><label for="fera-ai-cap">Daily message limit</label></th><td><input id="fera-ai-cap" type="number" min="1" max="5000" name="fera_ai_chat[daily_cap]" value="<?php echo esc_attr( (string) $o['daily_cap'] ); ?>"><p class="description">After this many AI replies in a day, the chat switches to quick answers until tomorrow. Keeps costs predictable.</p></td></tr>
+				<tr><th scope="row"><label for="fera-ai-key">API key</label></th><td>
+					<input id="fera-ai-key" type="password" class="regular-text" name="fera_ai_chat[api_key]" value="" autocomplete="new-password" placeholder="<?php echo $has ? esc_attr( 'Saved: ••••' . substr( $o['api_key'], -4 ) . ' (leave blank to keep)' ) : 'Paste your API key'; ?>">
+					<p class="description">The key stays on this server and is never shown to visitors. When you switch provider, paste that provider's key.</p>
+				</td></tr>
+				<tr><th scope="row"><label for="fera-ai-model">Model</label></th><td><input id="fera-ai-model" type="text" class="regular-text" name="fera_ai_chat[model]" value="<?php echo esc_attr( $o['model'] ); ?>" placeholder="<?php echo esc_attr( fera_ai_default_model( $o['provider'] ) ); ?>"><p class="description">Leave blank for the default: Groq <code>openai/gpt-oss-120b</code>, Gemini <code>gemini-flash-latest</code>, Claude <code>claude-haiku-5-5</code>.</p></td></tr>
+				<tr><th scope="row"><label for="fera-ai-cap">Daily message limit</label></th><td><input id="fera-ai-cap" type="number" min="1" max="5000" name="fera_ai_chat[daily_cap]" value="<?php echo esc_attr( (string) $o['daily_cap'] ); ?>"><p class="description">After this many AI replies in a day, the chat switches to quick answers until tomorrow. Keep it under the free plan's daily limit.</p></td></tr>
 				<tr><th scope="row"><label for="fera-ai-kn">Extra knowledge</label></th><td><textarea id="fera-ai-kn" name="fera_ai_chat[knowledge]" rows="8" class="large-text" placeholder="e.g. Office hours: Mon–Fri 9am–6pm ET. Website packages start from … Current offer: …"><?php echo esc_textarea( $o['knowledge'] ); ?></textarea><p class="description">Anything the assistant should know (hours, packages, offers, FAQs). It will only state facts from the site and from here.</p></td></tr>
 			</table>
 			<?php submit_button(); ?>
