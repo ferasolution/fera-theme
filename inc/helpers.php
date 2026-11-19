@@ -40,18 +40,50 @@ function fera_service( $slug ) {
 	return null;
 }
 
+/** Find a top-level page by slug (pages only — never media attachments). */
+function fera_get_page( $slug, $status = 'publish' ) {
+	$q = get_posts(
+		array(
+			'post_type'        => 'page',
+			'name'             => $slug,
+			'post_parent'      => 0,
+			'post_status'      => $status,
+			'posts_per_page'   => 1,
+			'suppress_filters' => true,
+		)
+	);
+	return $q ? $q[0] : null;
+}
+
 /** URL of a core page (falls back to /slug/ before the page exists). */
 function fera_page_url( $slug ) {
 	if ( 'home' === $slug ) {
 		return home_url( '/' );
 	}
-	$page = get_page_by_path( $slug );
+	$page = fera_get_page( $slug );
 	return $page ? get_permalink( $page ) : home_url( '/' . $slug . '/' );
+}
+
+/**
+ * Find a service post by slug. (get_page_by_path() would also match media
+ * attachments with the same name, e.g. an image called "content-writing".)
+ */
+function fera_get_service_post( $slug, $status = array( 'publish', 'draft', 'pending', 'private', 'future' ) ) {
+	$q = get_posts(
+		array(
+			'post_type'        => 'fera_service',
+			'name'             => $slug,
+			'post_status'      => $status,
+			'posts_per_page'   => 1,
+			'suppress_filters' => true,
+		)
+	);
+	return $q ? $q[0] : null;
 }
 
 /** URL of a service page. */
 function fera_service_url( $slug ) {
-	$post = get_page_by_path( $slug, OBJECT, 'fera_service' );
+	$post = fera_get_service_post( $slug, 'publish' );
 	return $post ? get_permalink( $post ) : home_url( '/services/' . $slug . '/' );
 }
 

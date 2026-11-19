@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FERA_THEME_VERSION', '1.0.1' );
+define( 'FERA_THEME_VERSION', '1.0.2' );
 define( 'FERA_DIR', get_template_directory() );
 define( 'FERA_URI', get_template_directory_uri() );
 

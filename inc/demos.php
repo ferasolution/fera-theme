@@ -54,8 +54,8 @@ function fera_demo_hub_id() {
 	if ( $id && 'publish' === get_post_status( $id ) ) {
 		return $id;
 	}
-	$p = get_page_by_path( 'experience' );
-	return ( $p && 'publish' === $p->post_status ) ? (int) $p->ID : 0;
+	$p = fera_get_page( 'experience' );
+	return $p ? (int) $p->ID : 0;
 }
 
 /** Is the current request a demo page / the hub? */

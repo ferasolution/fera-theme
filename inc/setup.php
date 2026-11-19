@@ -89,7 +89,7 @@ function fera_seed_content() {
 		'contact'  => 'Start a project with Fera Solution — USA office in Herndon, Virginia, serving clients worldwide. Call 337-252-4040 or email sales@ferasolution.com.',
 	);
 	foreach ( fera_core_pages() as $slug => $title ) {
-		if ( ! get_page_by_path( $slug ) ) {
+		if ( ! fera_get_page( $slug, array( 'publish', 'draft', 'pending', 'private', 'future', 'trash' ) ) ) {
 			wp_insert_post(
 				array(
 					'post_type'    => 'page',
@@ -105,7 +105,7 @@ function fera_seed_content() {
 	$order = 0;
 	foreach ( fera_services() as $s ) {
 		++$order;
-		$existing = get_page_by_path( $s['slug'], OBJECT, 'fera_service' );
+		$existing = fera_get_service_post( $s['slug'], array( 'publish', 'draft', 'pending', 'private', 'future', 'trash' ) );
 		if ( $existing ) {
 			if ( 'trash' === $existing->post_status ) {
 				wp_untrash_post( $existing->ID );
@@ -133,7 +133,7 @@ function fera_seed_content() {
 	}
 	// A Blog page for posts when the site has a static front page but no posts page yet.
 	if ( 'page' === get_option( 'show_on_front' ) && ! (int) get_option( 'page_for_posts' ) ) {
-		$blog    = get_page_by_path( 'blog' );
+		$blog    = fera_get_page( 'blog', array( 'publish', 'draft', 'private' ) );
 		$blog_id = $blog ? $blog->ID : wp_insert_post(
 			array(
 				'post_type'    => 'page',
