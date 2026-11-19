@@ -217,3 +217,13 @@ add_action(
 	},
 	6
 );
+
+/* ---- Site verification tags (moved here from the WPCode snippet) ---- */
+add_action(
+	'wp_head',
+	static function () {
+		echo '<meta name="facebook-domain-verification" content="3lbrq5yf4gppz2jjsag3u2a1eru09w">' . "\n";
+		echo '<meta name="gridinsoft-key" content="60occkd25ccl96jkn0ztpnu5wrfr97sx9wqmf75bu487ddvllvk4ddjeikvylk1u">' . "\n";
+	},
+	1
+);

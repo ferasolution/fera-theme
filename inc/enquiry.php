@@ -16,9 +16,81 @@ function fera_leads_email() {
 	return is_email( $e ) ? $e : 'sales@ferasolution.com';
 }
 
+/**
+ * Math check ("what is 7 + 4?"). The answer is never sent to the browser: the
+ * question comes with a signed token, and each token can be used only once.
+ * Generated per request, so it also works behind the page cache.
+ */
+function fera_captcha_sign( $payload ) {
+	return hash_hmac( 'sha256', $payload, wp_salt( 'auth' ) . 'fera-captcha' );
+}
+
+/** New question + token. */
+function fera_captcha_new() {
+	$op = wp_rand( 0, 2 );
+	if ( 0 === $op ) {
+		$a = wp_rand( 2, 15 );
+		$b = wp_rand( 2, 12 );
+		$q = $a . ' + ' . $b;
+		$ans = $a + $b;
+	} elseif ( 1 === $op ) {
+		$a = wp_rand( 8, 20 );
+		$b = wp_rand( 1, 7 );
+		$q = $a . ' − ' . $b;
+		$ans = $a - $b;
+	} else {
+		$a = wp_rand( 2, 9 );
+		$b = wp_rand( 2, 5 );
+		$q = $a . ' × ' . $b;
+		$ans = $a * $b;
+	}
+	$exp   = time() + 30 * MINUTE_IN_SECONDS;
+	$nonce = wp_generate_password( 12, false );
+	$body  = $exp . '.' . $nonce;
+	return array(
+		'q' => $q,
+		't' => $body . '.' . fera_captcha_sign( $ans . '|' . $body ),
+	);
+}
+
+/** Check an answer against its token (single use). */
+function fera_captcha_ok( $answer, $token ) {
+	$parts = explode( '.', (string) $token );
+	if ( 3 !== count( $parts ) || (int) $parts[0] < time() ) {
+		return false;
+	}
+	$answer = preg_replace( '/[^0-9\-]/', '', (string) $answer );
+	if ( '' === $answer ) {
+		return false;
+	}
+	$body = $parts[0] . '.' . $parts[1];
+	if ( ! hash_equals( fera_captcha_sign( (int) $answer . '|' . $body ), $parts[2] ) ) {
+		return false;
+	}
+	$used = 'fera_cap_' . md5( $parts[1] );
+	if ( get_transient( $used ) ) {
+		return false;
+	}
+	set_transient( $used, 1, 35 * MINUTE_IN_SECONDS );
+	return true;
+}
+
 add_action(
 	'rest_api_init',
 	static function () {
+		register_rest_route(
+			'fera/v1',
+			'/captcha',
+			array(
+				'methods'             => 'GET',
+				'permission_callback' => '__return_true',
+				'callback'            => static function () {
+					$r = new WP_REST_Response( fera_captcha_new(), 200 );
+					$r->header( 'Cache-Control', 'no-store, max-age=0' );
+					return $r;
+				},
+			)
+		);
 		register_rest_route(
 			'fera/v1',
 			'/enquiry',
@@ -45,11 +117,11 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 		return new WP_REST_Response( array( 'ok' => true ), 200 );
 	}
 
-	// Rate limit: 5 enquiries per 10 minutes per visitor IP.
+	// Rate limit: 8 attempts per 10 minutes per visitor IP.
 	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
 	$key = 'fera_rl_' . md5( $ip . wp_salt( 'nonce' ) );
 	$hits = (int) get_transient( $key );
-	if ( $hits >= 5 ) {
+	if ( $hits >= 8 ) {
 		return new WP_REST_Response( array( 'ok' => false, 'message' => 'Too many requests. Please email sales@ferasolution.com.' ), 429 );
 	}
 	set_transient( $key, $hits + 1, 10 * MINUTE_IN_SECONDS );
@@ -67,8 +139,33 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 	foreach ( array( 'name' => 120, 'phone' => 60, 'company' => 200, 'message' => 5000, 'budget' => 60 ) as $k => $max ) {
 		$f[ $k ] = mb_substr( $f[ $k ], 0, $max );
 	}
-	if ( '' === $f['name'] || ! is_email( $f['email'] ) ) {
-		return new WP_REST_Response( array( 'ok' => false, 'message' => 'Please add your name and a valid email address.' ), 400 );
+	$missing = array();
+	if ( ! $f['services'] ) {
+		$missing[] = 'services';
+	}
+	if ( ! empty( $p['needs_budget'] ) && '' === $f['budget'] ) {
+		$missing[] = 'budget';
+	}
+	if ( '' === $f['name'] ) {
+		$missing[] = 'name';
+	}
+	if ( ! is_email( $f['email'] ) ) {
+		$missing[] = 'email';
+	}
+	if ( strlen( preg_replace( '/\D/', '', $f['phone'] ) ) < 7 ) {
+		$missing[] = 'phone';
+	}
+	if ( '' === $f['company'] ) {
+		$missing[] = 'company';
+	}
+	if ( mb_strlen( trim( $f['message'] ) ) < 10 ) {
+		$missing[] = 'msg';
+	}
+	if ( $missing ) {
+		return new WP_REST_Response( array( 'ok' => false, 'fields' => $missing, 'message' => 'Please complete all required fields.' ), 400 );
+	}
+	if ( ! fera_captcha_ok( $p['cap'] ?? '', $p['cap_t'] ?? '' ) ) {
+		return new WP_REST_Response( array( 'ok' => false, 'fields' => array( 'cap' ), 'captcha' => fera_captcha_new(), 'message' => 'The answer to the quick check was not right. Please try the new question.' ), 400 );
 	}
 
 	$lines = array(

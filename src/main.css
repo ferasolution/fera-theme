@@ -744,6 +744,18 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 .demo-note{margin-top:22px;color:var(--muted);font-size:11px;letter-spacing:.12em}
 .u-link{color:var(--fg);text-decoration:underline;text-decoration-color:var(--red-hi);text-underline-offset:3px}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.req{color:var(--red-hi);font-style:normal;margin-left:2px}
+.field>.lbl{display:block}
+.field.bad input,.field.bad textarea,fieldset.bad .pick{outline:1px solid #FF6B6B;outline-offset:3px;border-radius:12px}
+.cap-label{display:block}
+.cap-label b{color:var(--fg);font-family:var(--mono,monospace);letter-spacing:.04em}
+.cap-row{display:flex;gap:10px;align-items:center;margin-top:8px}
+.cap-row input{flex:1;min-width:0}
+.cap-new{flex:none;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.cap-new:hover{border-color:var(--red)}
+.f-legal{display:flex;gap:18px;flex-wrap:wrap}
+.f-legal a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.f-legal a:hover{color:var(--fg)}
 .comment-respond{margin-top:56px}
 .comment-form p{display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
 .comment-form label{color:var(--muted);font-size:14px}

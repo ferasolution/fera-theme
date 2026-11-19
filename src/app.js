@@ -738,6 +738,28 @@ const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const formStart = Date.now();
 const labelOf = (inp) => { const s = inp.nextElementSibling; return (s ? s.textContent : inp.value).trim(); };
 function markNav() { const k = document.body.dataset.nav || ROUTE; $$('.nav-links a[data-page]').forEach((a) => a.classList.toggle('on', a.dataset.page === k)); }
+function setCap(f, j) {
+  if (!f || !j) return;
+  f.dataset.capT = j.t || '';
+  const q = $('[data-cap-q]', f); if (q) q.textContent = j.q || '';
+  if (f.elements.cap) f.elements.cap.value = '';
+}
+async function loadCap(f) {
+  if (!f || !$('[data-captcha]', f)) return;
+  try {
+    const r = await fetch((FERA.rest || '/wp-json/') + 'fera/v1/captcha?_=' + Date.now(), { cache: 'no-store' });
+    setCap(f, await r.json());
+  } catch (err) { const q = $('[data-cap-q]', f); if (q) q.textContent = '—'; }
+}
+$$('[data-fera-form]').forEach((f) => {
+  let done = false;
+  const go = () => { if (done) return; done = true; loadCap(f); };
+  f.addEventListener('focusin', go); f.addEventListener('pointerdown', go);
+  if ('IntersectionObserver' in window) { const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { go(); io.disconnect(); } }); io.observe(f); } else go();
+  f.addEventListener('input', (e) => { const b = e.target.closest('.field, fieldset'); if (b) b.classList.remove('bad'); });
+  f.addEventListener('change', (e) => { const b = e.target.closest('.field, fieldset'); if (b) b.classList.remove('bad'); });
+});
+document.addEventListener('click', (e) => { const b = e.target.closest('[data-cap-new]'); if (b) { e.preventDefault(); loadCap(b.closest('form')); } });
 document.addEventListener('submit', async (e) => {
   const f = e.target.closest('[data-fera-form]');
   if (!f) return;
@@ -745,21 +767,38 @@ document.addEventListener('submit', async (e) => {
   const note = $('.form-note', f), btn = $('button[type="submit"]', f);
   const say = (msg, bad) => { if (!note) return; note.textContent = msg; note.classList.toggle('err', !!bad); note.classList.add('show'); };
   const val = (n) => ((f.elements[n] && f.elements[n].value) || '').trim();
+  const boxOf = (n) => { if (n === 'services') { const i = $('input[name="svc"]', f); return i && i.closest('fieldset'); } if (n === 'budget') { const i = $('input[name="budget"]', f); return i && i.closest('fieldset'); } const el = f.elements[n === 'msg' ? 'msg' : n]; return el && (el.closest('.field') || el); };
+  const flag = (list) => { $$('.bad', f).forEach((x) => x.classList.remove('bad')); list.forEach((n) => { const b = boxOf(n); if (b) b.classList.add('bad'); }); const first = list.length && boxOf(list[0]); if (first) { const inp = first.querySelector ? (first.querySelector('input, textarea') || first) : first; try { inp.focus({ preventScroll: false }); } catch (err) {} } };
+  const hasBudget = !!$('input[name="budget"]', f);
   const data = {
     name: val('name'), email: val('email'), phone: val('phone'), company: val('company'), message: val('msg'),
     services: $$('input[name="svc"]:checked', f).map(labelOf),
     budget: (($('input[name="budget"]:checked', f)) ? labelOf($('input[name="budget"]:checked', f)) : ''),
+    needs_budget: hasBudget, cap: val('cap'), cap_t: f.dataset.capT || '',
     website_hp: val('website_hp'), elapsed: Date.now() - formStart, page: location.href
   };
-  if (!data.name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) { say('Please add your name and a valid email address.', true); return; }
+  const missing = [];
+  if (!data.services.length) missing.push('services');
+  if (hasBudget && !data.budget) missing.push('budget');
+  if (!data.name) missing.push('name');
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) missing.push('email');
+  if (data.phone.replace(/\D/g, '').length < 7) missing.push('phone');
+  if (!data.company) missing.push('company');
+  if (data.message.length < 10) missing.push('msg');
+  if (!data.cap) missing.push('cap');
+  if (missing.length) { flag(missing); say('Please complete all required fields (marked *), including the quick check.', true); return; }
+  if (!data.cap_t) { await loadCap(f); flag(['cap']); say('Please answer the quick check question.', true); return; }
   if (btn) btn.disabled = true;
   say('Sending…');
   try {
     const r = await fetch((FERA.rest || '/wp-json/') + 'fera/v1/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
     const j = await r.json().catch(() => ({}));
-    if (!r.ok || !j.ok) throw new Error(j.message || 'failed');
+    if (!r.ok || !j.ok) {
+      if (j && (j.fields || j.captcha)) { if (j.captcha) setCap(f, j.captcha); flag(j.fields || []); say(j.message || 'Please check the highlighted fields.', true); return; }
+      throw new Error(j.message || 'failed');
+    }
     say(j.message || 'Thank you! Your enquiry has been sent — we\'ll reply within one business day.');
-    f.reset();
+    f.reset(); $$('.bad', f).forEach((x) => x.classList.remove('bad')); loadCap(f);
     if (window.fbq) try { window.fbq('track', 'Lead'); } catch (err) {}
     if (window.gtag) try { window.gtag('event', 'generate_lead'); } catch (err) {}
   } catch (err) {
