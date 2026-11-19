@@ -1028,15 +1028,14 @@ Promise.all([fontsReady, loadAnim.then()]).then(() => {
   if (svcView) setupServiceAnimations();
   const root = homeView ? $('.hero') : svcView;
   const d0 = quick ? 0.15 : 0.75;
-  if (!reduced && root && navIn) {
+  if (!reduced && root && false) {
     if ($$('h1 .line > span', root).length) gsap.from($$('h1 .line > span', root), { yPercent: 118, rotate: 3, duration: 1.6, ease: 'expo.out', stagger: 0.12, delay: d0 });
     if ($$('[data-fade]', root).length) gsap.from($$('[data-fade]', root), { y: 30, opacity: 0, duration: 1.2, ease: 'power3.out', stagger: 0.1, delay: d0 + 0.25 });
     if (!quick) gsap.from('#nav > *', { y: -40, opacity: 0, duration: 1.2, ease: 'power3.out', stagger: 0.08, delay: 0.9 });
     setTimeout(() => $$('[data-scramble]').forEach(scramble), 1100);
   }
   // First paint is final (fast LCP / Speed Index); entrance motion only plays behind the page-transition curtain.
-  if (root && navIn) heroSignatureIntro(root, d0);
-  else if (root) { const ri = $('.hx-rule i', root); if (ri) ri.style.transform = 'scaleX(1)'; }
+  // Entrance motion is CSS-driven (starts at first paint; see main.css feraUp/feraFade/feraClip).
   ScrollTrigger.refresh();
   buildSecNav();
 });
