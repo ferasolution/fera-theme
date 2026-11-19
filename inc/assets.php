@@ -115,12 +115,12 @@ function fera_strip_builder_assets() {
 	}
 	global $wp_styles, $wp_scripts;
 	foreach ( (array) ( $wp_styles->queue ?? array() ) as $h ) {
-		if ( preg_match( '/^(elementor(?!-admin-bar|-common|-icons)|widget-|e-animation|e-swiper|swiper)/', $h ) ) {
+		if ( preg_match( '/^(elementor(?!-admin-bar|-common|-icons)|widget-|e-animation|e-swiper|swiper|contact-form-7)/', $h ) ) {
 			wp_dequeue_style( $h );
 		}
 	}
 	foreach ( (array) ( $wp_scripts->queue ?? array() ) as $h ) {
-		if ( preg_match( '/^(elementor-frontend|elementor-pro-frontend|elementor-waypoints|swiper)$/', $h ) ) {
+		if ( preg_match( '/^(elementor-frontend|elementor-pro-frontend|elementor-waypoints|swiper|contact-form-7|swv|wpcf7-recaptcha|google-recaptcha)$/', $h ) ) {
 			wp_dequeue_script( $h );
 		}
 	}

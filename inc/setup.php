@@ -105,7 +105,18 @@ function fera_seed_content() {
 	$order = 0;
 	foreach ( fera_services() as $s ) {
 		++$order;
-		if ( get_page_by_path( $s['slug'], OBJECT, 'fera_service' ) ) {
+		$existing = get_page_by_path( $s['slug'], OBJECT, 'fera_service' );
+		if ( $existing ) {
+			if ( 'trash' === $existing->post_status ) {
+				wp_untrash_post( $existing->ID );
+				wp_update_post( array( 'ID' => $existing->ID, 'post_status' => 'publish' ) );
+			}
+			continue;
+		}
+		$trashed = get_posts( array( 'post_type' => 'fera_service', 'post_status' => 'trash', 'name' => $s['slug'] . '__trashed', 'posts_per_page' => 1 ) );
+		if ( $trashed ) {
+			wp_untrash_post( $trashed[0]->ID );
+			wp_update_post( array( 'ID' => $trashed[0]->ID, 'post_status' => 'publish', 'post_name' => $s['slug'] ) );
 			continue;
 		}
 		wp_insert_post(
@@ -119,6 +130,22 @@ function fera_seed_content() {
 				'menu_order'   => $order,
 			)
 		);
+	}
+	// A Blog page for posts when the site has a static front page but no posts page yet.
+	if ( 'page' === get_option( 'show_on_front' ) && ! (int) get_option( 'page_for_posts' ) ) {
+		$blog    = get_page_by_path( 'blog' );
+		$blog_id = $blog ? $blog->ID : wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_title'   => 'Blog',
+				'post_name'    => 'blog',
+				'post_excerpt' => 'Insights on cybersecurity, web development, software and digital marketing from the Fera Solution team.',
+			)
+		);
+		if ( $blog_id && ! is_wp_error( $blog_id ) ) {
+			update_option( 'page_for_posts', $blog_id );
+		}
 	}
 	// Static front page + blog page, only if the site still shows latest posts on the front.
 	if ( 'posts' === get_option( 'show_on_front' ) ) {

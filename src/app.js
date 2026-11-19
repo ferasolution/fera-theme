@@ -1037,3 +1037,33 @@ Promise.all([fontsReady, loadAnim.then()]).then(() => {
   ScrollTrigger.refresh();
   buildSecNav();
 });
+
+/* ================= live demo gallery ================= */
+$$('[data-demo-gallery]').forEach((root) => {
+  const stage = $('.demo-stage', root), frame = stage && $('iframe', stage);
+  if (!stage || !frame) return;
+  let opener = null;
+  $$('.demo-filters button', root).forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.filter;
+    $$('.demo-filters button', root).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    $$('.demo-card', root).forEach((c) => { c.hidden = !(f === 'all' || c.dataset.category === f); });
+    ScrollTrigger.refresh();
+  }));
+  $$('.demo-open', root).forEach((b) => b.addEventListener('click', () => {
+    opener = b;
+    frame.src = b.dataset.src; frame.title = b.dataset.title;
+    $('.demo-title', stage).textContent = b.dataset.title;
+    stage.hidden = false;
+    ScrollTrigger.refresh();
+    scrollToEl(stage);
+    $('.demo-close', stage).focus({ preventScroll: true });
+  }));
+  $$('[data-device]', stage).forEach((b) => b.addEventListener('click', () => {
+    $$('[data-device]', stage).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    stage.classList.toggle('mobile', b.dataset.device === 'mobile');
+  }));
+  $('.demo-close', stage).addEventListener('click', () => {
+    stage.hidden = true; frame.src = 'about:blank'; ScrollTrigger.refresh();
+    if (opener) opener.focus({ preventScroll: true });
+  });
+});
