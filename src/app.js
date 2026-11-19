@@ -1068,3 +1068,10 @@ $$('[data-demo-gallery]').forEach((root) => {
     if (opener) opener.focus({ preventScroll: true });
   });
 });
+
+/* CSS loop animations start on the first interaction (keeps the first paint calm and fast) */
+(function () {
+  const ev = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'wheel', 'scroll'];
+  const wake = () => { document.documentElement.classList.remove('fera-idle'); ev.forEach((n) => removeEventListener(n, wake, true)); };
+  ev.forEach((n) => addEventListener(n, wake, { capture: true, passive: true }));
+})();

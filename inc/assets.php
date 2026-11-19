@@ -72,12 +72,12 @@ add_action(
 <meta name="format-detection" content="telephone=no">
 <script>
 window.FERA=<?php echo wp_json_encode( apply_filters( 'fera_frontend_config', $config ) ); ?>;
-(function(d){d.classList.add('fera-quick');try{if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
+(function(d){d.classList.add('fera-quick','fera-idle');try{if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
 window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/bodoni-moda-latin-wght-italic.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/img/markd-560.webp' ); ?>" as="image" type="image/webp" fetchpriority="high">
+<?php if ( is_front_page() ) : ?><link rel="preload" as="image" type="image/webp" fetchpriority="high" href="<?php echo esc_url( FERA_URI . '/assets/img/markd-560.webp' ); ?>" imagesrcset="<?php echo esc_url( FERA_URI . '/assets/img/markd-300.webp' ); ?> 300w, <?php echo esc_url( FERA_URI . '/assets/img/markd-560.webp' ); ?> 421w" imagesizes="(max-width: 760px) 70vw, 420px"><?php endif; ?>
 		<?php
 		if ( ! has_site_icon() ) {
 			printf( '<link rel="icon" href="%s" sizes="32x32">' . "\n", esc_url( FERA_URI . '/assets/img/icon-32.png' ) );
