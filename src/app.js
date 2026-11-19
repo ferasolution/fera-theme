@@ -989,7 +989,7 @@ gsap.ticker.add(() => {
 /* ================= v4: command palette ================= */
 const cmd = $('#cmd'), cmdIn = $('#cmdIn'), cmdList = $('#cmdList');
 const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
-$('#kbdK').textContent = isMac ? '⌘ K' : 'Ctrl K';
+
 const CMDS = [
   ...[['Home', 'home'], ['About', 'about'], ['Services', 'services'], ['Work', 'work'], ['Contact', 'contact']].map((x) => ({ g: 'Pages', t: x[0], k: 'Page', run: () => go(x[1] === 'home' ? FERA.home : (FERA.urls[x[1]] || FERA.home)) })),
   ...SERVICES.map((sv) => ({ g: 'Services', t: sv.name, k: String(sv.i + 1).padStart(2, '0'), run: () => go(FERA.svc[sv.slug] || FERA.home) })),
@@ -997,12 +997,17 @@ const CMDS = [
   { g: 'Actions', t: 'Chat with us', k: 'Chat', run: () => openChat() },
   { g: 'Actions', t: 'Email sales@ferasolution.com', k: 'Email', run: () => { location.href = 'mailto:sales@ferasolution.com'; } },
   { g: 'Actions', t: 'Call 337-252-4040', k: 'Phone', run: () => { location.href = 'tel:+13372524040'; } },
+  { g: 'Pages', t: 'Blog', k: 'Page', run: () => go((FERA.urls && FERA.urls.blog) || (FERA.home + 'blog/')) },
+  { g: 'Pages', t: 'Live demos', k: 'Page', run: () => go((FERA.urls && FERA.urls.experience) || (FERA.home + 'experience/')) },
+  { g: 'Actions', t: 'WhatsApp (337) 445-5717', k: 'WhatsApp', run: () => { window.open('https://wa.me/13374455717', '_blank', 'noopener'); } },
   { g: 'Actions', t: 'Toggle interface sound', k: 'Sound', run: () => setSound(!soundOn) }
 ];
 let cmdItems = [], cmdSel = 0;
 function renderCmd() {
   const q = cmdIn.value.trim().toLowerCase();
+  const raw = cmdIn.value.trim();
   cmdItems = CMDS.filter((c) => !q || (c.t + ' ' + c.k).toLowerCase().includes(q));
+  if (raw) cmdItems.unshift({ g: 'Search', t: 'Search the website for “' + raw + '”', k: 'Enter', run: () => go(FERA.home + '?s=' + encodeURIComponent(raw)) });
   cmdSel = Math.min(cmdSel, Math.max(0, cmdItems.length - 1));
   let g = '', html = '';
   cmdItems.forEach((c, i) => {

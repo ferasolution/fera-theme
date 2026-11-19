@@ -14,9 +14,9 @@
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="secnav" id="secnav" aria-label="Sections"></nav>
-<div id="cmd" role="dialog" aria-modal="true" aria-label="Quick navigation">
+<div id="cmd" role="dialog" aria-modal="true" aria-label="Search">
   <div class="cmd-box">
-    <div class="cmd-in"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="cmdIn">Search pages and actions</label><input id="cmdIn" type="text" placeholder="Jump to a service, section or action…" autocomplete="off" role="combobox" aria-controls="cmdList" aria-expanded="true"></div>
+    <div class="cmd-in"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="cmdIn">Search the website</label><input id="cmdIn" type="text" placeholder="Search services, pages or articles…" autocomplete="off" role="combobox" aria-controls="cmdList" aria-expanded="true"></div>
     <ul class="cmd-list" id="cmdList" role="listbox" data-lenis-prevent></ul>
     <div class="cmd-foot"><span>↑↓ Navigate</span><span>Enter Open</span><span>Esc Close</span></div>
   </div>
@@ -39,8 +39,7 @@
 
 <header class="nav" id="nav">
   <a href="{{URL:home}}" class="brand" aria-label="Fera Solution — home">
-    <img src="{{IMG}}/markd-96.webp" alt="" width="31" height="40">
-    <span><b>Fera Solution</b><small>Technology. With purpose.</small></span>
+    <img src="{{IMG}}/markd-96.webp" alt="Fera Solution" width="33" height="43">
   </a>
   <nav class="nav-links" aria-label="Main">
     <a href="{{URL:home}}" data-page="home"><span class="roll"><span data-t="Home">Home</span></span></a>
@@ -50,9 +49,8 @@
     <a href="{{URL:contact}}" data-page="contact"><span class="roll"><span data-t="Contact">Contact</span></span></a>
   </nav>
   <div class="nav-right">
-    <span class="clock mono" id="clock1">Herndon, VA, USA</span>
     <button type="button" class="tool snd" id="sndBtn" aria-pressed="false" aria-label="Interface sound"><i></i><i></i><i></i><i></i></button>
-    <button type="button" class="tool k" id="cmdBtn" aria-label="Quick navigation" data-cursor="Jump"><kbd id="kbdK">Ctrl K</kbd></button>
+    <button type="button" class="tool k search-btn" id="cmdBtn" aria-label="Search" data-cursor="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
     <button type="button" class="btn btn-red magnetic" data-open-contact><span class="roll"><span data-t="Start a project">Start a project</span></span></button>
     <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i><span></span><span></span></i></button>
   </div>
