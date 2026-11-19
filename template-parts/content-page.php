@@ -48,7 +48,7 @@ while ( have_posts() ) :
 				}
 				?>
 			</section>
-			<div class="prose-wrap">
+			<div class="prose-wrap" data-scene="pg-galaxy">
 				<?php
 				if ( has_post_thumbnail() && is_singular( 'post' ) ) {
 					the_post_thumbnail( 'large', array( 'class' => 'post-thumb', 'loading' => 'eager', 'fetchpriority' => 'high' ) );
