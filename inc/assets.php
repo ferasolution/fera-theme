@@ -209,3 +209,49 @@ add_action(
 	},
 	10001
 );
+
+/**
+ * Inline the consent banner stylesheet (it is tiny) so it no longer blocks first paint.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	static function () {
+		if ( is_admin() ) {
+			return;
+		}
+		$styles = wp_styles();
+		foreach ( (array) $styles->queue as $handle ) {
+			$src = isset( $styles->registered[ $handle ] ) ? (string) $styles->registered[ $handle ]->src : '';
+			if ( ! preg_match( '#/plugins/fera-consent/([\w\-/]+\.css)#', $src, $m ) ) {
+				continue;
+			}
+			$file = WP_PLUGIN_DIR . '/fera-consent/' . $m[1];
+			if ( is_readable( $file ) && filesize( $file ) < 40000 ) {
+				$css = (string) file_get_contents( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+				wp_dequeue_style( $handle );
+				wp_register_style( 'fera-consent-inline', false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters
+				wp_enqueue_style( 'fera-consent-inline' );
+				wp_add_inline_style( 'fera-consent-inline', $css );
+			}
+		}
+	},
+	10000
+);
+
+/**
+ * The Meta pixel plugin prints an inline call to its signal object even while the consent
+ * plugin holds the real script back, which logs a ReferenceError. This early stub queues
+ * those calls and replays them on the real object once consent loads it (nothing is sent before).
+ */
+add_action(
+	'wp_head',
+	static function () {
+		if ( is_admin() ) {
+			return;
+		}
+		?>
+<script id="fera-signal-stub" data-category="necessary">(function(w,n){if(w[n])return;var q=[],real=null,stub={};['init','initPixel','track','trackCustom'].forEach(function(f){stub[f]=function(){q.push([f,arguments]);};});try{Object.defineProperty(w,n,{configurable:true,get:function(){return real||stub;},set:function(v){real=v;try{Object.defineProperty(w,n,{value:v,writable:true,configurable:true});}catch(e){}q.forEach(function(c){try{v[c[0]].apply(v,c[1]);}catch(e){}});q=[];}});}catch(e){w[n]=stub;}})(window,'Face'+'book'+'Signal');</script>
+		<?php
+	},
+	0
+);

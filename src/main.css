@@ -691,11 +691,11 @@ body.admin-bar #nav{top:32px}
 .stage-fallback{opacity:0}
 html.no-gl .stage-fallback{opacity:1}
 html.fera-idle *,html.fera-idle *::before,html.fera-idle *::after{animation-play-state:paused!important}
-@keyframes feraUp{from{transform:translateY(118%) rotate(3deg)}to{transform:none}}
+@keyframes feraUp{from{transform:translateY(34%) rotate(1.5deg);opacity:.04}to{transform:none;opacity:1}}
 @keyframes feraFade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @keyframes feraClip{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% -20% 0)}}
 @keyframes feraRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-html.fera-quick .hero h1 .line>span,html.fera-quick .s-hero h1 .line>span{animation:feraUp 1.4s cubic-bezier(.16,1,.3,1) .05s both!important;animation-play-state:running!important}
+html.fera-quick .hero h1 .line>span,html.fera-quick .s-hero h1 .line>span{animation:feraUp 1.1s cubic-bezier(.16,1,.3,1) 0s both!important;animation-play-state:running!important}
 html.fera-quick .hero h1 .line:nth-child(2)>span,html.fera-quick .s-hero h1 .line:nth-child(2)>span{animation-delay:.17s!important}
 html.fera-quick .hero h1 .line:nth-child(3)>span,html.fera-quick .s-hero h1 .line:nth-child(3)>span{animation-delay:.29s!important}
 html.fera-quick .hero [data-fade],html.fera-quick .s-hero [data-fade],html.fera-quick .hero .hx-w{animation:feraFade 1.1s cubic-bezier(.22,1,.36,1) .35s both!important;animation-play-state:running!important}
