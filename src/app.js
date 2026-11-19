@@ -185,10 +185,18 @@ async function initGL() {
   await loadThree();
   const canvas = $('#gl');
   let renderer;
-  try { renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' }); }
+  try { renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'default', failIfMajorPerformanceCaveat: true }); }
   catch (e) { return null; }
   const small = mobile();
-  const PR = Math.min(devicePixelRatio, small ? 1.5 : 1.75);
+  const lowEnd = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+  const PR = Math.min(devicePixelRatio, small || lowEnd ? 1.25 : 1.5);
+  // If the GPU drops the context, fall back to the static logo instead of a blank page.
+  canvas.addEventListener('webglcontextlost', (ev) => {
+    ev.preventDefault();
+    try { renderer.setAnimationLoop(null); } catch (err) {}
+    document.documentElement.classList.remove('gl-on');
+    document.documentElement.classList.add('no-gl');
+  }, false);
   renderer.setPixelRatio(PR);
   renderer.setSize(innerWidth, innerHeight);
 
@@ -198,7 +206,7 @@ async function initGL() {
   camera.position.set(0, 0, 9);
 
   // ---- sample logo ----
-  const N = small ? 12000 : 30000;
+  const N = small ? 9000 : (lowEnd ? 16000 : 24000);
   const img = await loadImage(MARK);
   const cw = 360, ch = Math.round(360 * img.height / img.width);
   const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
