@@ -66,7 +66,7 @@ add_action(
 <meta name="color-scheme" content="dark">
 <meta name="format-detection" content="telephone=no">
 <script>
-window.FERA=<?php echo wp_json_encode( $config ); ?>;
+window.FERA=<?php echo wp_json_encode( apply_filters( 'fera_frontend_config', $config ) ); ?>;
 (function(d){try{if(sessionStorage.getItem('fera-v'))d.classList.add('fera-quick');if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
 window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
 </script>

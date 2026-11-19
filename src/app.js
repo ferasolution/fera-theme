@@ -599,14 +599,25 @@ function toggleChat(force) {
   if (open) setTimeout(() => $('#chatIn').focus({ preventScroll: true }), 300);
 }
 const hasTawk = () => window.Tawk_API && typeof window.Tawk_API.maximize === 'function';
-function openChat() {
-  if (hasTawk()) { try { window.Tawk_API.showWidget(); window.Tawk_API.maximize(); } catch (err) { toggleChat(true); } return; }
-  toggleChat(true);
+fab.addEventListener('click', () => toggleChat());
+function openChat() { toggleChat(true); }
+function talkToAgent() {
+  if (hasTawk()) {
+    toggleChat(false);
+    try { window.Tawk_API.showWidget(); window.Tawk_API.maximize(); } catch (err) {}
+    return;
+  }
+  addMsg('Our team is happy to help — call 337-252-4040 or email sales@ferasolution.com and a person will get back to you within one business day.', 'bot');
 }
-fab.addEventListener('click', () => (chat.classList.contains('open') ? toggleChat(false) : openChat()));
+document.addEventListener('click', (e) => { if (e.target.closest('[data-agent]')) { e.preventDefault(); talkToAgent(); } });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeDrawer(); closeMenu(); toggleChat(false); } });
-function addMsg(text, who) { const d = document.createElement('div'); d.className = 'msg ' + who; d.textContent = text; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; }
+function addMsg(text, who, agentBtn) {
+  const d = document.createElement('div'); d.className = 'msg ' + who; d.textContent = text;
+  if (agentBtn) { const b = document.createElement('button'); b.type = 'button'; b.className = 'msg-agent'; b.setAttribute('data-agent', ''); b.textContent = 'Talk to an agent'; d.appendChild(document.createElement('br')); d.appendChild(b); }
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d;
+}
 const REPLIES = [
+  [/human|agent|person|someone|representative|real person|call me/i, 'Sure — tap the button below and a member of our team will take it from here.', true],
   [/secur|hack|breach|pen ?test|cyber/i, 'Security is where we started. We can begin with a risk assessment of your website and systems, then a remediation plan. Want our team to reach out?'],
   [/store|shop|e-?com|woo|product/i, 'We build premium, fast online stores on Shopify, WooCommerce or fully custom — payments and shipping included. Roughly how many products do you sell?'],
   [/social|instagram|facebook|tiktok|linkedin/i, 'Our social team handles posting, community replies and monthly reports. Which platforms are you on today?'],
@@ -617,14 +628,34 @@ const REPLIES = [
   [/web|site|3d|landing|wordpress/i, 'A website like this one — 3D, motion and fast — or a clean WordPress business site. Do you have a current site we should look at?'],
   [/price|cost|budget|quote|rate|pricing/i, 'Every project is scoped individually. Share a few details via "Start a project" or email sales@ferasolution.com and we will send a quote within one business day.']
 ];
-function botReply(text) {
+const chatLog = [];
+let aiBusy = false;
+function localReply(text) {
+  const hit = REPLIES.find(([re]) => re.test(text));
+  return hit ? { text: hit[1], agent: !!hit[2] } : { text: 'Thanks! I can help with websites, software, security, marketing, design, content, e-commerce and social media. If you would rather speak to a person, tap “Talk to an agent”.', agent: true };
+}
+async function botReply(text) {
+  if (aiBusy) return;
+  aiBusy = true;
+  chatLog.push({ role: 'user', content: text.slice(0, 1000) });
   const typing = document.createElement('div'); typing.className = 'msg bot typing'; typing.innerHTML = '<i></i><i></i><i></i>';
   msgs.appendChild(typing); msgs.scrollTop = msgs.scrollHeight;
-  const hit = REPLIES.find(([re]) => re.test(text));
-  setTimeout(() => { typing.remove(); addMsg(hit ? hit[1] : 'Thanks! A team member will join shortly — you can also call 337-252-4040. Which service are you interested in?', 'bot'); }, 900 + Math.random() * 600);
+  let out = null;
+  if (FERA.ai) {
+    try {
+      const r = await fetch((FERA.rest || '/wp-json/') + 'fera/v1/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: chatLog.slice(-12), page: location.pathname }) });
+      const j = await r.json();
+      if (r.ok && j.ok && j.reply) out = { text: j.reply, agent: !!j.agent };
+    } catch (err) {}
+  }
+  if (!out) { await new Promise((res) => setTimeout(res, 700 + Math.random() * 500)); out = localReply(text); }
+  typing.remove();
+  chatLog.push({ role: 'assistant', content: out.text });
+  addMsg(out.text, 'bot', out.agent);
+  aiBusy = false;
 }
-$('#chatForm').addEventListener('submit', (e) => { e.preventDefault(); const inp = $('#chatIn'); const t = inp.value.trim(); if (!t) return; addMsg(t, 'me'); inp.value = ''; botReply(t); });
-$$('#quick button').forEach((b) => b.addEventListener('click', () => { addMsg(b.textContent, 'me'); botReply(b.textContent); }));
+$('#chatForm').addEventListener('submit', (e) => { e.preventDefault(); const inp = $('#chatIn'); const t = inp.value.trim(); if (!t || aiBusy) return; addMsg(t, 'me'); inp.value = ''; botReply(t); });
+$$('#quick button:not([data-agent])').forEach((b) => b.addEventListener('click', () => { if (aiBusy) return; addMsg(b.textContent, 'me'); botReply(b.textContent); }));
 
 
 /* ================= service pages ================= */

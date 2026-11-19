@@ -16,3 +16,4 @@ require FERA_DIR . '/inc/setup.php';
 require FERA_DIR . '/inc/assets.php';
 require FERA_DIR . '/inc/seo.php';
 require FERA_DIR . '/inc/enquiry.php';
+require FERA_DIR . '/inc/ai-chat.php';
