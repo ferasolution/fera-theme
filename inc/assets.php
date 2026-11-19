@@ -70,9 +70,11 @@ add_action(
 <meta name="theme-color" content="#070607">
 <meta name="color-scheme" content="dark">
 <meta name="format-detection" content="telephone=no">
-<script>
+<script id="fera-config" data-cfasync="false" data-category="necessary">
 window.FERA=<?php echo wp_json_encode( apply_filters( 'fera_frontend_config', $config ) ); ?>;
 (function(d){d.classList.add('fera-quick','fera-idle');try{if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
+</script>
+<script id="fera-chat-setup" data-category="necessary">
 window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
