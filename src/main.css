@@ -744,6 +744,18 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 .demo-note{margin-top:22px;color:var(--muted);font-size:11px;letter-spacing:.12em}
 .u-link{color:var(--fg);text-decoration:underline;text-decoration-color:var(--red-hi);text-underline-offset:3px}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.comment-respond{margin-top:56px}
+.comment-form p{display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.comment-form label{color:var(--muted);font-size:14px}
+.comment-form input[type=text],.comment-form input[type=email],.comment-form input[type=url],.comment-form textarea{width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(20,16,17,.6);color:var(--fg);font:inherit;transition:border-color .25s}
+.comment-form input:focus,.comment-form textarea:focus{outline:none;border-color:var(--red)}
+.comment-form textarea{min-height:150px;resize:vertical}
+.comment-form .comment-form-cookies-consent{flex-direction:row;align-items:center;gap:10px}
+.comment-form .comment-form-cookies-consent input{accent-color:var(--red);width:18px;height:18px}
+.comment-form input[type=submit]{min-height:50px;padding:0 26px;border-radius:999px;border:0;background:var(--red);color:#fff;font:inherit;font-weight:500;cursor:pointer;transition:background .25s}
+.comment-form input[type=submit]:hover{background:var(--red-hi)}
+.comment-list{list-style:none;padding:0}
+.comment-list .comment-body{padding:22px;border:1px solid var(--line);border-radius:18px;margin-bottom:16px;background:rgba(20,16,17,.45)}
 .socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .socials a{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);color:var(--fg);transition:background .25s,border-color .25s,color .25s}
 .socials a:hover,.socials a:focus-visible{background:var(--red);border-color:var(--red);color:#fff}

@@ -168,6 +168,7 @@ const SCENES = {
   'pg-sphere': { w: [0, 1, 0, 0], x: 2.8, y: 0.15, z: -0.3, s: 1.15, dim: 0.9 },
   'pg-wave':   { w: [0, 0, 1, 0], x: 0, y: -1.4, z: 0, s: 1.0, dim: 0.75 },
   'pg-galaxy': { w: [0, 0, 0, 1], x: 1.2, y: 0, z: -0.3, s: 1.0, dim: 0.85 },
+  'pg-prose': { w: [0, 0, 0, 1], x: 1.6, y: 0, z: -1.6, s: 1.0, dim: 0.28 },
   svc:      { w: [0, 0, 0, 0], ic: 1, x: 2.75, y: 0.15, z: 0, s: 1.0, dim: 1 },
   svcbody:  { w: [0, 1, 0, 0], x: 3.0, y: 0.2, z: -1.6, s: 1.0, dim: 0.38 },
   svcwave:  { w: [0, 0, 1, 0], x: 0, y: -1.7, z: 0, s: 1.0, dim: 0.6 },
@@ -617,6 +618,7 @@ function openChat() { toggleChat(true); }
 function talkToAgent() {
   if (hasTawk()) {
     toggleChat(false);
+    window.feraAgentOpen = true;
     try { window.Tawk_API.showWidget(); window.Tawk_API.maximize(); } catch (err) {}
     return;
   }
@@ -928,7 +930,7 @@ document.addEventListener('pointerover', (e) => {
 document.addEventListener('click', (e) => { if (e.target.closest('a,button,summary') && !e.target.closest('#sndBtn,#stage')) sfx('click'); });
 
 /* ================= v4: section navigator ================= */
-const NAV_LABELS = { 'pg-logo': 'Overview', 'pg-sphere': 'Overview', 'pg-wave': 'Overview', 'pg-galaxy': 'Overview', hero: 'Intro', about: 'Studio', services: 'Services', work: 'Work', process: 'Process', why: 'Why Fera', cta: 'Contact', svc: 'Overview', svcbody: 'Included', svcwave: 'Process', svcfaq: 'FAQ' };
+const NAV_LABELS = { 'pg-logo': 'Overview', 'pg-sphere': 'Overview', 'pg-wave': 'Overview', 'pg-galaxy': 'Overview', 'pg-prose': 'Read', hero: 'Intro', about: 'Studio', services: 'Services', work: 'Work', process: 'Process', why: 'Why Fera', cta: 'Contact', svc: 'Overview', svcbody: 'Included', svcwave: 'Process', svcfaq: 'FAQ' };
 const secnav = $('#secnav');
 let navSecs = [];
 function buildSecNav() {

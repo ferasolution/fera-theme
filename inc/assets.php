@@ -75,7 +75,7 @@ window.FERA=<?php echo wp_json_encode( apply_filters( 'fera_frontend_config', $c
 (function(d){d.classList.add('fera-quick','fera-idle');try{if(sessionStorage.getItem('fera-nav'))d.classList.add('fera-nav-in');}catch(e){}})(document.documentElement);
 </script>
 <script id="fera-chat-setup" data-category="necessary">
-window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimized;T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};})(window.Tawk_API);
+window.Tawk_API=window.Tawk_API||{};(function(T,w){var h=T.onLoad,m=T.onChatMinimized,u=T.onUnreadCountChanged;function keep(){try{if(w.feraAgentOpen){T.showWidget();}else{T.hideWidget();}}catch(e){}}T.onLoad=function(){try{T.hideWidget();}catch(e){}if(h)h();};T.onChatMinimized=function(){try{T.hideWidget();}catch(e){}if(m)m();};T.onUnreadCountChanged=function(n){if(n>0)keep();if(u)u(n);};T.onChatMessageAgent=keep;T.onChatMessageSystem=keep;})(window.Tawk_API,window);
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/bodoni-moda-latin-wght-italic.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
