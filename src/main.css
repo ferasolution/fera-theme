@@ -688,7 +688,8 @@ html.fera-quick #loader{display:none}
 body.admin-bar #nav{top:32px}
 @media (max-width:782px){body.admin-bar #nav{top:46px}}
 .stage-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;transition:opacity 1.1s ease}
-.gl-on .stage-fallback{opacity:0}
+.stage-fallback{opacity:0}
+html.no-gl .stage-fallback{opacity:1}
 html.fera-idle *,html.fera-idle *::before,html.fera-idle *::after{animation-play-state:paused!important}
 @keyframes feraUp{from{transform:translateY(118%) rotate(3deg)}to{transform:none}}
 @keyframes feraFade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
