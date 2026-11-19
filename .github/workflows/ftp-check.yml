@@ -1,10 +1,12 @@
 name: FTP check (read-only)
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Download a copy of the themes folder (read-only)
+      - name: Download a copy of the previous theme (read-only on the server)
         env:
           H: ${{ secrets.FTP_SERVER }}
           U: ${{ secrets.STAGING_FTP_USERNAME }}
@@ -12,13 +14,12 @@ jobs:
         run: |
           sudo apt-get -qq install -y lftp >/dev/null
           mkdir -p snap
-          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; cls -la; mirror --parallel=4 --exclude-glob node_modules/ --exclude-glob *.zip fera-foundry snap/fera-foundry; bye" "$H" 2>&1 | tail -20
+          lftp -u "$U","$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; mirror --parallel=4 --exclude-glob node_modules/ --exclude-glob *.zip fera-foundry snap/fera-foundry; bye" "$H" 2>&1 | tail -5
           find snap -type f | wc -l
-          echo "==== TREE ===="; find snap -type f -not -path '*/assets/*' | sort | head -150
-          echo "==== EXPERIENCE REFS ===="; grep -rl -i "experience" snap --include=*.php | head -20
-          for f in $(grep -rl -i "experience" snap --include=*.php | head -6); do echo "==== FILE $f ===="; head -c 6000 "$f"; echo; done
-      - uses: actions/upload-artifact@v4
-        with:
-          name: themes-snapshot
-          path: snap
-          retention-days: 1
+      - name: Store snapshot on branch foundry-snapshot
+        run: |
+          cd snap/fera-foundry
+          git init -q -b foundry-snapshot
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add -A && git commit -qm "Snapshot of previous fera-foundry theme (read-only copy)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" foundry-snapshot
