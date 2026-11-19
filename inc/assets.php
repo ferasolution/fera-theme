@@ -169,6 +169,10 @@ add_action(
 			if ( empty( $wp_scripts->registered[ $handle ] ) || 1 === $wp_scripts->get_data( $handle, 'group' ) ) {
 				return;
 			}
+			// Some plugins print inline code in <head> that calls their script right away — leave those in place.
+			if ( preg_match( '#official-facebook-pixel|facebook-pixel#', (string) $wp_scripts->registered[ $handle ]->src . ' ' . $handle ) ) {
+				return;
+			}
 			$wp_scripts->add_data( $handle, 'group', 1 );
 			foreach ( (array) $wp_scripts->registered[ $handle ]->deps as $dep ) {
 				$move( $dep );
@@ -190,7 +194,8 @@ add_action(
 		}
 		global $wp_styles;
 		foreach ( (array) $wp_styles->queue as $h ) {
-			if ( preg_match( '/^(jetpack-forms|grunion|jetpack_css|aioseo-table-of-contents|aioseo-toc|wp-block-library|global-styles)/', $h ) || false !== strpos( (string) ( $wp_styles->registered[ $h ]->src ?? '' ), 'table-of-contents' ) || false !== strpos( (string) ( $wp_styles->registered[ $h ]->src ?? '' ), 'jetpack-forms' ) ) {
+			$src = (string) ( $wp_styles->registered[ $h ]->src ?? '' );
+			if ( preg_match( '/^(jetpack-forms|grunion|jetpack_css|aioseo-table-of-contents|aioseo-toc|wp-block-library|global-styles|mediaelement|wp-mediaelement)/', $h ) || preg_match( '#table-of-contents|jetpack-forms|paypal-payment|mediaelement#', $src ) ) {
 				wp_dequeue_style( $h );
 			}
 		}
