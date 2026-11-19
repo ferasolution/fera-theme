@@ -196,6 +196,7 @@ async function initGL() {
     try { renderer.setAnimationLoop(null); } catch (err) {}
     document.documentElement.classList.remove('gl-on');
     document.documentElement.classList.add('no-gl');
+    try { localStorage.setItem('fera-gl-off', String(Date.now())); } catch (err) {}
   }, false);
   renderer.setPixelRatio(PR);
   renderer.setSize(innerWidth, innerHeight);
@@ -281,7 +282,7 @@ async function initGL() {
   scene.add(dust);
 
   const composer = new EffectComposer(renderer);
-  composer.setPixelRatio(PR);
+  composer.setPixelRatio(Math.min(PR, 1.25));
   composer.setSize(innerWidth, innerHeight);
   composer.addPass(new RenderPass(scene, camera));
   const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.55, 0.5, 0.2);
@@ -358,9 +359,12 @@ async function initGL() {
     bloom.strength = 0.55 * cur.dim + vel * 0.5 + (last === 'hero' ? heroFly * 0.5 : 0);
     composer.render();
   }
-  renderer.setAnimationLoop(frame);
+  const safeFrame = () => { if (document.hidden || innerWidth < 2 || innerHeight < 2) return; frame(); };
+  renderer.setAnimationLoop(safeFrame);
+  document.addEventListener('visibilitychange', () => { renderer.setAnimationLoop(document.hidden ? null : safeFrame); if (!document.hidden) clock.getDelta(); });
 
   addEventListener('resize', () => {
+    if (innerWidth < 2 || innerHeight < 2) return;
     camera.aspect = innerWidth / innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(innerWidth, innerHeight);
@@ -434,7 +438,8 @@ function softwareGL() {
   } catch (err) { return true; }
 }
 const noGL = () => { document.documentElement.classList.add('no-gl'); return Promise.resolve(null); };
-const startGL = () => ((softwareGL() && !/[?&]fera-gl=force/.test(location.search)) ? noGL() : initGL()).then((api) => {
+const glRecentlyLost = () => { try { const t = +localStorage.getItem('fera-gl-off') || 0; return Date.now() - t < 864e5; } catch (err) { return false; } };
+const startGL = () => (((softwareGL() || glRecentlyLost()) && !/[?&]fera-gl=force/.test(location.search)) ? noGL() : initGL()).then((api) => {
   gl = api;
   if (!gl) { document.documentElement.classList.add('no-gl'); return; }
   requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('gl-on')));
@@ -1083,4 +1088,5 @@ $$('[data-demo-gallery]').forEach((root) => {
   const ev = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'wheel', 'scroll'];
   const wake = () => { document.documentElement.classList.remove('fera-idle'); ev.forEach((n) => removeEventListener(n, wake, true)); };
   ev.forEach((n) => addEventListener(n, wake, { capture: true, passive: true }));
+  setTimeout(wake, 1800);
 })();
