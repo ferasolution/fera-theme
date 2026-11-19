@@ -429,6 +429,7 @@ const noGL = () => { document.documentElement.classList.add('no-gl'); return Pro
 const startGL = () => ((softwareGL() && !/[?&]fera-gl=force/.test(location.search)) ? noGL() : initGL()).then((api) => {
   gl = api;
   if (!gl) { document.documentElement.classList.add('no-gl'); return; }
+  requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('gl-on')));
   if (pendingIcon) gl.setIcon(pendingIcon);
   gl.scene(pendingScene, true);
 }).catch(() => document.documentElement.classList.add('no-gl'));

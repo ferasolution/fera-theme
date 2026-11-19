@@ -687,7 +687,9 @@ legend{font-size:14px;color:#CFC8C4;margin-bottom:12px;padding:0}
 html.fera-quick #loader{display:none}
 body.admin-bar #nav{top:32px}
 @media (max-width:782px){body.admin-bar #nav{top:46px}}
-.no-gl #stage{background:url(../img/markd-560.webp) center/contain no-repeat}
+.stage-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;transition:opacity 1.1s ease}
+.gl-on .stage-fallback{opacity:0}
+.chat-head img,.f-logo img{object-fit:contain}
 html.fera-quick body.loading{overflow:auto}
 html.fera-nav-in #curtain{visibility:visible;transform:none}
 .chat-head{position:relative}

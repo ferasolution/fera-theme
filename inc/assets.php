@@ -77,7 +77,7 @@ window.Tawk_API=window.Tawk_API||{};(function(T){var h=T.onLoad,m=T.onChatMinimi
 </script>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/geist-latin-wght-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/fonts/bodoni-moda-latin-wght-italic.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/img/markd-560.webp' ); ?>" as="image" type="image/webp">
+<link rel="preload" href="<?php echo esc_url( FERA_URI . '/assets/img/markd-560.webp' ); ?>" as="image" type="image/webp" fetchpriority="high">
 		<?php
 		if ( ! has_site_icon() ) {
 			printf( '<link rel="icon" href="%s" sizes="32x32">' . "\n", esc_url( FERA_URI . '/assets/img/icon-32.png' ) );
