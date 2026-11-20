@@ -1135,3 +1135,57 @@ $$('[data-demo-gallery]').forEach((root) => {
   ev.forEach((n) => addEventListener(n, wake, { capture: true, passive: true }));
   setTimeout(wake, 1800);
 })();
+
+/* ================= Why Fera tabs ================= */
+(() => {
+  const wx = $('[data-wx]');
+  if (!wx) return;
+  const tabs = $$('.wx-tab', wx), panels = $$('.wx-panel', wx), stage = $('.wx-stage', wx);
+  const DUR = 7000, reducedM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = 0, timer = null, inView = false, hover = false;
+  wx.style.setProperty('--wx-dur', DUR + 'ms');
+  const show = (i, focus) => {
+    cur = (i + tabs.length) % tabs.length;
+    tabs.forEach((t, k) => { const on = k === cur; t.classList.toggle('on', on); t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+    panels.forEach((p, k) => p.classList.toggle('on', k === cur));
+    const t = tabs[cur];
+    if (t && wx.querySelector('.wx-list').scrollWidth > wx.querySelector('.wx-list').clientWidth) t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    if (focus) t.focus();
+    restart();
+  };
+  const stop = () => { clearTimeout(timer); timer = null; };
+  const restart = () => {
+    stop();
+    const auto = !reducedM && inView && !hover;
+    wx.classList.toggle('auto', auto); wx.classList.toggle('paused', !auto);
+    if (!auto) return;
+    const t = tabs[cur]; const bar = t && t.querySelector('.wx-prog i');
+    if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+    timer = setTimeout(() => show(cur + 1), DUR);
+  };
+  tabs.forEach((t, k) => {
+    t.addEventListener('click', () => show(k));
+    t.addEventListener('keydown', (e) => {
+      const next = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (next) { e.preventDefault(); show(cur + next, true); }
+      else if (e.key === 'Home') { e.preventDefault(); show(0, true); }
+      else if (e.key === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
+    });
+  });
+  wx.addEventListener('pointerenter', () => { hover = true; restart(); });
+  wx.addEventListener('pointerleave', () => { hover = false; restart(); });
+  wx.addEventListener('focusin', () => { hover = true; restart(); });
+  wx.addEventListener('focusout', (e) => { if (!wx.contains(e.relatedTarget)) { hover = false; restart(); } });
+  if (stage) stage.addEventListener('pointermove', (e) => { const r = stage.getBoundingClientRect(); stage.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%'); stage.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%'); });
+  if ('IntersectionObserver' in window) new IntersectionObserver((es) => { inView = es.some((x) => x.isIntersecting); restart(); }, { threshold: 0.35 }).observe(wx);
+  /* live clocks */
+  const fmt = {};
+  const tick = () => {
+    $$('[data-tz]', wx).forEach((b) => {
+      const z = b.dataset.tz;
+      try { fmt[z] = fmt[z] || new Intl.DateTimeFormat('en-US', { timeZone: z, hour: 'numeric', minute: '2-digit' }); b.textContent = fmt[z].format(new Date()); } catch (err) {}
+    });
+  };
+  tick(); setInterval(tick, 30000);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else restart(); });
+})();
