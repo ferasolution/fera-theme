@@ -1013,7 +1013,7 @@ const CMDS = [
   { g: 'Actions', t: 'Call 337-252-4040', k: 'Phone', run: () => { location.href = 'tel:+13372524040'; } },
   { g: 'Pages', t: 'Blog', k: 'Page', run: () => go((FERA.urls && FERA.urls.blog) || (FERA.home + 'blog/')) },
   { g: 'Pages', t: 'Live demos', k: 'Page', run: () => go((FERA.urls && FERA.urls.experience) || (FERA.home + 'experience/')) },
-  { g: 'Actions', t: 'WhatsApp (337) 445-5717', k: 'WhatsApp', run: () => { window.open('https://wa.me/13374455717', '_blank', 'noopener'); } },
+  { g: 'Actions', t: 'WhatsApp 337-445-5717', k: 'WhatsApp', run: () => { window.open('https://wa.me/13374455717', '_blank', 'noopener'); } },
   { g: 'Actions', t: 'Toggle interface sound', k: 'Sound', run: () => setSound(!soundOn) }
 ];
 let cmdItems = [], cmdSel = 0;

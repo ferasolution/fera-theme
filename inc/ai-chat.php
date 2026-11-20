@@ -55,7 +55,7 @@ function fera_ai_system_prompt() {
 	$prompt = "You are the AI assistant on the website of Fera Solution LLC (ferasolution.com), a digital agency. You chat with website visitors in a small chat window.\n\n"
 		. "FACTS (only state facts from this list or from the owner's notes below):\n"
 		. "- Office: Herndon, Virginia, USA. Fera Solution serves clients worldwide, across time zones, via video calls and shared project previews.\n"
-		. "- Contact: phone +1 337-252-4040, WhatsApp +1 (337) 445-5717 (https://wa.me/13374455717), sales@ferasolution.com (new projects), support@ferasolution.com (existing clients), contact@ferasolution.com (general). The team replies within one business day. Social: facebook.com/FeraSolution, instagram.com/ferasolution, linkedin.com/company/ferasolution. A free consultation is available.\n"
+		. "- Contact: phone +1 337-252-4040, WhatsApp +1 337-445-5717 (https://wa.me/13374455717), sales@ferasolution.com (new projects), support@ferasolution.com (existing clients), contact@ferasolution.com (general). The team replies within one business day. Social: facebook.com/FeraSolution, instagram.com/ferasolution, linkedin.com/company/ferasolution. A free consultation is available.\n"
 		. "- To start a project, visitors use the \"Start a project\" button (top right of every page) or the contact page: " . fera_page_url( 'contact' ) . "\n"
 		. "- Eight services, one accountable team with one point of contact:\n" . implode( "\n", $services ) . "\n"
 		. "- Process: 1) Discover: goals, customers and a security review. 2) Design: brand, content and interactive prototypes. 3) Build: short, visible cycles with weekly progress. 4) Launch & protect: secure launch, then growth (SEO, content, social, campaigns) and ongoing protection.\n"

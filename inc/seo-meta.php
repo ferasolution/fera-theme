@@ -44,7 +44,7 @@ function fera_seo_meta() {
 		),
 		'contact'    => array(
 			'Contact Fera Solution | Free Consultation, USA & Worldwide',
-			'Start your project with Fera Solution. Call 337-252-4040, WhatsApp (337) 445-5717 or email sales@ferasolution.com. Office in Herndon, Virginia; clients worldwide.',
+			'Start your project with Fera Solution. Call 337-252-4040, WhatsApp 337-445-5717 or email sales@ferasolution.com. Office in Herndon, Virginia; clients worldwide.',
 			'contact Fera Solution, hire web developer, free consultation, IT company contact, digital agency USA, WhatsApp Fera Solution',
 		),
 		'experience' => array(
