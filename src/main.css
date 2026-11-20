@@ -924,6 +924,7 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 @media (max-width:1024px){.wx{grid-template-columns:1fr}.wx-list{flex-direction:row;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;scroll-snap-type:x mandatory}.wx-list::-webkit-scrollbar{display:none}.wx-tab{flex:none;width:auto;grid-template-columns:auto 1fr;scroll-snap-align:start;padding:12px 16px}.wx-tab .wx-n{display:none}.wx-tab:hover{transform:none}}
 @media (max-width:640px){.wx-stage{min-height:640px}.wx-vis{padding:22px 16px 0}.wx-copy{padding:6px 20px 24px}.v{min-height:260px;gap:16px}.v-sec,.v-world{flex-direction:column}.sec-shield{width:100px;height:100px}.sec-shield svg{width:44px}.globe2{width:110px;height:110px}.gauge{width:110px;right:0}.dev.laptop{height:150px}.dev.phone{display:none}.orb{--R:100px;width:260px;height:260px}.orb-you{display:none}.orb::before,.orb::after{inset:28px}.orb-ring em{font-size:10px;padding:5px 8px}}
 @media (prefers-reduced-motion:reduce){.wx *{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media (max-width:400px){.s-title{font-size:clamp(40px,13.5vw,52px)}.hx-l1{font-size:clamp(44px,15.5vw,62px)}.hx-l3{font-size:clamp(62px,21.5vw,86px)}.h2{font-size:clamp(36px,11.5vw,44px)}.mail{font-size:clamp(19px,6.4vw,26px);gap:10px}.mail svg{width:22px;height:22px;flex:none}}
 .f-legal a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .f-legal a:hover{color:var(--fg)}
 .comment-respond{margin-top:56px}

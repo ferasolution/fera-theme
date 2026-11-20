@@ -94,7 +94,7 @@ function fera_seo_meta() {
 
 /** Has an editor written a custom AIOSEO field for this object? */
 function fera_aioseo_custom( $field ) {
-	if ( ! function_exists( 'aioseo' ) || ! is_singular() && ! is_home() ) {
+	if ( ! function_exists( 'aioseo' ) || ! is_singular() && ! is_home() || is_front_page() ) {
 		return false;
 	}
 	try {
@@ -119,16 +119,52 @@ add_filter(
 	'aioseo_description',
 	static function ( $desc ) {
 		$m = fera_seo_meta();
-		return ( $m && ! fera_aioseo_custom( 'description' ) ) ? $m['desc'] : $desc;
+		return fera_seo_trim( ( $m && ! fera_aioseo_custom( 'description' ) ) ? $m['desc'] : $desc );
 	},
 	20
 );
+
+/** Keep descriptions within what Google shows (~160 characters), cut at a word. */
+function fera_seo_trim( $d ) {
+	$d = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( (string) $d ) ) );
+	if ( mb_strlen( $d ) <= 160 ) {
+		return $d;
+	}
+	$cut = mb_substr( $d, 0, 157 );
+	$sp  = mb_strrpos( $cut, ' ' );
+	return rtrim( $sp ? mb_substr( $cut, 0, $sp ) : $cut, ' ,.;:—-' ) . '…';
+}
 foreach ( array( 'aioseo_facebook_tags', 'aioseo_twitter_tags' ) as $fera_hook ) {
 	add_filter(
 		$fera_hook,
 		static function ( $tags ) {
+			if ( ! is_array( $tags ) ) {
+				return $tags;
+			}
+			// Every page gets a share image (post thumbnail first, then the brand image).
+			$img = ( is_singular() && has_post_thumbnail() ) ? get_the_post_thumbnail_url( null, 'large' ) : FERA_URI . '/assets/img/og-image.jpg';
+			if ( isset( $tags['og:type'] ) && empty( $tags['og:image'] ) ) {
+				$tags['og:image']        = $img;
+				$tags['og:image:secure_url'] = $img;
+				if ( ! ( is_singular() && has_post_thumbnail() ) ) {
+					$tags['og:image:width']  = 1200;
+					$tags['og:image:height'] = 630;
+				}
+				$tags['og:image:alt'] = get_bloginfo( 'name' );
+			}
+			if ( isset( $tags['twitter:card'] ) ) {
+				$tags['twitter:card'] = 'summary_large_image';
+				if ( empty( $tags['twitter:image'] ) ) {
+					$tags['twitter:image'] = $img;
+				}
+			}
+			foreach ( array( 'og:description', 'twitter:description' ) as $k ) {
+				if ( isset( $tags[ $k ] ) ) {
+					$tags[ $k ] = fera_seo_trim( $tags[ $k ] );
+				}
+			}
 			$m = fera_seo_meta();
-			if ( ! $m || ! is_array( $tags ) ) {
+			if ( ! $m ) {
 				return $tags;
 			}
 			foreach ( array( 'og:title', 'twitter:title' ) as $k ) {
