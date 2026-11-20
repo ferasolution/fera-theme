@@ -702,9 +702,9 @@ html.fera-quick .hero [data-fade],html.fera-quick .s-hero [data-fade],html.fera-
 html.fera-quick .hero .hl-wrap{animation:feraClip 1.5s cubic-bezier(.87,0,.13,1) .3s both!important;animation-play-state:running!important}
 html.fera-quick .hero .hx-rule i{animation:feraRule 1.4s cubic-bezier(.87,0,.13,1) .6s both!important;animation-play-state:running!important}
 @keyframes feraFloat{0%,100%{transform:translateY(0) scale(1);filter:drop-shadow(0 0 0 rgba(238,46,51,0))}50%{transform:translateY(-14px) scale(1.015);filter:drop-shadow(0 18px 40px rgba(238,46,51,.35))}}
-html .no-gl .stage-fallback,html.no-gl .stage-fallback{animation:feraFloat 6s ease-in-out infinite!important;animation-play-state:running!important}
+html .no-gl .stage-fallback,html.no-gl .stage-fallback{animation:feraFloat 6s ease-in-out 4s infinite!important;animation-play-state:running!important}
 @keyframes feraGlow{0%,100%{opacity:.35;transform:scale(.92)}50%{opacity:.8;transform:scale(1.06)}}
-html.no-gl #stage::before{content:'';position:absolute;inset:12% 6%;border-radius:50%;background:radial-gradient(closest-side,rgba(238,46,51,.28),transparent 70%);animation:feraGlow 6s ease-in-out infinite;animation-play-state:running!important;pointer-events:none}
+html.no-gl #stage::before{content:'';position:absolute;inset:12% 6%;border-radius:50%;background:radial-gradient(closest-side,rgba(238,46,51,.28),transparent 70%);animation:feraGlow 6s ease-in-out 4s infinite;animation-play-state:running!important;pointer-events:none}
 @media (prefers-reduced-motion:reduce){html.fera-quick .hero *,html.fera-quick .s-hero *{animation:none!important}}
 .chat-head img,.f-logo img,.orbit-c img{object-fit:contain}
 .orbit-c img{height:auto}

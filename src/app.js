@@ -1133,7 +1133,7 @@ $$('[data-demo-gallery]').forEach((root) => {
   const ev = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'wheel', 'scroll'];
   const wake = () => { document.documentElement.classList.remove('fera-idle'); ev.forEach((n) => removeEventListener(n, wake, true)); };
   ev.forEach((n) => addEventListener(n, wake, { capture: true, passive: true }));
-  setTimeout(wake, 1800);
+  if (document.readyState === "complete") setTimeout(wake, 3500); else addEventListener("load", () => setTimeout(wake, 3500), { once: true });
 })();
 
 /* ================= Why Fera tabs ================= */
