@@ -37,7 +37,7 @@ while ( have_posts() ) :
 				if ( is_singular( 'post' ) ) {
 					$fera_cats = get_the_category_list( ', ' );
 					fera_hero_tail(
-						has_excerpt() ? get_the_excerpt() : wp_trim_words( wp_strip_all_tags( get_the_content() ), 26, '…' ),
+						fera_dedash( has_excerpt() ? get_the_excerpt() : wp_trim_words( wp_strip_all_tags( get_the_content() ), 26, '…' ) ),
 						array( get_the_date() . ' · ' . get_the_author(), $fera_cats ? $fera_cats : __( 'Insights', 'fera-theme' ) )
 					);
 				} else {
