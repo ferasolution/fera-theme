@@ -1,6 +1,6 @@
 <?php
 /**
- * Fera Theme — bootstrap.
+ * Fera Theme, bootstrap.
  *
  * @package FeraTheme
  */

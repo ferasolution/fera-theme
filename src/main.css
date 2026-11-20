@@ -745,6 +745,9 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 .u-link{color:var(--fg);text-decoration:underline;text-decoration-color:var(--red-hi);text-underline-offset:3px}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 .req{color:var(--red-hi);font-style:normal;margin-left:2px}
+.opt{color:var(--muted);font-size:.85em;font-weight:400}
+.own-budget,.other-svc{margin-top:14px}
+.other-svc[hidden]{display:none}
 .field>.lbl{display:block}
 .field.bad input,.field.bad textarea,fieldset.bad .pick{outline:1px solid #FF6B6B;outline-offset:3px;border-radius:12px}
 .cap-label{display:block}

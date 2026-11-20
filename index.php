@@ -38,7 +38,7 @@ if ( is_search() ) {
 			$fera_desc = wp_strip_all_tags( get_the_archive_description() );
 			fera_hero_tail( $fera_desc ? $fera_desc : __( 'Articles, guides and news from the Fera Solution team.', 'fera-theme' ), array( __( 'Insights · Guides · News', 'fera-theme' ), $fera_count_label ) );
 		} else {
-			fera_hero_tail( __( 'Practical insights on cybersecurity, websites, software and digital growth — written by the Fera Solution team for businesses worldwide.', 'fera-theme' ), array( __( 'Insights · Guides · News', 'fera-theme' ), $fera_count_label ) );
+			fera_hero_tail( __( 'Practical insights on cybersecurity, websites, software and digital growth, written by the Fera Solution team for businesses worldwide.', 'fera-theme' ), array( __( 'Insights · Guides · News', 'fera-theme' ), $fera_count_label ) );
 		}
 		?>
 	</section>

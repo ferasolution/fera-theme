@@ -7,7 +7,7 @@
   "acc": "built.",
   "tags": "Assess · Protect · Remediate",
   "icon": "M32 6 10 14v16c0 13 9.4 24.6 22 28 12.6-3.4 22-15 22-28V14L32 6Z M27 28a5 5 0 1 0 10 0a5 5 0 1 0-10 0 M32 33v9",
-  "lead": "Risk assessments, penetration testing and hardening that find the gaps before attackers do — explained in plain language, with a clear plan to fix them.",
+  "lead": "Risk assessments, penetration testing and hardening that find the gaps before attackers do, explained in plain language, with a clear plan to fix them.",
   "inc": [
    [
     "Risk assessment",
@@ -41,7 +41,7 @@
    ],
    [
     "Assess",
-    "We scan, test and probe for weaknesses — carefully and safely."
+    "We scan, test and probe for weaknesses, carefully and safely."
    ],
    [
     "Report",
@@ -73,7 +73,7 @@
    ],
    [
     "What do I get at the end?",
-    "A plain-language report with prioritised findings and a remediation plan — plus our help fixing them if you want it."
+    "A plain-language report with prioritised findings and a remediation plan, plus our help fixing them if you want it."
    ]
   ],
   "i": 0
@@ -86,7 +86,7 @@
   "acc": "perform.",
   "tags": "WordPress · React · 3D",
   "icon": "M11 12h42a5 5 0 0 1 5 5v28a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z M6 21h52 M26 29l-7 7 7 7 M38 29l7 7-7 7",
-  "lead": "Distinctive, fast websites — from WordPress business sites to immersive 3D experiences like this one — built to turn visitors into customers.",
+  "lead": "Distinctive, fast websites, from WordPress business sites to immersive 3D experiences like this one, built to turn visitors into customers.",
   "inc": [
    [
     "Business websites",
@@ -165,7 +165,7 @@
   "acc": "work.",
   "tags": "Apps · Dashboards · Automation",
   "icon": "M32 8 56 20 32 32 8 20Z M8 32l24 12 24-12 M8 44l24 12 24-12",
-  "lead": "Custom software, dashboards, workflow automation and integrations — built around the way your business actually works, not the other way round.",
+  "lead": "Custom software, dashboards, workflow automation and integrations, built around the way your business actually works, not the other way round.",
   "inc": [
    [
     "Custom web applications",
@@ -227,7 +227,7 @@
    ],
    [
     "Can you connect our existing tools?",
-    "In most cases, yes — we integrate with CRMs, payment providers, accounting tools and other systems through their APIs."
+    "In most cases, yes, we integrate with CRMs, payment providers, accounting tools and other systems through their APIs."
    ],
    [
     "What happens after launch?",
@@ -244,7 +244,7 @@
   "acc": "measure.",
   "tags": "SEO · Ads · Analytics",
   "icon": "M8 54h48 M12 44l12-12 10 8 18-20 M42 20h10v10",
-  "lead": "SEO, paid campaigns and analytics working as one engine that turns traffic into qualified leads — with reporting you can actually read.",
+  "lead": "SEO, paid campaigns and analytics working as one engine that turns traffic into qualified leads, with reporting you can actually read.",
   "inc": [
    [
     "Technical SEO",
@@ -323,7 +323,7 @@
   "acc": "remember.",
   "tags": "Logos · Identity · Creatives",
   "icon": "M32 6 46 30 32 58 18 30Z M28 32a4 4 0 1 0 8 0a4 4 0 1 0-8 0 M32 6v22",
-  "lead": "Logos, brand identities and campaign visuals with a clear point of view — designed to be remembered and built to work everywhere.",
+  "lead": "Logos, brand identities and campaign visuals with a clear point of view, designed to be remembered and built to work everywhere.",
   "inc": [
    [
     "Logo design",
@@ -464,7 +464,7 @@
    ],
    [
     "Do you handle SEO?",
-    "Yes — keyword research, structure, meta titles and internal links are part of every article."
+    "Yes, keyword research, structure, meta titles and internal links are part of every article."
    ]
   ],
   "i": 5
@@ -477,7 +477,7 @@
   "acc": "sell.",
   "tags": "Shopify · WooCommerce · Custom",
   "icon": "M13 22h38l-3 34H16Z M24 26v-8a8 8 0 0 1 16 0v8",
-  "lead": "Online stores that look premium, load fast and convert — from product catalogue to checkout, payments and shipping.",
+  "lead": "Online stores that look premium, load fast and convert, from product catalogue to checkout, payments and shipping.",
   "inc": [
    [
     "Shopify stores",
@@ -556,7 +556,7 @@
   "acc": "connects.",
   "tags": "Posting · Community · Reports",
   "icon": "M8 12h36v26H24l-10 9v-9H8Z M26 21c-2-3.5-7-3-7 1 0 3.5 7 8 7 8s7-4.5 7-8c0-4-5-4.5-7-1Z M50 22h6v26h-6v8l-9-8H30v-4",
-  "lead": "Consistent posting, community care and clear reporting across every platform you are on — so your brand stays active while you run the business.",
+  "lead": "Consistent posting, community care and clear reporting across every platform you are on, so your brand stays active while you run the business.",
   "inc": [
    [
     "Strategy & calendar",
@@ -614,7 +614,7 @@
   "faq": [
    [
     "Which platforms do you manage?",
-    "Instagram, Facebook, LinkedIn, TikTok, X and YouTube — we focus on the ones where your customers are."
+    "Instagram, Facebook, LinkedIn, TikTok, X and YouTube, we focus on the ones where your customers are."
    ],
    [
     "Do I approve posts before they go live?",

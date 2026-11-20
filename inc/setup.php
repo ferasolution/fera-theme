@@ -86,7 +86,7 @@ function fera_seed_content() {
 		'about'    => 'Meet Fera Solution LLC, a USA-based digital agency in Herndon, Virginia serving clients worldwide: engineers, designers, writers, marketers and security specialists working as one accountable team.',
 		'services' => 'Eight digital services under one roof: cybersecurity, website and software development, digital marketing, graphic design, content writing, e-commerce and social media management.',
 		'work'     => 'Selected work from Fera Solution: learning management, hospital management and community portal platforms engineered and run in-house.',
-		'contact'  => 'Start a project with Fera Solution — USA office in Herndon, Virginia, serving clients worldwide. Call 337-252-4040 or email sales@ferasolution.com.',
+		'contact'  => 'Start a project with Fera Solution. USA office in Herndon, Virginia, serving clients worldwide. Call 337-252-4040 or email sales@ferasolution.com.',
 	);
 	foreach ( fera_core_pages() as $slug => $title ) {
 		if ( ! fera_get_page( $slug, array( 'publish', 'draft', 'pending', 'private', 'future', 'trash' ) ) ) {

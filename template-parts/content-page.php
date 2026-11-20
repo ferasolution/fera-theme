@@ -42,7 +42,7 @@ while ( have_posts() ) :
 					);
 				} else {
 					fera_hero_tail(
-						has_excerpt() ? get_the_excerpt() : __( 'Fera Solution LLC — a USA-based digital agency in Herndon, Virginia, serving clients worldwide.', 'fera-theme' ),
+						has_excerpt() ? get_the_excerpt() : __( 'Fera Solution LLC, a USA-based digital agency in Herndon, Virginia, serving clients worldwide.', 'fera-theme' ),
 						array( __( 'Fera Solution LLC', 'fera-theme' ), sprintf( /* translators: %s: date */ __( 'Updated %s', 'fera-theme' ), get_the_modified_date() ) )
 					);
 				}

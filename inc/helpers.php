@@ -40,7 +40,7 @@ function fera_service( $slug ) {
 	return null;
 }
 
-/** Find a top-level page by slug (pages only — never media attachments). */
+/** Find a top-level page by slug (pages only, never media attachments). */
 function fera_get_page( $slug, $status = 'publish' ) {
 	$q = get_posts(
 		array(

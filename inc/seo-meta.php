@@ -33,39 +33,39 @@ function fera_seo_meta() {
 			'about Fera Solution, digital agency Herndon Virginia, USA IT company, web and software team, cybersecurity experts, full-service agency',
 		),
 		'services'   => array(
-			'Digital Services | Web, Software, Security & Marketing — Fera Solution',
+			'Digital Services | Web, Software, Security & Marketing | Fera Solution',
 			'Eight services under one roof: cybersecurity, website development, software development, digital marketing & SEO, graphic design, content writing, e-commerce and social media.',
 			'digital services, website development services, software development services, cybersecurity services, SEO services, digital marketing services, graphic design, content writing, e-commerce, social media management',
 		),
 		'work'       => array(
 			'Our Work & Case Studies | Fera Solution',
-			'Platforms we design, build and run: learning management, hospital management and community portals — engineered for speed, security and scale by Fera Solution.',
+			'Platforms we design, build and run: learning management, hospital management and community portals, engineered for speed, security and scale by Fera Solution.',
 			'Fera Solution portfolio, case studies, LMS development, hospital management system, community portal, SaaS development, web application development',
 		),
 		'contact'    => array(
-			'Contact Fera Solution | Free Consultation — USA & Worldwide',
+			'Contact Fera Solution | Free Consultation, USA & Worldwide',
 			'Start your project with Fera Solution. Call 337-252-4040, WhatsApp (337) 445-5717 or email sales@ferasolution.com. Office in Herndon, Virginia; clients worldwide.',
 			'contact Fera Solution, hire web developer, free consultation, IT company contact, digital agency USA, WhatsApp Fera Solution',
 		),
 		'experience' => array(
-			'Live Demos | Interactive Website & App Demos — Fera Solution',
-			'Try live, interactive demos of websites, apps and dashboards built by Fera Solution — see the speed, motion and quality before you start your own project.',
+			'Live Demos | Interactive Website & App Demos | Fera Solution',
+			'Try live, interactive demos of websites, apps and dashboards built by Fera Solution, see the speed, motion and quality before you start your own project.',
 			'live website demos, web app demo, interactive demos, website examples, Fera Solution demos',
 		),
 		'blog'       => array(
-			'Blog | Cybersecurity, Web & Digital Marketing Insights — Fera Solution',
+			'Blog | Cybersecurity, Web & Digital Marketing Insights | Fera Solution',
 			'Practical insights on cybersecurity, website development, software and digital growth from the Fera Solution team in Herndon, Virginia.',
 			'cybersecurity blog, web development tips, digital marketing insights, SEO tips, software development blog, Fera Solution blog',
 		),
 	);
 	$svc = array(
-		'cybersecurity'        => array( 'Cybersecurity Services | Pen Testing & Risk Assessment — Fera Solution', 'cybersecurity services, penetration testing, vulnerability assessment, risk assessment, website security, network security, security hardening, cybersecurity company USA' ),
-		'web-development'      => array( 'Website Development Services | WordPress & Custom Sites — Fera Solution', 'website development, web design company, WordPress development, custom website, React development, responsive website, fast website, web development agency USA' ),
-		'software-development' => array( 'Custom Software Development | Apps & Dashboards — Fera Solution', 'custom software development, web application development, SaaS development, dashboard development, mobile app development, API development, software company USA' ),
+		'cybersecurity'        => array( 'Cybersecurity Services | Pen Testing & Risk Assessment | Fera Solution', 'cybersecurity services, penetration testing, vulnerability assessment, risk assessment, website security, network security, security hardening, cybersecurity company USA' ),
+		'web-development'      => array( 'Website Development Services | WordPress & Custom Sites | Fera Solution', 'website development, web design company, WordPress development, custom website, React development, responsive website, fast website, web development agency USA' ),
+		'software-development' => array( 'Custom Software Development | Apps & Dashboards | Fera Solution', 'custom software development, web application development, SaaS development, dashboard development, mobile app development, API development, software company USA' ),
 		'digital-marketing'    => array( 'Digital Marketing & SEO Services | Fera Solution', 'digital marketing services, SEO services, technical SEO, Google Ads, PPC management, local SEO, content marketing, digital marketing agency USA' ),
 		'graphic-design'       => array( 'Graphic Design & Branding Services | Fera Solution', 'graphic design services, logo design, brand identity, branding agency, social media graphics, UI design, print design' ),
-		'content-writing'      => array( 'Content Writing Services | SEO Copy & Blogs — Fera Solution', 'content writing services, SEO content writing, website copywriting, blog writing, product descriptions, copywriter USA' ),
-		'ecommerce'            => array( 'E-Commerce Development | WooCommerce & Shopify Stores — Fera Solution', 'e-commerce development, online store development, WooCommerce development, Shopify development, ecommerce website, payment integration' ),
+		'content-writing'      => array( 'Content Writing Services | SEO Copy & Blogs | Fera Solution', 'content writing services, SEO content writing, website copywriting, blog writing, product descriptions, copywriter USA' ),
+		'ecommerce'            => array( 'E-Commerce Development | WooCommerce & Shopify Stores | Fera Solution', 'e-commerce development, online store development, WooCommerce development, Shopify development, ecommerce website, payment integration' ),
 		'social-media'         => array( 'Social Media Management Services | Fera Solution', 'social media management, social media marketing, Instagram management, Facebook marketing, LinkedIn marketing, content calendar, social media agency' ),
 	);
 
@@ -79,7 +79,7 @@ function fera_seo_meta() {
 		if ( $s && isset( $svc[ $slug ] ) ) {
 			$lead = wp_strip_all_tags( $s['lead'] );
 			if ( strlen( $lead ) > 160 ) {
-				$lead = rtrim( wp_html_excerpt( $lead, 157 ), ' ,.—-' ) . '…';
+				$lead = rtrim( wp_html_excerpt( $lead, 157 ), ' ,., -' ) . '…';
 			}
 			$out = array( $svc[ $slug ][0], $lead, $svc[ $slug ][1] );
 		}
@@ -132,7 +132,7 @@ function fera_seo_trim( $d ) {
 	}
 	$cut = mb_substr( $d, 0, 157 );
 	$sp  = mb_strrpos( $cut, ' ' );
-	return rtrim( $sp ? mb_substr( $cut, 0, $sp ) : $cut, ' ,.;:—-' ) . '…';
+	return rtrim( $sp ? mb_substr( $cut, 0, $sp ) : $cut, ' ,.;:, -' ) . '…';
 }
 foreach ( array( 'aioseo_facebook_tags', 'aioseo_twitter_tags' ) as $fera_hook ) {
 	add_filter(

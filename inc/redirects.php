@@ -2,7 +2,7 @@
 /**
  * 301 redirects from the old site's URLs to the new pages.
  * Only fires when the old URL no longer resolves (404), e.g. after the old
- * page is moved to Draft — so nothing changes while the old page is published.
+ * page is moved to Draft, so nothing changes while the old page is published.
  *
  * @package FeraTheme
  */

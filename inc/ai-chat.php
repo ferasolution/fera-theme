@@ -4,7 +4,7 @@
  *
  * Visitors chat with an AI first; "Talk to an agent" hands over to Tawk.to.
  * The AI runs through this server on Groq (free), Google Gemini (free tier) or
- * Claude (paid) — the API key never reaches the browser. Without a key the panel falls back to built-in canned answers.
+ * Claude (paid), the API key never reaches the browser. Without a key the panel falls back to built-in canned answers.
  *
  * Settings → Fera AI Chat.
  *
@@ -58,13 +58,13 @@ function fera_ai_system_prompt() {
 		. "- Contact: phone +1 337-252-4040, WhatsApp +1 (337) 445-5717 (https://wa.me/13374455717), sales@ferasolution.com (new projects), support@ferasolution.com (existing clients), contact@ferasolution.com (general). The team replies within one business day. Social: facebook.com/FeraSolution, instagram.com/ferasolution, linkedin.com/company/ferasolution. A free consultation is available.\n"
 		. "- To start a project, visitors use the \"Start a project\" button (top right of every page) or the contact page: " . fera_page_url( 'contact' ) . "\n"
 		. "- Eight services, one accountable team with one point of contact:\n" . implode( "\n", $services ) . "\n"
-		. "- Process: 1) Discover — goals, customers and a security review. 2) Design — brand, content and interactive prototypes. 3) Build — short, visible cycles with weekly progress. 4) Launch & protect — secure launch, then growth (SEO, content, social, campaigns) and ongoing protection.\n"
+		. "- Process: 1) Discover: goals, customers and a security review. 2) Design: brand, content and interactive prototypes. 3) Build: short, visible cycles with weekly progress. 4) Launch & protect: secure launch, then growth (SEO, content, social, campaigns) and ongoing protection.\n"
 		. "- Security is built into everything they ship (SSL, security headers, firewall and bot protection, hardened logins, backups) because the company started in cybersecurity. Clients own their code and their ad accounts.\n"
 		. "- Selected work: Fera EduSphere (learning management platform), HospitalOS (hospital management system), Community Portal (community/society management). See " . fera_page_url( 'work' ) . "\n"
-		. "- Pricing: every project is scoped individually. Budget bands on the project form: under \$2k, \$2k–\$5k, \$5k–\$15k, \$15k+. Never quote a specific price, timeline or guarantee — offer a free quote instead.\n\n"
+		. "- Pricing: every project is scoped individually. Budget bands on the project form: under \$2k, \$2k–\$5k, \$5k–\$15k, \$15k+. Never quote a specific price, timeline or guarantee, offer a free quote instead.\n\n"
 		. ( $extra ? "OWNER'S NOTES (trusted, written by Fera Solution):\n" . $extra . "\n\n" : '' )
 		. "HOW TO REPLY:\n"
-		. "- Be warm, clear and brief: 1–4 short sentences, plain text, no markdown, no lists unless asked.\n"
+		. "- Be warm, clear and brief: 1–4 short sentences, plain text, no markdown, no lists unless asked. Never use em dashes or en dashes; use commas or full stops instead.\n"
 		. "- Reply in the visitor's language.\n"
 		. "- Ask one helpful follow-up question to understand their need, then point them to \"Start a project\" or a human agent.\n"
 		. "- If you don't know something, say so honestly and offer a human agent. Never invent facts, prices, clients, certifications or availability.\n"
@@ -107,7 +107,7 @@ function fera_ai_chat_handle( WP_REST_Request $req ) {
 	$key  = 'fera_ai_rl_' . md5( $ip . wp_salt( 'nonce' ) );
 	$hits = (int) get_transient( $key );
 	if ( $hits >= 25 ) {
-		return new WP_REST_Response( array( 'ok' => true, 'reply' => 'You have sent a lot of messages — a team member can take it from here.', 'agent' => true ), 200 );
+		return new WP_REST_Response( array( 'ok' => true, 'reply' => 'You have sent a lot of messages, a team member can take it from here.', 'agent' => true ), 200 );
 	}
 	set_transient( $key, $hits + 1, 10 * MINUTE_IN_SECONDS );
 
@@ -152,7 +152,9 @@ function fera_ai_chat_handle( WP_REST_Request $req ) {
 	if ( '' === $reply ) {
 		return new WP_REST_Response( array( 'ok' => false, 'reason' => 'empty-reply' ), 200 );
 	}
-	return new WP_REST_Response( array( 'ok' => true, 'reply' => wp_strip_all_tags( $reply ), 'agent' => $agent ), 200 );
+	// House style: no em/en dashes in replies.
+	$reply = preg_replace( '/\s*[\x{2014}\x{2013}]\s*/u', ', ', wp_strip_all_tags( $reply ) );
+	return new WP_REST_Response( array( 'ok' => true, 'reply' => $reply, 'agent' => $agent ), 200 );
 }
 
 /** Default model per provider. */
@@ -290,7 +292,7 @@ function fera_ai_settings_page() {
 	<div class="wrap">
 		<h1>Fera AI Chat</h1>
 		<p>Visitors talk to the AI assistant first. The <strong>Talk to an agent</strong> button opens your Tawk.to chat so a person can take over.</p>
-		<p>Status: <strong><?php echo fera_ai_enabled() ? '✅ AI is answering' : '⚪ AI off — built-in quick answers are used'; ?></strong></p>
+		<p>Status: <strong><?php echo fera_ai_enabled() ? '✅ AI is answering' : '⚪ AI off, built-in quick answers are used'; ?></strong></p>
 		<?php if ( $err && ! empty( $err['time'] ) ) : ?>
 			<p style="color:#b32d2e">Last API error (<?php echo esc_html( human_time_diff( (int) $err['time'] ) ); ?> ago): <code><?php echo esc_html( (string) $err['code'] ); ?></code></p>
 		<?php endif; ?>
@@ -300,9 +302,9 @@ function fera_ai_settings_page() {
 				<tr><th scope="row">Enable AI</th><td><label><input type="checkbox" name="fera_ai_chat[enabled]" value="1" <?php checked( ! empty( $o['enabled'] ) ); ?>> Let the AI answer visitors</label></td></tr>
 				<tr><th scope="row"><label for="fera-ai-provider">AI provider</label></th><td>
 					<select id="fera-ai-provider" name="fera_ai_chat[provider]">
-						<option value="groq" <?php selected( $o['provider'], 'groq' ); ?>>Groq — free (recommended)</option>
-						<option value="gemini" <?php selected( $o['provider'], 'gemini' ); ?>>Google Gemini — free tier</option>
-						<option value="anthropic" <?php selected( $o['provider'], 'anthropic' ); ?>>Claude (Anthropic) — paid</option>
+						<option value="groq" <?php selected( $o['provider'], 'groq' ); ?>>Groq, free (recommended)</option>
+						<option value="gemini" <?php selected( $o['provider'], 'gemini' ); ?>>Google Gemini, free tier</option>
+						<option value="anthropic" <?php selected( $o['provider'], 'anthropic' ); ?>>Claude (Anthropic), paid</option>
 					</select>
 					<p class="description"><strong>Groq:</strong> free key at console.groq.com → API Keys (no card). <strong>Gemini:</strong> free key at aistudio.google.com → Get API key. <strong>Claude:</strong> console.anthropic.com (needs credit).</p>
 				</td></tr>

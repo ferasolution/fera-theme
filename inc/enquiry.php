@@ -133,14 +133,36 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 		'company'  => sanitize_text_field( $p['company'] ?? '' ),
 		'message'  => sanitize_textarea_field( $p['message'] ?? '' ),
 		'budget'   => sanitize_text_field( $p['budget'] ?? '' ),
+		'budget_own' => sanitize_text_field( $p['budget_own'] ?? '' ),
+		'other_service' => sanitize_text_field( $p['other_service'] ?? '' ),
 		'services' => array_slice( array_map( 'sanitize_text_field', (array) ( $p['services'] ?? array() ) ), 0, 12 ),
 		'page'     => esc_url_raw( $p['page'] ?? '' ),
 	);
-	foreach ( array( 'name' => 120, 'phone' => 60, 'company' => 200, 'message' => 5000, 'budget' => 60 ) as $k => $max ) {
+	foreach ( array( 'name' => 120, 'phone' => 60, 'company' => 200, 'message' => 5000, 'budget' => 60, 'budget_own' => 60, 'other_service' => 160 ) as $k => $max ) {
 		$f[ $k ] = mb_substr( $f[ $k ], 0, $max );
 	}
+	// A budget typed by the visitor takes the place of the preset ranges.
+	if ( '' !== $f['budget_own'] ) {
+		$f['budget'] = $f['budget_own'] . ' (own amount)';
+	}
+	unset( $f['budget_own'] );
+	// "Other IT service": keep the description with the selected services.
+	$wants_other = false;
+	foreach ( $f['services'] as $i => $svc ) {
+		if ( 0 === stripos( $svc, 'Other' ) ) {
+			$wants_other = true;
+			unset( $f['services'][ $i ] );
+		}
+	}
+	$f['services'] = array_values( $f['services'] );
+	if ( $wants_other && '' !== $f['other_service'] ) {
+		$f['services'][] = 'Other: ' . $f['other_service'];
+	}
 	$missing = array();
-	if ( ! $f['services'] ) {
+	if ( $wants_other && '' === $f['other_service'] ) {
+		$missing[] = 'other_service';
+	}
+	if ( ! $f['services'] && ! $wants_other ) {
 		$missing[] = 'services';
 	}
 	if ( ! empty( $p['needs_budget'] ) && '' === $f['budget'] ) {
@@ -155,9 +177,6 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 	if ( strlen( preg_replace( '/\D/', '', $f['phone'] ) ) < 7 ) {
 		$missing[] = 'phone';
 	}
-	if ( '' === $f['company'] ) {
-		$missing[] = 'company';
-	}
 	if ( mb_strlen( trim( $f['message'] ) ) < 10 ) {
 		$missing[] = 'msg';
 	}
@@ -171,14 +190,15 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 	$lines = array(
 		'Name: ' . $f['name'],
 		'Email: ' . $f['email'],
-		'Phone: ' . ( $f['phone'] ? $f['phone'] : '—' ),
-		'Company / website: ' . ( $f['company'] ? $f['company'] : '—' ),
-		'Services: ' . ( $f['services'] ? implode( ', ', $f['services'] ) : '—' ),
-		'Budget: ' . ( $f['budget'] ? $f['budget'] : '—' ),
+		'Phone: ' . ( $f['phone'] ? $f['phone'] : '-' ),
+		'Company / website: ' . ( $f['company'] ? $f['company'] : '-' ),
+		'Services: ' . ( $f['services'] ? implode( ', ', $f['services'] ) : '-' ),
+		'Other IT service: ' . ( $f['other_service'] ? $f['other_service'] : '-' ),
+		'Budget: ' . ( $f['budget'] ? $f['budget'] : '-' ),
 		'Page: ' . $f['page'],
 		'',
 		'Message:',
-		$f['message'] ? $f['message'] : '—',
+		$f['message'] ? $f['message'] : '-',
 	);
 	$body = implode( "\n", $lines );
 
@@ -186,7 +206,7 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 		array(
 			'post_type'    => 'fera_lead',
 			'post_status'  => 'private',
-			'post_title'   => $f['name'] . ( $f['services'] ? ' — ' . implode( ', ', $f['services'] ) : '' ),
+			'post_title'   => $f['name'] . ( $f['services'] ? ', ' . implode( ', ', $f['services'] ) : '' ),
 			'post_content' => $body,
 		),
 		true
@@ -199,7 +219,7 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 
 	$sent = wp_mail(
 		fera_leads_email(),
-		'New enquiry from ' . $f['name'] . ' — ferasolution.com',
+		'New enquiry from ' . $f['name'] . ', ferasolution.com',
 		$body,
 		array( 'Reply-To: ' . $f['name'] . ' <' . $f['email'] . '>' )
 	);
@@ -207,7 +227,7 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 	if ( is_wp_error( $lead_id ) && ! $sent ) {
 		return new WP_REST_Response( array( 'ok' => false, 'message' => 'Sorry, that didn\'t go through. Please email sales@ferasolution.com.' ), 500 );
 	}
-	return new WP_REST_Response( array( 'ok' => true, 'message' => 'Thank you! Your enquiry has been sent — we\'ll reply within one business day.' ), 200 );
+	return new WP_REST_Response( array( 'ok' => true, 'message' => 'Thank you! Your enquiry has been sent, we\'ll reply within one business day.' ), 200 );
 }
 
 /* ---------- Admin: enquiry list columns + settings field ---------- */
@@ -219,6 +239,8 @@ add_filter(
 			'title'        => __( 'Enquiry', 'fera-theme' ),
 			'fera_email'   => __( 'Email', 'fera-theme' ),
 			'fera_phone'   => __( 'Phone', 'fera-theme' ),
+			'fera_company' => __( 'Company', 'fera-theme' ),
+			'fera_services' => __( 'Services', 'fera-theme' ),
 			'fera_budget'  => __( 'Budget', 'fera-theme' ),
 			'date'         => $cols['date'],
 		);
@@ -227,13 +249,13 @@ add_filter(
 add_action(
 	'manage_fera_lead_posts_custom_column',
 	static function ( $col, $id ) {
-		$map = array( 'fera_email' => '_fera_email', 'fera_phone' => '_fera_phone', 'fera_budget' => '_fera_budget' );
+		$map = array( 'fera_email' => '_fera_email', 'fera_phone' => '_fera_phone', 'fera_company' => '_fera_company', 'fera_services' => '_fera_services', 'fera_budget' => '_fera_budget' );
 		if ( isset( $map[ $col ] ) ) {
 			$v = get_post_meta( $id, $map[ $col ], true );
 			if ( 'fera_email' === $col && $v ) {
 				printf( '<a href="mailto:%1$s">%2$s</a>', esc_attr( $v ), esc_html( $v ) );
 			} else {
-				echo esc_html( $v ? $v : '—' );
+				echo esc_html( $v ? $v : '-' );
 			}
 		}
 	},
@@ -259,6 +281,40 @@ add_action(
 				printf( '<input type="email" class="regular-text" name="fera_leads_email" value="%s"><p class="description">%s</p>', esc_attr( fera_leads_email() ), esc_html__( 'Website enquiry forms are emailed here and saved under Enquiries.', 'fera-theme' ) );
 			},
 			'general'
+		);
+	}
+);
+
+/* ---------- Admin: full enquiry details on the edit screen ---------- */
+add_action(
+	'add_meta_boxes_fera_lead',
+	static function () {
+		add_meta_box(
+			'fera_lead_details',
+			__( 'Enquiry details', 'fera-theme' ),
+			static function ( $post ) {
+				$rows = array(
+					'Name'             => '_fera_name',
+					'Email'            => '_fera_email',
+					'Phone'            => '_fera_phone',
+					'Company / website' => '_fera_company',
+					'Services'         => '_fera_services',
+					'Other IT service' => '_fera_other_service',
+					'Budget'           => '_fera_budget',
+					'Sent from page'   => '_fera_page',
+				);
+				echo '<table class="widefat striped" style="border:0"><tbody>';
+				foreach ( $rows as $label => $key ) {
+					$v = (string) get_post_meta( $post->ID, $key, true );
+					echo '<tr><th style="width:180px">' . esc_html( $label ) . '</th><td>' . ( '' === $v ? '-' : esc_html( $v ) ) . '</td></tr>';
+				}
+				$msg = (string) get_post_meta( $post->ID, '_fera_message', true );
+				echo '<tr><th>Message</th><td style="white-space:pre-wrap">' . esc_html( '' === $msg ? '-' : $msg ) . '</td></tr>';
+				echo '</tbody></table>';
+			},
+			'fera_lead',
+			'normal',
+			'high'
 		);
 	}
 );

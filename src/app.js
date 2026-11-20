@@ -88,7 +88,7 @@ function tickClock() {
   let t = '';
   try { t = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).format(new Date()); } catch (e) { t = ''; }
   const c1 = $('#clock1'); if (c1) c1.textContent = 'Herndon, VA, USA · ' + t;
-  const c3 = $('#clock3'); if (c3) c3.textContent = 'Local time in Herndon — ' + t + ' ET';
+  const c3 = $('#clock3'); if (c3) c3.textContent = 'Local time in Herndon, ' + t + ' ET';
 }
 tickClock(); setInterval(tickClock, 15000);
 
@@ -477,7 +477,7 @@ if (st) st.childNodes.forEach((n) => {
 if (st) st.innerHTML = parts.join('');
 
 function scramble(el) {
-  const final = el.textContent, chars = '!<>-_\\/[]{}—=+*^?#ABCDEFX0123456789';
+  const final = el.textContent, chars = '!<>-_\\/[]{}, =+*^?#ABCDEFX0123456789';
   let f = 0; const total = 28;
   const id = setInterval(() => {
     f++;
@@ -622,7 +622,7 @@ function talkToAgent() {
     try { window.Tawk_API.showWidget(); window.Tawk_API.maximize(); } catch (err) {}
     return;
   }
-  addMsg('Our team is happy to help — call 337-252-4040 or email sales@ferasolution.com and a person will get back to you within one business day.', 'bot');
+  addMsg('Our team is happy to help. Call 337-252-4040 or email sales@ferasolution.com and a person will get back to you within one business day.', 'bot');
 }
 document.addEventListener('click', (e) => { if (e.target.closest('[data-agent]')) { e.preventDefault(); talkToAgent(); } });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeDrawer(); closeMenu(); toggleChat(false); } });
@@ -632,15 +632,15 @@ function addMsg(text, who, agentBtn) {
   msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d;
 }
 const REPLIES = [
-  [/human|agent|person|someone|representative|real person|call me/i, 'Sure — tap the button below and a member of our team will take it from here.', true],
+  [/human|agent|person|someone|representative|real person|call me/i, 'Sure, tap the button below and a member of our team will take it from here.', true],
   [/secur|hack|breach|pen ?test|cyber/i, 'Security is where we started. We can begin with a risk assessment of your website and systems, then a remediation plan. Want our team to reach out?'],
-  [/store|shop|e-?com|woo|product/i, 'We build premium, fast online stores on Shopify, WooCommerce or fully custom — payments and shipping included. Roughly how many products do you sell?'],
+  [/store|shop|e-?com|woo|product/i, 'We build premium, fast online stores on Shopify, WooCommerce or fully custom, payments and shipping included. Roughly how many products do you sell?'],
   [/social|instagram|facebook|tiktok|linkedin/i, 'Our social team handles posting, community replies and monthly reports. Which platforms are you on today?'],
   [/logo|brand|design|graphic/i, 'Our designers create logos, full brand identities and campaign visuals. Are we refreshing an existing brand or starting fresh?'],
   [/content|blog|copy|writ/i, 'We write website copy, SEO blogs and scripts in your voice. How many pieces a month are you thinking?'],
   [/seo|market|ads|google|lead/i, 'We run SEO plus Google and Meta campaigns with clear monthly reporting. Is your main goal leads, sales or awareness?'],
   [/app|software|saas|portal|system|dashboard|automat/i, 'We build custom software, dashboards and automation. Tell me a bit about the idea and who will use it.'],
-  [/web|site|3d|landing|wordpress/i, 'A website like this one — 3D, motion and fast — or a clean WordPress business site. Do you have a current site we should look at?'],
+  [/web|site|3d|landing|wordpress/i, 'A website like this one (3D, motion and fast) or a clean WordPress business site. Do you have a current site we should look at?'],
   [/price|cost|budget|quote|rate|pricing/i, 'Every project is scoped individually. Share a few details via "Start a project" or email sales@ferasolution.com and we will send a quote within one business day.']
 ];
 const chatLog = [];
@@ -677,35 +677,35 @@ $$('#quick button:not([data-agent])').forEach((b) => b.addEventListener('click',
 const SERVICES = [
   { slug: 'cybersecurity', name: 'Cybersecurity', t1: 'Protect what', t2: "you've", acc: 'built.', tags: 'Assess · Protect · Remediate',
     icon: 'M32 6 10 14v16c0 13 9.4 24.6 22 28 12.6-3.4 22-15 22-28V14L32 6Z M27 28a5 5 0 1 0 10 0a5 5 0 1 0-10 0 M32 33v9',
-    lead: 'Risk assessments, penetration testing and hardening that find the gaps before attackers do — explained in plain language, with a clear plan to fix them.',
+    lead: 'Risk assessments, penetration testing and hardening that find the gaps before attackers do, explained in plain language, with a clear plan to fix them.',
     inc: [['Risk assessment', 'A clear picture of your exposure across website, cloud, devices and people.'], ['Vulnerability scanning', 'Automated and manual checks of your apps, servers and network.'], ['Penetration testing', 'Ethical, controlled attacks that prove what is really exploitable.'], ['Hardening & remediation', 'Prioritised fixes, configuration changes and patching guidance.'], ['Website security', 'SSL, security headers, firewall, backups and malware protection.'], ['Awareness training', 'Short, practical sessions so your team can spot phishing and scams.']],
-    steps: [['Scope', 'We agree on the systems to test, the goals and the timing.'], ['Assess', 'We scan, test and probe for weaknesses — carefully and safely.'], ['Report', 'You get prioritised findings in plain language, not jargon.'], ['Remediate', 'We help fix every issue, then re-test to confirm it is closed.']],
+    steps: [['Scope', 'We agree on the systems to test, the goals and the timing.'], ['Assess', 'We scan, test and probe for weaknesses, carefully and safely.'], ['Report', 'You get prioritised findings in plain language, not jargon.'], ['Remediate', 'We help fix every issue, then re-test to confirm it is closed.']],
     tools: ['OWASP Top 10', 'Nmap', 'Burp Suite', 'Cloudflare WAF', 'SSL / TLS', 'Wordfence', 'MFA', 'Backups'],
-    faq: [['Is my business too small to be a target?', 'No. Small businesses are often targeted precisely because they have fewer defences. A short assessment shows exactly where you stand.'], ['Will testing disrupt my website?', 'We agree on scope and timing in advance and test carefully, so your normal operations continue.'], ['What do I get at the end?', 'A plain-language report with prioritised findings and a remediation plan — plus our help fixing them if you want it.']] },
+    faq: [['Is my business too small to be a target?', 'No. Small businesses are often targeted precisely because they have fewer defences. A short assessment shows exactly where you stand.'], ['Will testing disrupt my website?', 'We agree on scope and timing in advance and test carefully, so your normal operations continue.'], ['What do I get at the end?', 'A plain-language report with prioritised findings and a remediation plan, plus our help fixing them if you want it.']] },
   { slug: 'web-development', name: 'Website Development', t1: 'Websites that', t2: '', acc: 'perform.', tags: 'WordPress · React · 3D',
     icon: 'M11 12h42a5 5 0 0 1 5 5v28a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z M6 21h52 M26 29l-7 7 7 7 M38 29l7 7-7 7',
-    lead: 'Distinctive, fast websites — from WordPress business sites to immersive 3D experiences like this one — built to turn visitors into customers.',
+    lead: 'Distinctive, fast websites, from WordPress business sites to immersive 3D experiences like this one, built to turn visitors into customers.',
     inc: [['Business websites', 'Professional sites that explain what you do and why customers should choose you.'], ['WordPress development', 'Custom themes your team can edit without touching code.'], ['3D & motion', 'Three.js, WebGL and GSAP experiences that make your brand unforgettable.'], ['Landing pages', 'Focused pages built for campaigns, launches and lead generation.'], ['Redesigns', 'A modern refresh of your existing site, keeping what already works.'], ['Speed & SEO', 'Core Web Vitals, clean structure and on-page SEO from day one.']],
     steps: [['Discover', 'Goals, audience, competitors and the content you need.'], ['Design', 'Interactive prototypes with real motion for you to approve.'], ['Develop', 'Clean, responsive build with weekly previews.'], ['Launch', 'Secure go-live, analytics, training and ongoing support.']],
     tools: ['WordPress', 'React', 'Next.js', 'Three.js', 'GSAP', 'Tailwind CSS', 'Figma', 'Cloudflare'],
     faq: [['Can I edit the website myself?', 'Yes. We build on WordPress or a headless CMS so your team can update text, images and pages without code.'], ['How long does a website take?', 'It depends on scope. Once we understand your needs, we give you a clear timeline before any work starts.'], ['Do 3D animations slow the site down?', 'We load heavy effects only when needed and optimise everything, so the site stays fast on phones and desktops.']] },
   { slug: 'software-development', name: 'Software Development', t1: 'Software built', t2: 'around your', acc: 'work.', tags: 'Apps · Dashboards · Automation',
     icon: 'M32 8 56 20 32 32 8 20Z M8 32l24 12 24-12 M8 44l24 12 24-12',
-    lead: 'Custom software, dashboards, workflow automation and integrations — built around the way your business actually works, not the other way round.',
+    lead: 'Custom software, dashboards, workflow automation and integrations, built around the way your business actually works, not the other way round.',
     inc: [['Custom web applications', 'Secure, scalable apps designed around your exact workflow.'], ['Dashboards & portals', 'Customer, staff and admin portals with the data you need at a glance.'], ['Workflow automation', 'Replace repetitive manual work with reliable automated processes.'], ['API integrations', 'Connect your CRM, payments, accounting and other tools.'], ['SaaS products', 'Multi-tenant platforms ready to sell to your own customers.'], ['Mobile apps', 'Cross-platform apps for iOS and Android with React Native.']],
     steps: [['Discovery', 'We map your processes, users and must-have features.'], ['Prototype', 'Clickable screens to validate the idea before building.'], ['Build', 'Short sprints with working software you can test every week.'], ['Launch & support', 'Deployment, documentation, training and continued improvements.']],
     tools: ['Laravel', 'Node.js', 'React', 'React Native', 'PostgreSQL', 'MySQL', 'REST APIs', 'GitHub Actions'],
-    faq: [['Do I own the code?', 'Yes. You own the code and the data, with documentation so any developer can work on it.'], ['Can you connect our existing tools?', 'In most cases, yes — we integrate with CRMs, payment providers, accounting tools and other systems through their APIs.'], ['What happens after launch?', 'We offer ongoing support, updates and new features as your business grows.']] },
+    faq: [['Do I own the code?', 'Yes. You own the code and the data, with documentation so any developer can work on it.'], ['Can you connect our existing tools?', 'In most cases, yes, we integrate with CRMs, payment providers, accounting tools and other systems through their APIs.'], ['What happens after launch?', 'We offer ongoing support, updates and new features as your business grows.']] },
   { slug: 'digital-marketing', name: 'Digital Marketing', t1: 'Growth you', t2: 'can', acc: 'measure.', tags: 'SEO · Ads · Analytics',
     icon: 'M8 54h48 M12 44l12-12 10 8 18-20 M42 20h10v10',
-    lead: 'SEO, paid campaigns and analytics working as one engine that turns traffic into qualified leads — with reporting you can actually read.',
+    lead: 'SEO, paid campaigns and analytics working as one engine that turns traffic into qualified leads, with reporting you can actually read.',
     inc: [['Technical SEO', 'Site structure, speed and indexing fixed so search engines love you.'], ['Local SEO', 'Google Business Profile and local rankings for customers near you.'], ['Google Ads', 'Search and display campaigns focused on real enquiries.'], ['Meta Ads', 'Facebook and Instagram campaigns that reach the right people.'], ['Conversion tracking', 'Know exactly which channels bring calls, forms and sales.'], ['Monthly reporting', 'Clear reports with results and what we are doing next.']],
     steps: [['Audit', 'We review your site, rankings, ads and analytics.'], ['Strategy', 'Channels, budget split and goals agreed together.'], ['Launch', 'Campaigns and SEO work go live with full tracking.'], ['Optimise', 'We test, learn and improve every single month.']],
     tools: ['Google Analytics 4', 'Search Console', 'Google Ads', 'Meta Ads', 'Tag Manager', 'Semrush', 'Looker Studio', 'Hotjar'],
     faq: [['How soon will I see results?', 'Paid campaigns can bring traffic quickly; SEO builds steadily over months. We set realistic expectations up front.'], ['Who owns the ad accounts?', 'You do. Campaigns run in your own accounts, so you keep full access and history.'], ['What will I see each month?', 'A clear report showing traffic, leads, spend and what we are changing next.']] },
   { slug: 'graphic-design', name: 'Graphic Design', t1: 'Brands people', t2: '', acc: 'remember.', tags: 'Logos · Identity · Creatives',
     icon: 'M32 6 46 30 32 58 18 30Z M28 32a4 4 0 1 0 8 0a4 4 0 1 0-8 0 M32 6v22',
-    lead: 'Logos, brand identities and campaign visuals with a clear point of view — designed to be remembered and built to work everywhere.',
+    lead: 'Logos, brand identities and campaign visuals with a clear point of view, designed to be remembered and built to work everywhere.',
     inc: [['Logo design', 'A distinctive mark that works from favicon to billboard.'], ['Brand identity', 'Colours, typography and visual language that feel like you.'], ['Brand guidelines', 'A simple guide so everyone uses your brand correctly.'], ['Social creatives', 'Post and story templates that stay on-brand.'], ['Ad creatives', 'Scroll-stopping visuals for Google, Meta and display ads.'], ['Print collateral', 'Business cards, brochures, flyers and signage.']],
     steps: [['Brief', 'Your story, audience, competitors and personality.'], ['Concepts', 'Several creative directions to choose from.'], ['Refine', 'We perfect the chosen direction with your feedback.'], ['Deliver', 'Final files in every format, plus guidelines.']],
     tools: ['Figma', 'Illustrator', 'Photoshop', 'InDesign', 'After Effects', 'Canva templates'],
@@ -716,21 +716,21 @@ const SERVICES = [
     inc: [['Website copy', 'Clear, persuasive pages that explain your value in seconds.'], ['SEO blog articles', 'Researched articles that answer real questions and rank.'], ['Product descriptions', 'Benefit-led descriptions that help products sell.'], ['Email campaigns', 'Newsletters and sequences that people actually open.'], ['Video & ad scripts', 'Short, punchy scripts for reels, YouTube and ads.'], ['Case studies', 'Stories that prove your results to new customers.']],
     steps: [['Research', 'Your voice, audience, keywords and competitors.'], ['Outline', 'Structure and key messages agreed before writing.'], ['Write', 'Original drafts written for humans and search engines.'], ['Edit & optimise', 'Polished, proofread and optimised for SEO.']],
     tools: ['Search Console', 'Semrush', 'Surfer SEO', 'Grammarly', 'Google Docs', 'WordPress'],
-    faq: [['Will the content sound like my brand?', 'Yes. We start by learning your voice, audience and goals, and every piece is edited to match.'], ['Is the content original?', 'Every piece is written specifically for you and checked before delivery.'], ['Do you handle SEO?', 'Yes — keyword research, structure, meta titles and internal links are part of every article.']] },
+    faq: [['Will the content sound like my brand?', 'Yes. We start by learning your voice, audience and goals, and every piece is edited to match.'], ['Is the content original?', 'Every piece is written specifically for you and checked before delivery.'], ['Do you handle SEO?', 'Yes, keyword research, structure, meta titles and internal links are part of every article.']] },
   { slug: 'ecommerce', name: 'E-Commerce Solutions', t1: 'Online stores', t2: 'that', acc: 'sell.', tags: 'Shopify · WooCommerce · Custom',
     icon: 'M13 22h38l-3 34H16Z M24 26v-8a8 8 0 0 1 16 0v8',
-    lead: 'Online stores that look premium, load fast and convert — from product catalogue to checkout, payments and shipping.',
+    lead: 'Online stores that look premium, load fast and convert, from product catalogue to checkout, payments and shipping.',
     inc: [['Shopify stores', 'Beautiful, reliable stores on the world’s leading platform.'], ['WooCommerce stores', 'Flexible stores on WordPress with full control.'], ['Custom storefronts', 'Bespoke shopping experiences for unique products.'], ['Payments & shipping', 'Stripe, PayPal, taxes, shipping rates and delivery set up.'], ['Product setup', 'Catalogue, variants, images and descriptions organised.'], ['Conversion optimisation', 'Faster pages and smoother checkout for more sales.']],
     steps: [['Plan', 'Products, platform, payments and shipping decided.'], ['Design', 'A storefront that reflects your brand and builds trust.'], ['Build', 'Store, integrations and products set up and tested.'], ['Launch & grow', 'Go live, then marketing, SEO and optimisation.']],
     tools: ['Shopify', 'WooCommerce', 'Stripe', 'PayPal', 'Klaviyo', 'Merchant Center', 'Meta Shop', 'Cloudflare'],
     faq: [['Shopify or WooCommerce?', 'It depends on your products, budget and how much control you want. We recommend the right fit for you.'], ['Can you move my existing store?', 'Yes. We migrate products, customers and orders carefully to protect your sales and SEO.'], ['Can I manage products myself?', 'Absolutely. We set everything up so you can add products, update prices and manage orders easily.']] },
   { slug: 'social-media', name: 'Social Account Management', t1: 'Social that', t2: '', acc: 'connects.', tags: 'Posting · Community · Reports',
     icon: 'M8 12h36v26H24l-10 9v-9H8Z M26 21c-2-3.5-7-3-7 1 0 3.5 7 8 7 8s7-4.5 7-8c0-4-5-4.5-7-1Z M50 22h6v26h-6v8l-9-8H30v-4',
-    lead: 'Consistent posting, community care and clear reporting across every platform you are on — so your brand stays active while you run the business.',
+    lead: 'Consistent posting, community care and clear reporting across every platform you are on, so your brand stays active while you run the business.',
     inc: [['Strategy & calendar', 'A monthly plan of themes, formats and posting times.'], ['Content creation', 'On-brand graphics, reels, captions and hashtags.'], ['Posting & scheduling', 'Consistent publishing across all your platforms.'], ['Community management', 'Replies to comments and messages in your voice.'], ['Profile optimisation', 'Bios, highlights and links set up to convert.'], ['Monthly reports', 'Reach, engagement and growth explained simply.']],
     steps: [['Audit', 'Your profiles, audience and competitors reviewed.'], ['Plan', 'A content calendar you approve before anything posts.'], ['Publish', 'Content created, scheduled and posted consistently.'], ['Report', 'Monthly results and next month’s improvements.']],
     tools: ['Instagram', 'Facebook', 'LinkedIn', 'TikTok', 'X', 'YouTube', 'Meta Business Suite', 'Canva'],
-    faq: [['Which platforms do you manage?', 'Instagram, Facebook, LinkedIn, TikTok, X and YouTube — we focus on the ones where your customers are.'], ['Do I approve posts before they go live?', 'Yes. You review the monthly calendar and approve content before anything is published.'], ['Do you reply to comments and messages?', 'Yes, community management can be included so your audience always gets a response.']] }
+    faq: [['Which platforms do you manage?', 'Instagram, Facebook, LinkedIn, TikTok, X and YouTube, we focus on the ones where your customers are.'], ['Do I approve posts before they go live?', 'Yes. You review the monthly calendar and approve content before anything is published.'], ['Do you reply to comments and messages?', 'Yes, community management can be included so your audience always gets a response.']] }
 ];
 const SVC = {};
 SERVICES.forEach((s, i) => { s.i = i; SVC[s.slug] = s; });
@@ -749,7 +749,7 @@ async function loadCap(f) {
   try {
     const r = await fetch((FERA.rest || '/wp-json/') + 'fera/v1/captcha?_=' + Date.now(), { cache: 'no-store' });
     setCap(f, await r.json());
-  } catch (err) { const q = $('[data-cap-q]', f); if (q) q.textContent = '—'; }
+  } catch (err) { const q = $('[data-cap-q]', f); if (q) q.textContent = '-'; }
 }
 $$('[data-fera-form]').forEach((f) => {
   let done = false;
@@ -760,6 +760,18 @@ $$('[data-fera-form]').forEach((f) => {
   f.addEventListener('change', (e) => { const b = e.target.closest('.field, fieldset'); if (b) b.classList.remove('bad'); });
 });
 document.addEventListener('click', (e) => { const b = e.target.closest('[data-cap-new]'); if (b) { e.preventDefault(); loadCap(b.closest('form')); } });
+document.addEventListener('change', (e) => {
+  const t = e.target;
+  if (t.matches && t.matches('input[data-other-svc]')) {
+    const box = t.closest('fieldset').querySelector('.other-svc');
+    if (box) { box.hidden = !t.checked; const i = box.querySelector('input'); if (t.checked && i) setTimeout(() => i.focus(), 30); if (!t.checked && i) i.value = ''; }
+  }
+  if (t.name === 'budget' && t.checked) { const own = t.form && t.form.elements.budget_own; if (own) own.value = ''; }
+});
+document.addEventListener('input', (e) => {
+  const t = e.target;
+  if (t.name === 'budget_own' && t.value.trim()) { $$('input[name="budget"]', t.form).forEach((r) => { r.checked = false; }); }
+});
 document.addEventListener('submit', async (e) => {
   const f = e.target.closest('[data-fera-form]');
   if (!f) return;
@@ -767,23 +779,24 @@ document.addEventListener('submit', async (e) => {
   const note = $('.form-note', f), btn = $('button[type="submit"]', f);
   const say = (msg, bad) => { if (!note) return; note.textContent = msg; note.classList.toggle('err', !!bad); note.classList.add('show'); };
   const val = (n) => ((f.elements[n] && f.elements[n].value) || '').trim();
-  const boxOf = (n) => { if (n === 'services') { const i = $('input[name="svc"]', f); return i && i.closest('fieldset'); } if (n === 'budget') { const i = $('input[name="budget"]', f); return i && i.closest('fieldset'); } const el = f.elements[n === 'msg' ? 'msg' : n]; return el && (el.closest('.field') || el); };
+  const boxOf = (n) => { if (n === 'services') { const i = $('input[name="svc"]', f); return i && i.closest('fieldset'); } if (n === 'budget') { const i = $('input[name="budget"]', f); return i && i.closest('fieldset'); } if (n === 'other_service') { const i = f.elements.other_service; return i && i.closest('.field'); } const el = f.elements[n === 'msg' ? 'msg' : n]; return el && (el.closest('.field') || el); };
   const flag = (list) => { $$('.bad', f).forEach((x) => x.classList.remove('bad')); list.forEach((n) => { const b = boxOf(n); if (b) b.classList.add('bad'); }); const first = list.length && boxOf(list[0]); if (first) { const inp = first.querySelector ? (first.querySelector('input, textarea') || first) : first; try { inp.focus({ preventScroll: false }); } catch (err) {} } };
   const hasBudget = !!$('input[name="budget"]', f);
   const data = {
     name: val('name'), email: val('email'), phone: val('phone'), company: val('company'), message: val('msg'),
     services: $$('input[name="svc"]:checked', f).map(labelOf),
     budget: (($('input[name="budget"]:checked', f)) ? labelOf($('input[name="budget"]:checked', f)) : ''),
-    needs_budget: hasBudget, cap: val('cap'), cap_t: f.dataset.capT || '',
+    needs_budget: hasBudget, budget_own: val('budget_own'), other_service: val('other_service'), cap: val('cap'), cap_t: f.dataset.capT || '',
     website_hp: val('website_hp'), elapsed: Date.now() - formStart, page: location.href
   };
   const missing = [];
   if (!data.services.length) missing.push('services');
-  if (hasBudget && !data.budget) missing.push('budget');
+  const wantsOther = !!$('input[data-other-svc]:checked', f);
+  if (wantsOther && !data.other_service) missing.push('other_service');
+  if (hasBudget && !data.budget && !data.budget_own) missing.push('budget');
   if (!data.name) missing.push('name');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) missing.push('email');
   if (data.phone.replace(/\D/g, '').length < 7) missing.push('phone');
-  if (!data.company) missing.push('company');
   if (data.message.length < 10) missing.push('msg');
   if (!data.cap) missing.push('cap');
   if (missing.length) { flag(missing); say('Please complete all required fields (marked *), including the quick check.', true); return; }
@@ -797,8 +810,8 @@ document.addEventListener('submit', async (e) => {
       if (j && (j.fields || j.captcha)) { if (j.captcha) setCap(f, j.captcha); flag(j.fields || []); say(j.message || 'Please check the highlighted fields.', true); return; }
       throw new Error(j.message || 'failed');
     }
-    say(j.message || 'Thank you! Your enquiry has been sent — we\'ll reply within one business day.');
-    f.reset(); $$('.bad', f).forEach((x) => x.classList.remove('bad')); loadCap(f);
+    say(j.message || 'Thank you! Your enquiry has been sent, we\'ll reply within one business day.');
+    f.reset(); $$('.bad', f).forEach((x) => x.classList.remove('bad')); $$('.other-svc', f).forEach((b) => { b.hidden = true; }); loadCap(f);
     if (window.fbq) try { window.fbq('track', 'Lead'); } catch (err) {}
     if (window.gtag) try { window.gtag('event', 'generate_lead'); } catch (err) {}
   } catch (err) {

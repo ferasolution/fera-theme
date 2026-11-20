@@ -176,7 +176,7 @@ add_action(
 			if ( empty( $wp_scripts->registered[ $handle ] ) || 1 === $wp_scripts->get_data( $handle, 'group' ) ) {
 				return;
 			}
-			// Some plugins print inline code in <head> that calls their script right away — leave those in place.
+			// Some plugins print inline code in <head> that calls their script right away, leave those in place.
 			if ( preg_match( '#official-facebook-pixel|facebook-pixel#', (string) $wp_scripts->registered[ $handle ]->src . ' ' . $handle ) ) {
 				return;
 			}
