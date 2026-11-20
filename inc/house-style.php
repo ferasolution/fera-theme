@@ -19,7 +19,7 @@ function fera_dedash( $t ) {
 	if ( ! is_string( $t ) || false === strpos( $t, "\u{2014}" ) ) {
 		return $t;
 	}
-	// "Title — Fera Solution" style separators.
+	// "Title | Fera Solution" style separators.
 	$t = preg_replace( '/\s+\x{2014}\s+(Fera Solution)\b/u', ' | $1', $t );
 	// Inside headings a colon reads best.
 	$t = preg_replace_callback(

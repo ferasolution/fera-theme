@@ -747,6 +747,17 @@ html.fera-nav-in #curtain{visibility:visible;transform:none}
 .req{color:var(--red-hi);font-style:normal;margin-left:2px}
 .opt{color:var(--muted);font-size:.85em;font-weight:400}
 .own-budget,.other-svc{margin-top:14px}
+.usd{display:flex;align-items:center;gap:8px}
+.usd b{font-weight:500;font-size:18px;color:var(--fg)}
+.usd input{flex:1;min-width:0}
+.wa-ic{color:#25D366;flex:none;vertical-align:middle}
+.wa-tag{display:inline-flex;align-items:center}
+.socials .wa-ic{color:currentColor}
+.f-col .wa-tag,.ct-list .wa-tag{margin-right:8px}
+.wa-link{display:inline-flex;align-items:center;gap:8px}
+.quick .quick-wa{gap:6px}
+.quick .quick-wa:hover .wa-ic{color:#0b0a0a}
+.cta-quick .btn .wa-ic{margin-right:8px}
 .other-svc[hidden]{display:none}
 .field>.lbl{display:block}
 .field.bad input,.field.bad textarea,fieldset.bad .pick{outline:1px solid #FF6B6B;outline-offset:3px;border-radius:12px}

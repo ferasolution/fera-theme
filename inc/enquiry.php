@@ -142,8 +142,10 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 		$f[ $k ] = mb_substr( $f[ $k ], 0, $max );
 	}
 	// A budget typed by the visitor takes the place of the preset ranges.
-	if ( '' !== $f['budget_own'] ) {
-		$f['budget'] = $f['budget_own'] . ' (own amount)';
+	// Budgets are in US dollars only.
+	$own_digits = preg_replace( '/\D/', '', $f['budget_own'] );
+	if ( '' !== $own_digits ) {
+		$f['budget'] = '$' . number_format( (float) $own_digits ) . ' USD (own amount)';
 	}
 	unset( $f['budget_own'] );
 	// "Other IT service": keep the description with the selected services.
@@ -165,7 +167,7 @@ function fera_handle_enquiry( WP_REST_Request $req ) {
 	if ( ! $f['services'] && ! $wants_other ) {
 		$missing[] = 'services';
 	}
-	if ( ! empty( $p['needs_budget'] ) && '' === $f['budget'] ) {
+	if ( ! empty( $p['needs_budget'] ) && ( '' === $f['budget'] || '$0 USD (own amount)' === $f['budget'] ) ) {
 		$missing[] = 'budget';
 	}
 	if ( '' === $f['name'] ) {

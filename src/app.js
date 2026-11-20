@@ -770,6 +770,7 @@ document.addEventListener('change', (e) => {
 });
 document.addEventListener('input', (e) => {
   const t = e.target;
+  if (t.name === 'budget_own') { const d = t.value.replace(/[^0-9]/g, '').slice(0, 9); const f2 = d ? Number(d).toLocaleString('en-US') : ''; if (t.value !== f2) t.value = f2; }
   if (t.name === 'budget_own' && t.value.trim()) { $$('input[name="budget"]', t.form).forEach((r) => { r.checked = false; }); }
 });
 document.addEventListener('submit', async (e) => {
