@@ -244,19 +244,37 @@ add_action(
 );
 
 /**
- * The Meta pixel plugin prints an inline call to its signal object even while the consent
- * plugin holds the real script back, which logs a ReferenceError. This early stub queues
- * those calls and replays them on the real object once consent loads it (nothing is sent before).
+ * The Meta pixel plugin prints an inline FacebookSignal.init()/initPixel() call that runs
+ * immediately, while the consent plugin holds the Meta script back until marketing consent.
+ * That inline call is put behind the same consent gate here, and it waits for the Meta
+ * script to be ready, so the pixel starts correctly after consent and nothing errors before.
  */
+add_action(
+	'wp_head',
+	static function () {
+		if ( ! is_admin() ) {
+			ob_start();
+		}
+	},
+	-1000
+);
 add_action(
 	'wp_head',
 	static function () {
 		if ( is_admin() ) {
 			return;
 		}
-		?>
-<script id="fera-signal-stub" data-category="necessary">(function(w,n){if(w[n])return;var q=[],real=null,stub={};['init','initPixel','track','trackCustom'].forEach(function(f){stub[f]=function(){q.push([f,arguments]);};});try{Object.defineProperty(w,n,{configurable:true,get:function(){if(real)return real;var cs=document.currentScript;if(cs&&/facebook_signal/.test(cs.src||''))return undefined;return stub;},set:function(v){real=v;try{Object.defineProperty(w,n,{value:v,writable:true,configurable:true});}catch(e){}q.forEach(function(c){try{v[c[0]].apply(v,c[1]);}catch(e){}});q=[];}});}catch(e){w[n]=stub;}})(window,'Face'+'book'+'Signal');</script>
-		<?php
+		$html = (string) ob_get_clean();
+		$html = preg_replace_callback(
+			'#<script(?![^>]*type=["\']text/plain)[^>]*>(\s*FacebookSignal\.init\([\s\S]*?)</script>#',
+			static function ( $m ) {
+				return '<script data-fc-category="marketing" data-fc-kind="script" data-fc-type="text/javascript" type="text/plain">'
+					. '(function(){var n=0;(function r(){if(window.FacebookSignal&&window.FacebookSignal.initPixel){' . $m[1] . '}else if(n++<300){setTimeout(r,50);}})();})();'
+					. '</script>';
+			},
+			$html
+		);
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput -- re-emitting wp_head output.
 	},
-	0
+	PHP_INT_MAX
 );
