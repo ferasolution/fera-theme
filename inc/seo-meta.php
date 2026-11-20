@@ -22,51 +22,61 @@ function fera_seo_meta() {
 		return $cache;
 	}
 	$m = array(
-		'home'       => array(
-			'Fera Solution | Web, Software & Cybersecurity Agency USA',
-			'USA-based digital agency in Herndon, Virginia serving clients worldwide. Website & software development, cybersecurity, SEO, digital marketing, design and e-commerce.',
-			'Fera Solution, digital agency USA, web development company, software development company, cybersecurity services, SEO agency, digital marketing agency, Herndon Virginia, website design, e-commerce development',
+		'home' => array(
+			'Cybersecurity & Web Development Company USA | Fera Solution',
+			'Fera Solution is a USA IT company in Herndon, VA. We build secure websites and custom software, and grow brands with SEO and digital marketing. Free quote.',
+			'IT company USA, cybersecurity company, web development company, software development company, digital marketing agency, SEO services, website design, IT services Virginia, Fera Solution',
 		),
-		'about'      => array(
-			'About Fera Solution | USA Digital Agency in Herndon, Virginia',
-			'Meet Fera Solution LLC: engineers, designers, writers, marketers and security specialists in Herndon, Virginia, working as one accountable team for clients worldwide.',
-			'about Fera Solution, digital agency Herndon Virginia, USA IT company, web and software team, cybersecurity experts, full-service agency',
+		'about' => array(
+			'About Us | USA IT & Cybersecurity Company | Fera Solution',
+			'Meet Fera Solution, a USA-based IT and cybersecurity company in Herndon, Virginia. One team of engineers, designers and marketers serving clients worldwide.',
+			'about Fera Solution, IT company Herndon Virginia, cybersecurity company USA, web development team, software engineers, digital agency USA',
 		),
-		'services'   => array(
-			'Digital Services | Web, Software, Security & Marketing | Fera Solution',
-			'Eight services under one roof: cybersecurity, website development, software development, digital marketing & SEO, graphic design, content writing, e-commerce and social media.',
-			'digital services, website development services, software development services, cybersecurity services, SEO services, digital marketing services, graphic design, content writing, e-commerce, social media management',
+		'services' => array(
+			'IT Services: Security, Web, Software & SEO | Fera Solution',
+			'Cybersecurity, website and software development, SEO, digital marketing, design, content, e-commerce and social media. All IT services in one USA team.',
+			'IT services, cybersecurity services, website development services, software development services, SEO services, digital marketing services, graphic design, content writing, e-commerce development, social media management',
 		),
-		'work'       => array(
-			'Our Work & Case Studies | Fera Solution',
-			'Platforms we design, build and run: learning management, hospital management and community portals, engineered for speed, security and scale by Fera Solution.',
-			'Fera Solution portfolio, case studies, LMS development, hospital management system, community portal, SaaS development, web application development',
+		'work' => array(
+			'Portfolio & Case Studies | LMS, HMS & SaaS | Fera Solution',
+			'See platforms Fera Solution designed and built: learning management, hospital management and community portals. Fast, secure SaaS for real businesses.',
+			'Fera Solution portfolio, case studies, LMS development, hospital management system, SaaS development, web application development, custom software projects',
 		),
-		'contact'    => array(
-			'Contact Fera Solution | Free Consultation, USA & Worldwide',
-			'Start your project with Fera Solution. Call 337-252-4040, WhatsApp 337-445-5717 or email sales@ferasolution.com. Office in Herndon, Virginia; clients worldwide.',
-			'contact Fera Solution, hire web developer, free consultation, IT company contact, digital agency USA, WhatsApp Fera Solution',
+		'contact' => array(
+			'Contact Us | Free IT & Web Consultation | Fera Solution',
+			'Talk to Fera Solution about your website, software or security project. Call 337-252-4040, WhatsApp 337-445-5717 or email sales@ferasolution.com.',
+			'contact Fera Solution, free consultation, hire web developer, cybersecurity consultation, IT company contact, get a quote, web design quote',
 		),
 		'experience' => array(
-			'Live Demos | Interactive Website & App Demos | Fera Solution',
-			'Try live, interactive demos of websites, apps and dashboards built by Fera Solution, see the speed, motion and quality before you start your own project.',
-			'live website demos, web app demo, interactive demos, website examples, Fera Solution demos',
+			'Live Website & App Demos | Fera Solution',
+			'Explore live demos of websites, web apps and dashboards built by Fera Solution. Click around, test the speed and see the quality before you start.',
+			'live website demos, web app demos, website examples, dashboard demo, interactive demos, Fera Solution work',
 		),
-		'blog'       => array(
-			'Blog | Cybersecurity, Web & Digital Marketing Insights | Fera Solution',
-			'Practical insights on cybersecurity, website development, software and digital growth from the Fera Solution team in Herndon, Virginia.',
-			'cybersecurity blog, web development tips, digital marketing insights, SEO tips, software development blog, Fera Solution blog',
+		'blog' => array(
+			'IT, Cybersecurity & Marketing Blog | Fera Solution',
+			'Practical guides on cybersecurity, web development, software, SEO and digital marketing for growing businesses, from the Fera Solution team.',
+			'cybersecurity blog, IT blog, web development tips, SEO tips, digital marketing guide, small business security, Fera Solution blog',
+		),
+		'privacy-policy' => array(
+			'Privacy Policy | Fera Solution',
+			'How Fera Solution LLC collects, uses and protects information on ferasolution.com, including cookies, analytics and your privacy choices.',
+			'Fera Solution privacy policy, cookie policy, data protection',
+		),
+		'terms-and-conditions' => array(
+			'Terms & Conditions | Fera Solution',
+			'The terms for using ferasolution.com and working with Fera Solution LLC on website, software, cybersecurity and marketing projects.',
+			'Fera Solution terms and conditions, website terms, service terms',
 		),
 	);
 	$svc = array(
-		'cybersecurity'        => array( 'Cybersecurity Services | Pen Testing & Risk Assessment | Fera Solution', 'cybersecurity services, penetration testing, vulnerability assessment, risk assessment, website security, network security, security hardening, cybersecurity company USA' ),
-		'web-development'      => array( 'Website Development Services | WordPress & Custom Sites | Fera Solution', 'website development, web design company, WordPress development, custom website, React development, responsive website, fast website, web development agency USA' ),
-		'software-development' => array( 'Custom Software Development | Apps & Dashboards | Fera Solution', 'custom software development, web application development, SaaS development, dashboard development, mobile app development, API development, software company USA' ),
-		'digital-marketing'    => array( 'Digital Marketing & SEO Services | Fera Solution', 'digital marketing services, SEO services, technical SEO, Google Ads, PPC management, local SEO, content marketing, digital marketing agency USA' ),
-		'graphic-design'       => array( 'Graphic Design & Branding Services | Fera Solution', 'graphic design services, logo design, brand identity, branding agency, social media graphics, UI design, print design' ),
-		'content-writing'      => array( 'Content Writing Services | SEO Copy & Blogs | Fera Solution', 'content writing services, SEO content writing, website copywriting, blog writing, product descriptions, copywriter USA' ),
-		'ecommerce'            => array( 'E-Commerce Development | WooCommerce & Shopify Stores | Fera Solution', 'e-commerce development, online store development, WooCommerce development, Shopify development, ecommerce website, payment integration' ),
-		'social-media'         => array( 'Social Media Management Services | Fera Solution', 'social media management, social media marketing, Instagram management, Facebook marketing, LinkedIn marketing, content calendar, social media agency' ),
+		'cybersecurity' => array( 'Cybersecurity Services USA | Pen Testing | Fera Solution', 'Penetration testing, vulnerability assessments and security hardening for websites, networks and apps. Find and fix risks before attackers do. Free quote.', 'cybersecurity services, cybersecurity company USA, penetration testing, vulnerability assessment, website security audit, network security, security hardening, managed security' ),
+		'web-development' => array( 'Website Development Company USA | Web Design | Fera Solution', 'Fast, secure and SEO-ready websites built on WordPress or custom code. Responsive design that turns visitors into customers. Get a free website quote.', 'website development company, web design company USA, WordPress development, custom website development, responsive web design, business website, website redesign' ),
+		'software-development' => array( 'Custom Software Development Company USA | Fera Solution', 'Custom web apps, SaaS platforms, dashboards and integrations built around your business. Clean code you own, delivered in short, visible cycles.', 'custom software development, software development company USA, web application development, SaaS development, dashboard development, API integration, business automation' ),
+		'digital-marketing' => array( 'SEO & Digital Marketing Agency USA | Fera Solution', 'SEO, Google Ads, local SEO and content marketing that bring qualified leads. Clear monthly reports and strategies built for measurable growth.', 'SEO services, digital marketing agency USA, local SEO, Google Ads management, PPC services, technical SEO, content marketing, lead generation' ),
+		'graphic-design' => array( 'Graphic Design & Logo Design Services | Fera Solution', 'Logos, brand identity, social media graphics and marketing design that make your business look professional and consistent everywhere.', 'graphic design services, logo design, brand identity design, branding agency, social media graphics, marketing materials, business card design' ),
+		'content-writing' => array( 'SEO Content Writing Services | Blogs & Copy | Fera Solution', 'SEO blog posts, website copy and product descriptions written by people, not templates. Content that ranks on Google and turns readers into leads.', 'content writing services, SEO content writing, website copywriting, blog writing services, product descriptions, copywriting agency' ),
+		'ecommerce' => array( 'E-Commerce Website Development USA | Fera Solution', 'Online stores on Shopify or WooCommerce with secure payments, fast checkout and easy product management. Start selling online with a free quote.', 'ecommerce website development, online store development, Shopify development, WooCommerce development, payment gateway integration, ecommerce design' ),
+		'social-media' => array( 'Social Media Management Services | Fera Solution', 'Content calendars, posts, reels and community management for Facebook, Instagram and LinkedIn. Grow followers and leads with a consistent brand.', 'social media management, social media marketing services, Instagram management, Facebook marketing, LinkedIn marketing, content calendar, social media agency' ),
 	);
 
 	$r   = fera_route();
@@ -75,18 +85,15 @@ function fera_seo_meta() {
 		$out = $m[ $r ];
 	} elseif ( 'service' === $r ) {
 		$slug = get_post_field( 'post_name', get_queried_object_id() );
-		$s    = fera_service( $slug );
-		if ( $s && isset( $svc[ $slug ] ) ) {
-			$lead = wp_strip_all_tags( $s['lead'] );
-			if ( strlen( $lead ) > 160 ) {
-				$lead = rtrim( wp_html_excerpt( $lead, 157 ), ' ,., -' ) . '…';
-			}
-			$out = array( $svc[ $slug ][0], $lead, $svc[ $slug ][1] );
+		if ( isset( $svc[ $slug ] ) ) {
+			$out = $svc[ $slug ];
 		}
 	} elseif ( is_home() && ! is_front_page() ) {
 		$out = $m['blog'];
 	} elseif ( is_page( 'experience' ) || ( function_exists( 'fera_demo_hub_id' ) && is_page( fera_demo_hub_id() ) ) ) {
 		$out = $m['experience'];
+	} elseif ( is_page() && isset( $m[ get_post_field( 'post_name', get_queried_object_id() ) ] ) && ! in_array( get_post_field( 'post_name', get_queried_object_id() ), array( 'home', 'blog' ), true ) ) {
+		$out = $m[ get_post_field( 'post_name', get_queried_object_id() ) ];
 	}
 	$cache = $out ? array( 'title' => $out[0], 'desc' => $out[1], 'keys' => $out[2] ) : null;
 	return $cache;
