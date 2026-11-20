@@ -255,7 +255,7 @@ add_action(
 			return;
 		}
 		?>
-<script id="fera-signal-stub" data-category="necessary">(function(w,n){if(w[n])return;var q=[],real=null,stub={};['init','initPixel','track','trackCustom'].forEach(function(f){stub[f]=function(){q.push([f,arguments]);};});try{Object.defineProperty(w,n,{configurable:true,get:function(){return real||stub;},set:function(v){real=v;try{Object.defineProperty(w,n,{value:v,writable:true,configurable:true});}catch(e){}q.forEach(function(c){try{v[c[0]].apply(v,c[1]);}catch(e){}});q=[];}});}catch(e){w[n]=stub;}})(window,'Face'+'book'+'Signal');</script>
+<script id="fera-signal-stub" data-category="necessary">(function(w,n){if(w[n])return;var q=[],real=null,stub={};['init','initPixel','track','trackCustom'].forEach(function(f){stub[f]=function(){q.push([f,arguments]);};});try{Object.defineProperty(w,n,{configurable:true,get:function(){if(real)return real;var cs=document.currentScript;if(cs&&/facebook_signal/.test(cs.src||''))return undefined;return stub;},set:function(v){real=v;try{Object.defineProperty(w,n,{value:v,writable:true,configurable:true});}catch(e){}q.forEach(function(c){try{v[c[0]].apply(v,c[1]);}catch(e){}});q=[];}});}catch(e){w[n]=stub;}})(window,'Face'+'book'+'Signal');</script>
 		<?php
 	},
 	0
