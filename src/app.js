@@ -197,7 +197,7 @@ async function initGL() {
     try { renderer.setAnimationLoop(null); } catch (err) {}
     document.documentElement.classList.remove('gl-on');
     document.documentElement.classList.add('no-gl');
-    try { localStorage.setItem('fera-gl-off', String(Date.now())); } catch (err) {}
+    try { sessionStorage.setItem('fera-gl-lost', String((+sessionStorage.getItem('fera-gl-lost') || 0) + 1)); } catch (err) {}
   }, false);
   renderer.setPixelRatio(PR);
   renderer.setSize(innerWidth, innerHeight);
@@ -439,7 +439,7 @@ function softwareGL() {
   } catch (err) { return true; }
 }
 const noGL = () => { document.documentElement.classList.add('no-gl'); return Promise.resolve(null); };
-const glRecentlyLost = () => { try { const t = +localStorage.getItem('fera-gl-off') || 0; return Date.now() - t < 864e5; } catch (err) { return false; } };
+const glRecentlyLost = () => { try { localStorage.removeItem('fera-gl-off'); return (+sessionStorage.getItem('fera-gl-lost') || 0) >= 2; } catch (err) { return false; } };
 const startGL = () => (((softwareGL() || glRecentlyLost()) && !/[?&]fera-gl=force/.test(location.search)) ? noGL() : initGL()).then((api) => {
   gl = api;
   if (!gl) { document.documentElement.classList.add('no-gl'); return; }
